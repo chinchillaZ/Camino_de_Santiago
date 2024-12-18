@@ -2,6 +2,7 @@ import streamlit as st
 import leafmap.foliumap as leafmap
 # import leafmap
 import plotly.graph_objects as go
+import pandas as pd
 
 markdown = """
 A Streamlit map template
@@ -97,6 +98,62 @@ with col1:
     
     st.markdown(markdown)
 
+
+    
+    # 路線資料
+    data = {
+        "name": [
+            "法國之路 (Camino Francés)",
+            "葡萄牙之路 (Camino Portugués)",
+            "北方之路 (Camino del Norte)",
+            "原始之路 (Camino Primitivo)",
+            "銀之路 (Via de la Plata)",
+            "英國之路 (Camino Inglés)",
+            "世界盡頭之路 (Camino Finisterre-Muxía)"
+        ],
+        "Distance": [771, 620, 481, 16, 49, 114, 86],
+        "Days": [36, 29, 23, 16, 49, 7, 6]
+    }
+    
+    route_colors = {
+        "法國之路 (Camino Francés)": "#440154",
+        "葡萄牙之路 (Camino Portugués)": "#3e4a89",
+        "北方之路 (Camino del Norte)": "#482878",
+        "原始之路 (Camino Primitivo)": "#21908d",
+        "銀之路 (Via de la Plata)": "#31688e",
+        "英國之路 (Camino Inglés)": "#5dc963",
+        "世界盡頭之路 (Camino Finisterre-Muxía)": "#f0f921",
+    }
+    
+    df = pd.DataFrame(data)
+    
+    # 繪圖
+    fig = go.Figure()
+    
+    for index, row in df.iterrows():
+        fig.add_trace(go.Bar(
+            name=row["name"],
+            x=["Distance", "Days"],
+            y=[row["Distance"], row["Days"]],
+            marker_color=route_colors[row["name"]]
+        ))
+    
+    fig.update_layout(
+        barmode="group",
+        title="Camino de Santiago Routes",
+        xaxis_title="Metrics",
+        yaxis_title="Values",
+        legend_title="Routes"
+    )
+    
+    fig.show()
+
+
+
+
+
+
+
     #     # Data for the routes
     # routes = ["法國之路", "北方之路", "葡萄牙之路", "銀之路", "原始之路", "英格蘭之路", "聖雅各海岸之路"]
     # distances_km = [780, 825, 620, 1000, 321, 120, 825]
@@ -148,63 +205,4 @@ with col1:
     # # Display the interactive plot in Streamlit
     # st.plotly_chart(fig)
 
-
-# Data
-    names = [
-        "法國之路 (Camino Francés)",
-        "葡萄牙之路 (Camino Portugués)",
-        "北方之路 (Camino del Norte)",
-        "原始之路 (Camino Primitivo)",
-        "銀之路 (Via de la Plata)",
-        "英國之路 (Camino Inglés)",
-        "世界盡頭之路 (Camino Finisterre-Muxía)",
-    ]
-    distances = [771, 620, 481, 16, 49, 114, 86]
-    days = [36, 29, 23, 16, 49, 7, 6]
-    route_colors = [
-        "#440154",  # 法國之路
-        "#3e4a89",  # 葡萄牙之路
-        "#482878",  # 北方之路
-        "#21908d",  # 原始之路
-        "#31688e",  # 銀之路
-        "#5dc963",  # 英國之路
-        "#f0f921",  # 世界盡頭之路
-    ]
-    
-    # Create a bar chart with two bars per name
-    fig = go.Figure()
-    
-    # Add Distance bars
-    fig.add_trace(
-        go.Bar(
-            x=names,
-            y=distances,
-            name="Distance (km)",
-            marker_color=route_colors,
-        )
-    )
-    
-    # Add Days bars
-    fig.add_trace(
-        go.Bar(
-            x=names,
-            y=days,
-            name="Days",
-            marker_color=[color + "AA" for color in route_colors],  # Add transparency
-        )
-    )
-    
-    # Update layout for better visualization
-    fig.update_layout(
-        barmode="group",
-        title="Camino de Santiago: Distance and Days",
-        xaxis_title="Route",
-        yaxis_title="Value",
-        legend_title="Metric",
-        xaxis_tickangle=-45,
-        template="plotly_white",
-    )
-    
-    # Display the plot
-    fig.show()
 
