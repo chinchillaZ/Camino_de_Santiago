@@ -67,8 +67,27 @@ geojson_urls = [
     "https://chinchillaz.github.io/streamlit-hw/Camino/Via_de_la_Plata.geojson"
 ]
 
-style = {"color": route_colors[0], "weight": 3, "opacity": 0.8}
-m.add_geojson(geojson_urls[0], layer_name="Camino de Santiago Route", style=style)
+# Create a map centered on Spain
+m = folium.Map(location=[42.5, -3.7], zoom_start=6)
+
+# Loop through the GeoJSON URLs and add them to the map with the assigned colors
+for geojson_url, (route_name, route_color) in zip(geojson_urls, route_colors.items()):
+    # Add the GeoJSON layer to the map with the specified color
+    folium.GeoJson(
+        geojson_url,
+        name=route_name,
+        style_function=lambda x, color=route_color: {
+            "color": color,
+            "weight": 3,
+            "opacity": 0.8
+        }
+    ).add_to(m)
+
+# Add layer control to toggle layers
+folium.LayerControl().add_to(m)
+
+# Save the map as an HTML file
+m.save("camino_map.html")
 
 
 m.to_streamlit(height=500)
