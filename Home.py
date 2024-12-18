@@ -36,59 +36,40 @@ country_url = "https://chinchillaz.github.io/streamlit-hw/S_P_F_country_clear.ge
 style = {"color": "yellow", "weight": 1.5, "opacity": 0.9}
 m.add_geojson(country_url, layer_name="Country", style=style)
 
-# Add GeoJSON line to the map
-# geojson_url = "https://chinchillaz.github.io/streamlit-hw/all_Camino_route.geojson"
-# style = {"color": "navy", "weight": 3, "opacity": 0.8}
-# m.add_geojson(geojson_url, layer_name="Camino de Santiago Route", style=style)
+Add GeoJSON line to the map
+geojson_url = "https://chinchillaz.github.io/streamlit-hw/all_Camino_route.geojson"
+style = {"color": "navy", "weight": 3, "opacity": 0.8}
+m.add_geojson(geojson_url, layer_name="Camino de Santiago Route", style=style)
 
 # Get the colors from the 'Paired' colormap
 # Get the colors from the 'Paired' colormap
-route_colors = [
-    "#b3ff44",  # 法國之路
-    "#bf8600",  # 北方之路
-    "#aa8800",  # 葡萄牙之路
-    "#9a8c8c",  # 銀之路
-    "#876e8c",  # 原始之路
-    "#6c8c8c",  # 英格蘭之路
-    "#24f0f0"   # 聖雅各海岸之路
-]
+# route_colors = [
+#     "#b3ff44",  # 法國之路
+#     "#bf8600",  # 北方之路
+#     "#aa8800",  # 葡萄牙之路
+#     "#9a8c8c",  # 銀之路
+#     "#876e8c",  # 原始之路
+#     "#6c8c8c",  # 英格蘭之路
+#     "#24f0f0"   # 聖雅各海岸之路
+# ]
 
 
 # List of GeoJSON URLs
-geojson_urls = [
-    "https://chinchillaz.github.io/streamlit-hw/Camino/Camino_Frances.geojson",
-    "https://chinchillaz.github.io/streamlit-hw/Camino/Camino_Ingles.geojson",
-    "https://chinchillaz.github.io/streamlit-hw/Camino/Camino_Portugues_central.geojson",
-    "https://chinchillaz.github.io/streamlit-hw/Camino/Camino_Primitivo.geojson",
-    "https://chinchillaz.github.io/streamlit-hw/Camino/Camino_del_Norte.geojson",
-    "https://chinchillaz.github.io/streamlit-hw/Camino/Portugues_Coastal.geojson",
-    "https://chinchillaz.github.io/streamlit-hw/Camino/Via_de_la_Plata.geojson"
-]
+# geojson_urls = [
+#     "https://chinchillaz.github.io/streamlit-hw/Camino/Camino_Frances.geojson",
+#     "https://chinchillaz.github.io/streamlit-hw/Camino/Camino_Ingles.geojson",
+#     "https://chinchillaz.github.io/streamlit-hw/Camino/Camino_Portugues_central.geojson",
+#     "https://chinchillaz.github.io/streamlit-hw/Camino/Camino_Primitivo.geojson",
+#     "https://chinchillaz.github.io/streamlit-hw/Camino/Camino_del_Norte.geojson",
+#     "https://chinchillaz.github.io/streamlit-hw/Camino/Portugues_Coastal.geojson",
+#     "https://chinchillaz.github.io/streamlit-hw/Camino/Via_de_la_Plata.geojson"
+# ]
 
-# style = {"color": route_colors[0], "weight": 3, "opacity": 0.8}
-# m.add_geojson(geojson_urls[0], layer_name="Camino de Santiago Route", style=style)
 
-# style = {"color": route_colors[1], "weight": 3, "opacity": 0.8}
-# m.add_geojson(geojson_urls[1], layer_name="Camino de Santiago Route", style=style)
 
-# style = {"color": route_colors[2], "weight": 3, "opacity": 0.8}
-# m.add_geojson(geojson_urls[2], layer_name="Camino de Santiago Route", style=style)
-
-# style = {"color": route_colors[3], "weight": 3, "opacity": 0.8}
-# m.add_geojson(geojson_urls[3], layer_name="Camino de Santiago Route", style=style)
-
-# style = {"color": route_colors[4], "weight": 3, "opacity": 0.8}
-# m.add_geojson(geojson_urls[4], layer_name="Camino de Santiago Route", style=style)
-
-# style = {"color": route_colors[5], "weight": 3, "opacity": 0.8}
-# m.add_geojson(geojson_urls[5], layer_name="Camino de Santiago Route", style=style)
-
-# style = {"color": route_colors[6], "weight": 3, "opacity": 0.8}
-# m.add_geojson(geojson_urls[6], layer_name="Camino de Santiago Route", style=style)
-
-# Loop through the route_colors and geojson_urls to add them dynamically
-for i in range(4):   #
-    style = {"color": route_colors[i], "weight": 3, "opacity": 0.8}
-    m.add_geojson(geojson_urls[i], layer_name=f"Camino de Santiago Route {i+1}", style=style)
+# # Loop through the route_colors and geojson_urls to add them dynamically
+# for i in range(4):   #
+#     style = {"color": route_colors[i], "weight": 3, "opacity": 0.8}
+#     m.add_geojson(geojson_urls[i], layer_name=f"Camino de Santiago Route {i+1}", style=style)
 
 m.to_streamlit(height=500)
