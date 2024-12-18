@@ -43,18 +43,16 @@ m.add_geojson(country_url, layer_name="Country", style=style)
 
 # Get the colors from the 'Paired' colormap
 # Get the colors from the 'Paired' colormap
-paired_colors = plt.cm.Paired.colors
-
-# Assign colors to each route
-route_colors = {
-    "法國之路": paired_colors[0],  # Camino_Frances
-    "北方之路": paired_colors[1],  # Camino_Ingles
-    "葡萄牙之路": paired_colors[2],  # Camino_Portugues_central
-    "銀之路": paired_colors[3],  # Camino_Primitivo
-    "原始之路": paired_colors[4],  # Camino_del_Norte
-    "英格蘭之路": paired_colors[5],  # Portugues_Coastal
-    "聖雅各海岸之路": paired_colors[6],  # Via_de_la_Plata
+route_colors_hsv = {
+    "法國之路": (0.702, 1.0, 0.271),  # Camino_Frances (HSV)
+    "北方之路": (0.750, 1.0, 0.533),  # Camino_Ingles (HSV)
+    "葡萄牙之路": (0.667, 1.0, 0.537),  # Camino_Portugues_central (HSV)
+    "銀之路": (0.607, 1.0, 0.553),  # Camino_Primitivo (HSV)
+    "原始之路": (0.528, 1.0, 0.553),  # Camino_del_Norte (HSV)
+    "英格蘭之路": (0.425, 1.0, 0.553),  # Portugues_Coastal (HSV)
+    "聖雅各海岸之路": (0.143, 1.0, 0.941)  # Via_de_la_Plata (HSV)
 }
+
 
 # List of GeoJSON URLs
 geojson_urls = [
@@ -71,13 +69,13 @@ geojson_urls = [
 m = folium.Map(location=[42.5, -3.7], zoom_start=6)
 
 # Loop through the GeoJSON URLs and add them to the map with the assigned colors
-for geojson_url, (route_name, route_color) in zip(geojson_urls, route_colors.items()):
+for geojson_url, (route_name, route_color) in zip(geojson_urls, route_colors_hsv.items()):
     # Add the GeoJSON layer to the map with the specified color
     folium.GeoJson(
         geojson_url,
         name=route_name,
         style_function=lambda x, color=route_color: {
-            "color": color,
+            "color": folium.colors.hsv_to_rgb(color),
             "weight": 3,
             "opacity": 0.8
         }
@@ -88,6 +86,5 @@ folium.LayerControl().add_to(m)
 
 # Save the map as an HTML file
 m.save("camino_map.html")
-
 
 # m.to_streamlit(height=500)
