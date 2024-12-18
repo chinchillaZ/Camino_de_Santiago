@@ -23,21 +23,6 @@ st.markdown(
     """
 )
 
-# st.header("intro")
-
-# markdown = """
-
-# | **路線名稱**      | **起點**                  | **終點**                        | **距離**       | **特色**                        |
-# |------------------|-------------------------|--------------------------------|---------------|--------------------------------|
-# | **法國之路**      | 聖讓-皮耶-德波爾特 🇫🇷    | 聖地亞哥-德孔波斯特拉 (西班牙)       | 約 780 公里    | 最受歡迎，設施完善，風景多樣。           |
-# | **北方之路**      | 依倫 (西班牙)             | 聖地亞哥-德孔波斯特拉            | 約 825 公里    | 沿北部海岸線，風景優美但地形較艱難。         |
-# | **葡萄牙之路**    | 里斯本/波爾圖 (葡萄牙)     | 聖地亞哥-德孔波斯特拉            | 約 620 公里    | 穿越葡萄牙北部，歷史與美食並存。          |
-# | **銀之路**        | 塞維亞 (西班牙)           | 聖地亞哥-德孔波斯特拉            | 約 1000 公里   | 途經西班牙內陸，古羅馬遺跡豐富。          |
-# | **原始之路**      | 奧維耶多 (西班牙)         | 聖地亞哥-德孔波斯特拉            | 約 321 公里    | 最古老的路線，山地挑戰性高，風景壯麗。      |
-# | **英格蘭之路**    | 拉科魯尼亞/費羅爾 (西班牙)  | 聖地亞哥-德孔波斯特拉            | 約 120 公里    | 適合短期徒步，當年英格蘭人登岸之路。         |
-# | **聖雅各海岸之路**| 聖塞瓦斯提安 (西班牙)      | 聖地亞哥-德孔波斯特拉            | 約 825 公里    | 與北方之路重疊，沿途海岸風光引人入勝。        |
-
-# """
 
 # st.markdown(markdown)
 
@@ -50,9 +35,59 @@ style = {"color": "yellow", "weight": 1.5, "opacity": 0.9}
 m.add_geojson(country_url, layer_name="Country", style=style)
 
 # Add GeoJSON line to the map
-geojson_url = "https://chinchillaz.github.io/streamlit-hw/all_Camino_route.geojson"
-style = {"color": "navy", "weight": 3, "opacity": 0.8}
-m.add_geojson(geojson_url, layer_name="Camino de Santiago Route", style=style)
+# geojson_url = "https://chinchillaz.github.io/streamlit-hw/all_Camino_route.geojson"
+# style = {"color": "navy", "weight": 3, "opacity": 0.8}
+# m.add_geojson(geojson_url, layer_name="Camino de Santiago Route", style=style)
+
+# Get the colors from the 'Paired' colormap
+paired_colors = plt.cm.Paired.colors
+
+route_colors = {
+    "法國之路": paired_colors[0],  # Camino_Frances
+    "北方之路": paired_colors[1],  # Camino_Ingles
+    "葡萄牙之路": paired_colors[2],  # Camino_Portugues_central
+    "銀之路": paired_colors[3],  # Camino_Primitivo
+    "原始之路": paired_colors[4],  # Camino_del_Norte
+    "英格蘭之路": paired_colors[5],  # Portugues_Coastal
+    "聖雅各海岸之路": paired_colors[6],  # Via_de_la_Plata
+}
+
+# List of GeoJSON URLs
+geojson_urls = [
+    "https://chinchillaz.github.io/streamlit-hw/Camino/Camino_Frances.geojson",
+    "https://chinchillaz.github.io/streamlit-hw/Camino/Camino_Ingles.geojson",
+    "https://chinchillaz.github.io/streamlit-hw/Camino/Camino_Portugues_central.geojson",
+    "https://chinchillaz.github.io/streamlit-hw/Camino/Camino_Primitivo.geojson",
+    "https://chinchillaz.github.io/streamlit-hw/Camino/Camino_del_Norte.geojson",
+    "https://chinchillaz.github.io/streamlit-hw/Camino/Portugues_Coastal.geojson",
+    "https://chinchillaz.github.io/streamlit-hw/Camino/Via_de_la_Plata.geojson"
+]
+
+# Create a map centered on Spain
+m = folium.Map(location=[42.5, -3.7], zoom_start=6)
+
+# Loop through the GeoJSON URLs and add them to the map
+for i, url in enumerate(geojson_urls):
+    route_name = list(route_colors.keys())[i]  # Get the route name from the dictionary
+    color = route_colors[route_name]  # Get the color from the dictionary
+
+    # Add the GeoJSON layer to the map with custom styling
+    folium.GeoJson(
+        url,
+        name=route_name,
+        style_function=lambda x, color=color: {
+            "fillColor": color,
+            "color": color,
+            "weight": 2,
+            "fillOpacity": 0.6
+        }
+    ).add_to(m)
+
+# Add layer control to toggle layers
+folium.LayerControl().add_to(m)
+
+# Save the map as an HTML file
+m.save("camino_map.html")
 
 
 
