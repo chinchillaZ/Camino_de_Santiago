@@ -36,7 +36,7 @@ country_url = "https://chinchillaz.github.io/streamlit-hw/S_P_F_country_clear.ge
 style = {"color": "yellow", "weight": 1.5, "opacity": 0.9}
 m.add_geojson(country_url, layer_name="Country", style=style)
 
-Add GeoJSON line to the map
+# Add GeoJSON line to the map
 geojson_url = "https://chinchillaz.github.io/streamlit-hw/all_Camino_route.geojson"
 style = {"color": "navy", "weight": 3, "opacity": 0.8}
 m.add_geojson(geojson_url, layer_name="Camino de Santiago Route", style=style)
