@@ -68,5 +68,23 @@ geojson_urls = [
 style = {"color": route_colors[0], "weight": 3, "opacity": 0.8}
 m.add_geojson(geojson_urls[0], layer_name="Camino de Santiago Route", style=style)
 
+style = {"color": route_colors[1], "weight": 3, "opacity": 0.8}
+m.add_geojson(geojson_urls[1], layer_name="Camino de Santiago Route", style=style)
+
+# style = {"color": route_colors[0], "weight": 3, "opacity": 0.8}
+# m.add_geojson(geojson_urls[0], layer_name="Camino de Santiago Route", style=style)
+
+# style = {"color": route_colors[0], "weight": 3, "opacity": 0.8}
+# m.add_geojson(geojson_urls[0], layer_name="Camino de Santiago Route", style=style)
+
+# style = {"color": route_colors[0], "weight": 3, "opacity": 0.8}
+# m.add_geojson(geojson_urls[0], layer_name="Camino de Santiago Route", style=style)
+
+# style = {"color": route_colors[0], "weight": 3, "opacity": 0.8}
+# m.add_geojson(geojson_urls[0], layer_name="Camino de Santiago Route", style=style)
+
+# style = {"color": route_colors[0], "weight": 3, "opacity": 0.8}
+# m.add_geojson(geojson_urls[0], layer_name="Camino de Santiago Route", style=style)
+
 
 m.to_streamlit(height=500)
