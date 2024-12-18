@@ -92,4 +92,4 @@ for i in range(4):   #
     m.add_geojson(geojson_urls[i], layer_name=f"Camino de Santiago Route {i+1}", style=style)
 
 
-m.to_streamlit(height=500)
+m.to_streamlit(height=1000)
