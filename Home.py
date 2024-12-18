@@ -65,30 +65,26 @@ geojson_urls = [
     "https://chinchillaz.github.io/streamlit-hw/Camino/Via_de_la_Plata.geojson"
 ]
 
-# style = {"color": route_colors[0], "weight": 3, "opacity": 0.8}
-# m.add_geojson(geojson_urls[0], layer_name="Camino de Santiago Route", style=style)
+style = {"color": route_colors[0], "weight": 3, "opacity": 0.8}
+m.add_geojson(geojson_urls[0], layer_name="Camino de Santiago Route", style=style)
 
-# style = {"color": route_colors[1], "weight": 3, "opacity": 0.8}
-# m.add_geojson(geojson_urls[1], layer_name="Camino de Santiago Route", style=style)
+style = {"color": route_colors[1], "weight": 3, "opacity": 0.8}
+m.add_geojson(geojson_urls[1], layer_name="Camino de Santiago Route", style=style)
 
-# style = {"color": route_colors[0], "weight": 3, "opacity": 0.8}
-# m.add_geojson(geojson_urls[0], layer_name="Camino de Santiago Route", style=style)
+style = {"color": route_colors[2], "weight": 3, "opacity": 0.8}
+m.add_geojson(geojson_urls[2], layer_name="Camino de Santiago Route", style=style)
 
-# style = {"color": route_colors[0], "weight": 3, "opacity": 0.8}
-# m.add_geojson(geojson_urls[0], layer_name="Camino de Santiago Route", style=style)
+style = {"color": route_colors[3], "weight": 3, "opacity": 0.8}
+m.add_geojson(geojson_urls[3], layer_name="Camino de Santiago Route", style=style)
 
-# style = {"color": route_colors[0], "weight": 3, "opacity": 0.8}
-# m.add_geojson(geojson_urls[0], layer_name="Camino de Santiago Route", style=style)
+style = {"color": route_colors[4], "weight": 3, "opacity": 0.8}
+m.add_geojson(geojson_urls[4], layer_name="Camino de Santiago Route", style=style)
 
-# style = {"color": route_colors[0], "weight": 3, "opacity": 0.8}
-# m.add_geojson(geojson_urls[0], layer_name="Camino de Santiago Route", style=style)
+style = {"color": route_colors[5], "weight": 3, "opacity": 0.8}
+m.add_geojson(geojson_urls[5], layer_name="Camino de Santiago Route", style=style)
 
-# style = {"color": route_colors[0], "weight": 3, "opacity": 0.8}
-# m.add_geojson(geojson_urls[0], layer_name="Camino de Santiago Route", style=style)
+style = {"color": route_colors[6], "weight": 3, "opacity": 0.8}
+m.add_geojson(geojson_urls[6], layer_name="Camino de Santiago Route", style=style)
 
-# Loop through the colors and GeoJSON URLs
-for i in range(7):  # 0 to 6
-    style = {"color": route_colors[i], "weight": 3, "opacity": 0.8}
-    m.add_geojson(geojson_urls[i], layer_name=f"Camino de Santiago Route {i+1}", style=style)
 
 m.to_streamlit(height=500)
