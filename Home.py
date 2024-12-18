@@ -65,10 +65,8 @@ geojson_urls = [
     "https://chinchillaz.github.io/streamlit-hw/Camino/Via_de_la_Plata.geojson"
 ]
 
-
-geojson_url = geojson_urls[0]
 style = {"color": "navy", "weight": 3, "opacity": 0.8}
-m.add_geojson(geojson_url, layer_name="Camino de Santiago Route", style=style)
+m.add_geojson(geojson_urls[0], layer_name="Camino de Santiago Route", style=style)
 
 
 m.to_streamlit(height=500)
