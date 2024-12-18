@@ -97,16 +97,45 @@ with col1:
     
     st.markdown(markdown)
 
-        # Data for the routes
-    routes = ["法國之路", "北方之路", "葡萄牙之路", "銀之路", "原始之路", "英格蘭之路", "聖雅各海岸之路"]
-    distances_km = [780, 825, 620, 1000, 321, 120, 825]
+    #     # Data for the routes
+    # routes = ["法國之路", "北方之路", "葡萄牙之路", "銀之路", "原始之路", "英格蘭之路", "聖雅各海岸之路"]
+    # distances_km = [780, 825, 620, 1000, 321, 120, 825]
     
-    # Create an interactive bar chart using Plotly
+    # # Create an interactive bar chart using Plotly
+    # # fig = go.Figure(go.Bar(
+    # #     x=distances_km,
+    # #     y=routes,
+    # #     orientation='h',  # Horizontal bar chart
+    # #     marker=dict(color='skyblue'),
+    # # ))
+    
+    # # fig.update_layout(
+    # #     title='朝聖者之路 路線長度分布',
+    # #     xaxis_title='距離 (公里)',
+    # #     yaxis_title='路線名稱',
+    # #     template='plotly_white'
+    # # )
+    # # Colors for each route
+    # route_colors = {
+    #     "法國之路": "#440154",  # Camino_Frances
+    #     "北方之路": "#482878",  # Camino_Ingles
+    #     "葡萄牙之路": "#3e4a89",  # Camino_Portugues_central
+    #     "銀之路": "#31688e",  # Camino_Primitivo
+    #     "原始之路": "#21908d",  # Camino_del_Norte
+    #     "英格蘭之路": "#5dc963",  # Portugues_Coastal
+    #     "聖雅各海岸之路": "#f0f921",  # Via_de_la_Plata
+    # }
+
+
+    # # Create a list of colors for the bars based on the routes
+    # bar_colors = [route_colors[route] for route in routes]
+    
+    # # Create an interactive bar chart using Plotly
     # fig = go.Figure(go.Bar(
     #     x=distances_km,
     #     y=routes,
     #     orientation='h',  # Horizontal bar chart
-    #     marker=dict(color='skyblue'),
+    #     marker=dict(color=bar_colors),
     # ))
     
     # fig.update_layout(
@@ -115,37 +144,67 @@ with col1:
     #     yaxis_title='路線名稱',
     #     template='plotly_white'
     # )
-    # Colors for each route
-    route_colors = {
-        "法國之路": "#440154",  # Camino_Frances
-        "北方之路": "#482878",  # Camino_Ingles
-        "葡萄牙之路": "#3e4a89",  # Camino_Portugues_central
-        "銀之路": "#31688e",  # Camino_Primitivo
-        "原始之路": "#21908d",  # Camino_del_Norte
-        "英格蘭之路": "#5dc963",  # Portugues_Coastal
-        "聖雅各海岸之路": "#f0f921",  # Via_de_la_Plata
-    }
-
-
-    # Create a list of colors for the bars based on the routes
-    bar_colors = [route_colors[route] for route in routes]
-    
-    # Create an interactive bar chart using Plotly
-    fig = go.Figure(go.Bar(
-        x=distances_km,
-        y=routes,
-        orientation='h',  # Horizontal bar chart
-        marker=dict(color=bar_colors),
-    ))
-    
-    fig.update_layout(
-        title='朝聖者之路 路線長度分布',
-        xaxis_title='距離 (公里)',
-        yaxis_title='路線名稱',
-        template='plotly_white'
-    )
         
-    # Display the interactive plot in Streamlit
-    st.plotly_chart(fig)
+    # # Display the interactive plot in Streamlit
+    # st.plotly_chart(fig)
 
+
+# Data
+    names = [
+        "法國之路 (Camino Francés)",
+        "葡萄牙之路 (Camino Portugués)",
+        "北方之路 (Camino del Norte)",
+        "原始之路 (Camino Primitivo)",
+        "銀之路 (Via de la Plata)",
+        "英國之路 (Camino Inglés)",
+        "世界盡頭之路 (Camino Finisterre-Muxía)",
+    ]
+    distances = [771, 620, 481, 16, 49, 114, 86]
+    days = [36, 29, 23, 16, 49, 7, 6]
+    route_colors = [
+        "#440154",  # 法國之路
+        "#3e4a89",  # 葡萄牙之路
+        "#482878",  # 北方之路
+        "#21908d",  # 原始之路
+        "#31688e",  # 銀之路
+        "#5dc963",  # 英國之路
+        "#f0f921",  # 世界盡頭之路
+    ]
+    
+    # Create a bar chart with two bars per name
+    fig = go.Figure()
+    
+    # Add Distance bars
+    fig.add_trace(
+        go.Bar(
+            x=names,
+            y=distances,
+            name="Distance (km)",
+            marker_color=route_colors,
+        )
+    )
+    
+    # Add Days bars
+    fig.add_trace(
+        go.Bar(
+            x=names,
+            y=days,
+            name="Days",
+            marker_color=[color + "AA" for color in route_colors],  # Add transparency
+        )
+    )
+    
+    # Update layout for better visualization
+    fig.update_layout(
+        barmode="group",
+        title="Camino de Santiago: Distance and Days",
+        xaxis_title="Route",
+        yaxis_title="Value",
+        legend_title="Metric",
+        xaxis_tickangle=-45,
+        template="plotly_white",
+    )
+    
+    # Display the plot
+    fig.show()
 
