@@ -87,7 +87,7 @@ geojson_urls = [
 # m.add_geojson(geojson_urls[6], layer_name="Camino de Santiago Route", style=style)
 
 # Loop through the route_colors and geojson_urls to add them dynamically
-for i in range(2):   #
+for i in range(4):   #
     style = {"color": route_colors[i], "weight": 3, "opacity": 0.8}
     m.add_geojson(geojson_urls[i], layer_name=f"Camino de Santiago Route {i+1}", style=style)
 
