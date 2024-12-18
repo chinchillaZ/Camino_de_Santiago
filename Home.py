@@ -43,15 +43,15 @@ m.add_geojson(country_url, layer_name="Country", style=style)
 
 # Get the colors from the 'Paired' colormap
 # Get the colors from the 'Paired' colormap
-route_colors_hsv = {
-    "法國之路": (0.702, 1.0, 0.271),  # Camino_Frances (HSV)
-    "北方之路": (0.750, 1.0, 0.533),  # Camino_Ingles (HSV)
-    "葡萄牙之路": (0.667, 1.0, 0.537),  # Camino_Portugues_central (HSV)
-    "銀之路": (0.607, 1.0, 0.553),  # Camino_Primitivo (HSV)
-    "原始之路": (0.528, 1.0, 0.553),  # Camino_del_Norte (HSV)
-    "英格蘭之路": (0.425, 1.0, 0.553),  # Portugues_Coastal (HSV)
-    "聖雅各海岸之路": (0.143, 1.0, 0.941)  # Via_de_la_Plata (HSV)
-}
+route_colors = [
+    "#b3ff44",  # 法國之路
+    "#bf8600",  # 北方之路
+    "#aa8800",  # 葡萄牙之路
+    "#9a8c8c",  # 銀之路
+    "#876e8c",  # 原始之路
+    "#6c8c8c",  # 英格蘭之路
+    "#24f0f0"   # 聖雅各海岸之路
+]
 
 
 # List of GeoJSON URLs
@@ -65,7 +65,7 @@ geojson_urls = [
     "https://chinchillaz.github.io/streamlit-hw/Camino/Via_de_la_Plata.geojson"
 ]
 
-style = {"color": route_colors_hsv.get("法國之路"), "weight": 3, "opacity": 0.8}
+style = {"color": route_colors[0], "weight": 3, "opacity": 0.8}
 m.add_geojson(geojson_urls[0], layer_name="Camino de Santiago Route", style=style)
 
 
