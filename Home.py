@@ -40,8 +40,10 @@ m.add_geojson(country_url, layer_name="Country", style=style)
 # m.add_geojson(geojson_url, layer_name="Camino de Santiago Route", style=style)
 
 # Get the colors from the 'Paired' colormap
+# Get the colors from the 'Paired' colormap
 paired_colors = plt.cm.Paired.colors
 
+# Assign colors to each route
 route_colors = {
     "法國之路": paired_colors[0],  # Camino_Frances
     "北方之路": paired_colors[1],  # Camino_Ingles
@@ -63,32 +65,9 @@ geojson_urls = [
     "https://chinchillaz.github.io/streamlit-hw/Camino/Via_de_la_Plata.geojson"
 ]
 
-# Create a map centered on Spain
-m = folium.Map(location=[42.5, -3.7], zoom_start=6)
-
-# Loop through the GeoJSON URLs and add them to the map
-for i, url in enumerate(geojson_urls):
-    route_name = list(route_colors.keys())[i]  # Get the route name from the dictionary
-    color = route_colors[route_name]  # Get the color from the dictionary
-
-    # Add the GeoJSON layer to the map with custom styling
-    folium.GeoJson(
-        url,
-        name=route_name,
-        style_function=lambda x, color=color: {
-            "fillColor": color,
-            "color": color,
-            "weight": 2,
-            "fillOpacity": 0.6
-        }
-    ).add_to(m)
-
-# Add layer control to toggle layers
-folium.LayerControl().add_to(m)
-
-# Save the map as an HTML file
-m.save("camino_map.html")
-
-
+for geojson_url, route_color in zip(geojson_urls, route_colors):
+    style = {"color": route_color, "weight": 3, "opacity": 0.8}
+    m.add_geojson(geojson_url, layer_name="Camino de Santiago Route", style=style)
+    
 
 m.to_streamlit(height=500)
