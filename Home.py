@@ -90,4 +90,4 @@ folium.LayerControl().add_to(m)
 m.save("camino_map.html")
 
 
-m.to_streamlit(height=500)
+# m.to_streamlit(height=500)
