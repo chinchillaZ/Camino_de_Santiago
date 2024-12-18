@@ -65,7 +65,7 @@ geojson_urls = [
     "https://chinchillaz.github.io/streamlit-hw/Camino/Via_de_la_Plata.geojson"
 ]
 
-style = {"color": "navy", "weight": 3, "opacity": 0.8}
+style = {"color": route_colors_hsv.get("法國之路"), "weight": 3, "opacity": 0.8}
 m.add_geojson(geojson_urls[0], layer_name="Camino de Santiago Route", style=style)
 
 
