@@ -91,5 +91,5 @@ for i in range(4):   #
     style = {"color": route_colors[i], "weight": 3, "opacity": 0.8}
     m.add_geojson(geojson_urls[i], layer_name=f"Camino de Santiago Route {i+1}", style=style)
 
-
-m.to_streamlit(height=1000)
+m = leafmap.Map()
+m.to_streamlit(height=500)
