@@ -74,25 +74,22 @@ with col1:
     m.to_streamlit(height=500)  # Set height and width
 
 
- 
-    markdown = """
+     markdown = """
     | 名稱              | 距離 (公里) | 天數 | 挑戰難度  | 適合季節                                |
     |-------------------|------------|------|-----------|---------------------------------------|
-    | 法國之路          | 771        | 36   | ⭐⭐        | <span style="color:red">1月</span>  2月  3月  4月  5月  6月<br/>7月  8月  9月  10月  11月  12月 |
-    | 葡萄牙之路        | 620        | 29   | ⭐         | 1月  2月  3月  4月  5月  6月<br/>7月  8月  9月  10月  11月  12月 |
-    | 北方之路          | 481        | 23   | ⭐         | 1月  2月  3月  4月  5月  6月<br/>7月  8月  9月  10月  11月  12月 |
-    | 原始之路          | 16         | 16   | ⭐⭐⭐⭐     | 1月  2月  3月  4月  5月  6月<br/>7月  8月  9月  10月  11月  12月 |
-    | 銀之路            | 49         | 49   | ⭐⭐⭐⭐     | 1月  2月  3月  4月  5月  6月<br/>7月  8月  9月  10月  11月  12月 |
-    | 英國之路          | 114        | 7    | ⭐⭐        | 1月  2月  3月  4月  5月  6月<br/>7月  8月  9月  10月  11月  12月 |
-    | 世界盡頭之路      | 86         | 6    | ⭐⭐        | 1月  2月  3月  4月  5月  6月<br/>7月  8月  9月  10月  11月  12月 |
+    | 法國之路          | 771        | 36   | ⭐⭐        | <span style="background-color:yellow">1月</span>  2月  3月  4月  5月  6月<br/>7月  8月  9月  10月  11月  12月 |
+    | 葡萄牙之路        | 620        | 29   | ⭐         | <span style="background-color:yellow">1月</span>  2月  3月  4月  5月  6月<br/>7月  8月  9月  10月  11月  12月 |
+    | 北方之路          | 481        | 23   | ⭐         | <span style="background-color:yellow">1月</span>  2月  3月  4月  5月  6月<br/>7月  8月  9月  10月  11月  12月 |
+    | 原始之路          | 16         | 16   | ⭐⭐⭐⭐     | <span style="background-color:yellow">1月</span>  2月  3月  4月  5月  6月<br/>7月  8月  9月  10月  11月  12月 |
+    | 銀之路            | 49         | 49   | ⭐⭐⭐⭐     | <span style="background-color:yellow">1月</span>  2月  3月  4月  5月  6月<br/>7月  8月  9月  10月  11月  12月 |
+    | 英國之路          | 114        | 7    | ⭐⭐        | <span style="background-color:yellow">1月</span>  2月  3月  4月  5月  6月<br/>7月  8月  9月  10月  11月  12月 |
+    | 世界盡頭之路      | 86         | 6    | ⭐⭐        | <span style="background-color:yellow">1月</span>  2月  3月  4月  5月  6月<br/>7月  8月  9月  10月  11月  12月 |
     """
     
     st.markdown(markdown, unsafe_allow_html=True)
 
 
         
-    st.markdown(markdown)
-
     # Create the DataFrame
     df = pd.DataFrame({
         "Name": ["法國之路", "葡萄牙之路", "北方之路", 
