@@ -41,8 +41,8 @@ def show_map():
                     data=chart_data,
                     get_position="[Y, X]",  # Using Y (longitude) and X (latitude) for positions
                     radius=200000,  # Size of the hexagons, adjust based on data density
-                    elevation_scale=4,
-                    elevation_range=[0, 1000],
+                    elevation_scale=10,
+                    elevation_range=[0, 5000],
                     pickable=True,
                     extruded=True,
                 ),
