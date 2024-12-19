@@ -184,7 +184,7 @@ with col1:
     st.plotly_chart(fig, use_container_width=True)
 
     markdown = """
-            ### 法國之路 (Camino Francés)
+            ### 1. 法國之路 (Camino Francés)
         
         聖讓皮德波特（Saint-Jean-Pied-de-Port）位於法國，是這條路的起點，沿途經過的城市，如：潘普洛納（Pamplona）、布爾戈斯（Burgos）、萊昂（Leon）和龐費拉達（Ponferrada）等城鎮，  
         不僅有豐富的歷史文化，這條路線的地形還很多變，從庇里牛斯山脈的高山到北部平原的平坦地帶，再到加利西亞的起伏丘陵，相當考驗朝聖者的體能。  
@@ -192,7 +192,7 @@ with col1:
         
         ---
         
-        ### 葡萄牙之路 (Camino Portugués)
+        ### 2. 葡萄牙之路 (Camino Portugués)
         
         葡萄牙的首都里斯本（Lisbon）是這條路的主要出發點，沿途會經過「古老的道路」、「森林」、「農田」、「橄欖樹林」、「葡萄園」和「歷史城鎮」，這些自然景觀不僅提供了美麗的視覺享受，還能讓朝聖者與大自然親密接觸。      
         <img src="https://chinchillaz.github.io/streamlit-hw//Camino/photos/2_portugal_UU.jpg" width="1200"/>
@@ -200,14 +200,14 @@ with col1:
         
         ---
         
-        ### 北方之路 (Camino del Norte)
+        ### 3. 北方之路 (Camino del Norte)
         
         起點是位於西班牙北部的海濱城市聖塞巴斯蒂安（San Sebastien），沿途會穿越西班牙北部的海灘，再進入到寧靜的森林，於行走過程放鬆地享受大自然的魅力。  
         ![Image Description](https://chinchillaz.github.io/streamlit-hw//Camino/photos/3_Norte.jpg)
         
         ---
         
-        ### 原始之路 (Camino Primitivo)
+        ### 4. 原始之路 (Camino Primitivo)
         
         這條路線是朝聖者前往聖雅各的最早路徑之一，起點位於西班牙的奧維多（Oviedo），沿途會經過坎塔布里亞山脈（Cantabrian Mountains），  
         以壯麗的自然景觀和豐富的文化聞名，但同時朝聖者也必須面對高達 1,100 米的山脈和險峻的地形，因此，也被描述為「美麗且最具挑戰性」的選擇。  
@@ -215,7 +215,7 @@ with col1:
         
         ---
         
-        ### 銀之路 (Via de la Plata)
+        ### 5. 銀之路 (Via de la Plata)
         
         這條路線的起點位於南部的城市塞維利亞（Seville），其起源可以追溯到羅馬時代，當時它是塞維利亞和阿斯托爾加（Astorga）之間的重要貿易路線。  
         隨著時間的推移，這條路線逐漸成為朝聖者前往聖地亞哥·德·孔波斯特拉的主要路徑，並在阿斯托爾加與主要的「Camino Francés」（法國之路）相連。  
@@ -224,7 +224,7 @@ with col1:
         
         ---
         
-        ### 英國之路 (Camino Inglés)
+        ### 6. 英國之路 (Camino Inglés)
         
         這條路線的歷史悠久，且與海洋有著密切的聯繫，從崎嶇的丘陵海岸線開始，再往內陸移動到郁郁蔥蔥的森林鄉村，不僅展現了自然景觀的美麗，也暗示了這條路線的多樣性，讓朝聖者能體驗不同的環境變化。  
         此外，這條路線也相較於其他路線安靜，朝聖者可以在一周內從費羅爾（Ferrol）或拉科魯尼亞（A Coruna）到達聖地亞哥（Santiago de Compostela）。  
@@ -233,7 +233,7 @@ with col1:
         
         ---
         
-        ### 世界盡頭之路 (Camino Finisterre-Muxía)
+        ### 7. 世界盡頭之路 (Camino Finisterre-Muxía)
         
         許多朝聖者在抵達終點後，會決定將他們的旅程延伸到死亡之海（Costa da Morte）– 菲尼斯特雷（Finisterre），並在西班牙最西端的陡峭懸崖為這趟旅程畫下句點。  
         <img src="https://chinchillaz.github.io/streamlit-hw//Camino/photos/6_muxia.jpg" width="1200"/>
