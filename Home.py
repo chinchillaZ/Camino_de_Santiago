@@ -3,6 +3,7 @@ import leafmap.foliumap as leafmap
 #import leafmap
 import matplotlib.pyplot as plt
 import folium
+from branca.element import Template, MacroElement
 
 st.set_page_config(layout="wide")
 
