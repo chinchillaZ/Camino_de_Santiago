@@ -27,29 +27,38 @@ def show_map():
     # Filter data for the year 2024
     chart_data = chart_data[chart_data["year"] == 2024]
 
-    # Render the map using Pydeck
+    # chart_data = pd.DataFrame(
+    #     np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
+    #     columns=["lat", "lon"],
+    # )
+    
     st.pydeck_chart(
         pdk.Deck(
             map_style=None,
             initial_view_state=pdk.ViewState(
-                latitude=20,  # Centering the map on the general location
-                longitude=0,  # Adjust based on your map area
-                zoom=1,       # Adjust zoom to fit the global map
+                latitude=37.76,
+                longitude=-122.4,
+                zoom=11,
                 pitch=50,
             ),
             layers=[
                 pdk.Layer(
                     "HexagonLayer",
                     data=chart_data,
-                    get_position="['Y', 'X']",  # Correct way to extract longitude (Y) and latitude (X)
-                    radius=2000,  # Size of the hexagons, adjust based on data density
-                    elevation_scale=10000,  # Controls the height of the hexagons
-                    elevation_range=[0, 5000],  # Range for hexagon heights
-                    get_elevation="Number",  # Use the 'Number' column for height
-                    get_fill_color="[0, 0, 255, 255]",  # Color for the hexagons (blue)
-                    pickable=True,  # Make the hexagons interactive
-                    #extruded=True,  # Enable extrusion for 3D effect
-                ),            
+                    get_position="[lon, lat]",
+                    radius=200,
+                    elevation_scale=4,
+                    elevation_range=[0, 1000],
+                    pickable=True,
+                    extruded=True,
+                ),
+                pdk.Layer(
+                    "ScatterplotLayer",
+                    data=chart_data,
+                    get_position="[lon, lat]",
+                    get_color="[200, 30, 0, 160]",
+                    get_radius=200,
+                ),
             ],
         )
     )
