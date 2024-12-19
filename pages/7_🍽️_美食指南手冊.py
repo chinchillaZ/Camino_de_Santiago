@@ -1,5 +1,8 @@
 import streamlit as st
 
+logo = "https://chinchillaz.github.io/streamlit-hw/logo_sun-removebg-preview.png"
+st.sidebar.image(logo)
+
 st.title("美食指南手冊")
 
 st.markdown(
