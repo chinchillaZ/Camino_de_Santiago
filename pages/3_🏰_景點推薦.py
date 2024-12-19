@@ -34,6 +34,10 @@ m.add_points_from_xy(data, x="Y", y="X")
 # Display the map
 m.to_streamlit(height=700)
 
+
+
+
+st.markdown("#### 🎇推薦景點清點🎇")
 df = pd.read_csv(data)
 st.dataframe(df)
 
