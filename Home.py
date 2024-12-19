@@ -59,6 +59,7 @@ def style_by_route(feature):
     }
 
 # Add the GeoJSON with dynamic styling
+geojson_url = "https://chinchillaz.github.io/streamlit-hw/all_Camino_route.geojson"
 m.add_geojson(geojson_url, layer_name="Camino de Santiago Route", style_callback=style_by_route)
 
 
