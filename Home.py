@@ -1,5 +1,6 @@
 import streamlit as st
-import leafmap.foliumap as leafmap
+#import leafmap.foliumap as leafmap
+import leafmap
 import matplotlib.pyplot as plt
 import folium
 
