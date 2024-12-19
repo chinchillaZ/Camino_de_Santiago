@@ -167,7 +167,7 @@ with col1:
     fig = px.bar(
         data_frame=df,
         x="Name",
-        y=["Distance (km)", "Days"],
+        y=["距離(km)", "天數"],
         title="天數、距離比一比🔍",
         opacity=0.9,
         orientation="v",  # Vertical bars
@@ -175,7 +175,7 @@ with col1:
     )
     
     fig.update_layout(
-        xaxis_title="路線",
+        #xaxis_title="路線",
         yaxis_title="數值",
         xaxis_tickangle=-45,  # Rotate x-axis labels for better readability
     )
