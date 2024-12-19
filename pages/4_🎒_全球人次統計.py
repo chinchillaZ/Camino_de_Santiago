@@ -17,12 +17,26 @@ st.sidebar.image(logo)
 st.title("🎒_全球人次統計")
 
 
-left, middle, right = st.columns(3)
-if left.button("Plain button", use_container_width=True):
-    left.markdown("You clicked the plain button.")
-if middle.button("Emoji button", icon="😃", use_container_width=True):
-    middle.markdown("You clicked the emoji button.")
-if right.button("Material button", icon=":material/mood:", use_container_width=True):
-    right.markdown("You clicked the Material button.")
+# Create two rows using columns
+upper_row = st.columns(3)  # Upper row with 3 buttons
+lower_row = st.columns(4)  # Lower row with 4 buttons
+
+# Upper row buttons
+if upper_row[0].button("法國之路", use_container_width=True):
+    upper_row[0].markdown("You clicked 法國之路")
+if upper_row[1].button("葡萄牙之路", use_container_width=True):
+    upper_row[1].markdown("You clicked 葡萄牙之路")
+if upper_row[2].button("北方之路", use_container_width=True):
+    upper_row[2].markdown("You clicked 北方之路")
+
+# Lower row buttons
+if lower_row[0].button("原始之路", use_container_width=True):
+    lower_row[0].markdown("You clicked 原始之路")
+if lower_row[1].button("銀之路", use_container_width=True):
+    lower_row[1].markdown("You clicked 銀之路")
+if lower_row[2].button("英國之路", use_container_width=True):
+    lower_row[2].markdown("You clicked 英國之路")
+if lower_row[3].button("世界盡頭之路", use_container_width=True):
+    lower_row[3].markdown("You clicked 世界盡頭之路")
 
 #m.to_streamlit(height=700)
