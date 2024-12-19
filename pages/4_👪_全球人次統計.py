@@ -41,7 +41,7 @@ def show_map():
                     "HexagonLayer",
                     data=chart_data,
                     get_position="['Y', 'X']",  # Correct way to extract longitude (Y) and latitude (X)
-                    radius=200,  # Size of the hexagons, adjust based on data density
+                    radius=2000,  # Size of the hexagons, adjust based on data density
                     elevation_scale=10000,  # Controls the height of the hexagons
                     elevation_range=[0, 5000],  # Range for hexagon heights
                     get_elevation="Number",  # Use the 'Number' column for height
