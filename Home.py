@@ -86,7 +86,7 @@ labels = [
 colors = ["red", "blue", "orange", "green", "purple", "yellow", "brown", "black"]
 
 # Add the legend to the map
-Map.add_legend(title="Camino de Santiago Routes", labels=labels, colors=colors)
+m.add_legend(title="Camino de Santiago Routes", labels=labels, colors=colors)
 
 
 
