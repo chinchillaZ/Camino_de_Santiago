@@ -31,7 +31,8 @@ with col1:
         locate_control=True, latlon_control=True, draw_export=True, minimap_control=True
     )
     m.add_basemap(basemap)
-    m.to_streamlit(height=700)
+   m.to_streamlit(height=500, width=700)  # Set height and width
+
  
     # markdown = """
         
