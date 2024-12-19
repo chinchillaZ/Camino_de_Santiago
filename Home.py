@@ -73,20 +73,20 @@ geojson_url = "https://chinchillaz.github.io/streamlit-hw/all_Camino_route.geojs
 m.add_geojson(geojson_url, layer_name="Camino de Santiago Route", style_callback=style_by_route)
 
 # Define the legend details
-labels = [
-    "Camino Frances",
-    "Camino Ingles",
-    "Camino Portugues Central",
-    "Camino Primitivo",
-    "Camino del Norte",
-    "Portugues Coastal",
-    "Via de la Plata",
-    "Default",
-]
-colors = ["red", "blue", "orange", "green", "purple", "yellow", "brown", "black"]
+# Define the legend dictionary
+legend_dict = {
+    "Camino Frances": "red",
+    "Camino Ingles": "blue",
+    "Camino Portugues Central": "orange",
+    "Camino Primitivo": "green",
+    "Camino del Norte": "purple",
+    "Portugues Coastal": "yellow",
+    "Via de la Plata": "brown",
+    "Default": "black",
+}
 
 # Add the legend to the map
-m.add_legend(title="Camino de Santiago Routes", labels=labels, colors=colors)
+m.add_legend(title="Camino de Santiago Routes", legend_dict=legend_dict)
 
 
 
