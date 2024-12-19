@@ -3,6 +3,9 @@ import leafmap.foliumap as leafmap
 # import leafmap
 import plotly.graph_objects as go
 import pandas as pd
+import pandas as pd
+import numpy as np
+import plotly.express as px
 
 markdown = """
 A Streamlit map template
@@ -117,4 +120,5 @@ with col1:
     
     # Show the plot in Streamlit
     st.plotly_chart(fig, use_container_width=True)
+
 
