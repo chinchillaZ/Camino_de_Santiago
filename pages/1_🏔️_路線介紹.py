@@ -229,7 +229,7 @@ with col1:
         這條路線的歷史悠久，且與海洋有著密切的聯繫，從崎嶇的丘陵海岸線開始，再往內陸移動到郁郁蔥蔥的森林鄉村，不僅展現了自然景觀的美麗，也暗示了這條路線的多樣性，讓朝聖者能體驗不同的環境變化。  
         此外，這條路線也相較於其他路線安靜，朝聖者可以在一周內從費羅爾（Ferrol）或拉科魯尼亞（A Coruna）到達聖地亞哥（Santiago de Compostela）。  
         對於那些想要遠離更受歡迎的法國之路，並獲得朝聖證書的朝聖者來說，「英國之路」是一個很好的選擇。  
-        <img src="https://chinchillaz.github.io/streamlit-hw//Camino/photos/6_Camino_Ingles_U.jpg" width="1200"/>
+        <img src="https://chinchillaz.github.io/streamlit-hw//Camino/photos/6_Camino_Ingles_UU.jpg" width="1200"/>
         
         ---
         
