@@ -19,17 +19,17 @@ st.sidebar.image(logo)
 
 st.title("全球人次統計 👪")
 
-def show_map():
-    # Prepare the chart data for the map
-    data = "https://chinchillaz.github.io/streamlit-hw/Camino/1_Frances_travelers.geojson"
-    chart_data = gpd.read_file(data)
+# def show_map():
+#     # Prepare the chart data for the map
+#     data = "https://chinchillaz.github.io/streamlit-hw/Camino/1_Frances_travelers.geojson"
+#     chart_data = gpd.read_file(data)
 
-    # Filter data for the year 2024
-    chart_data = chart_data[chart_data["year"] == 2024]
+#     # Filter data for the year 2024
+#     chart_data = chart_data[chart_data["year"] == 2024]
 
-    # chart_data = pd.DataFrame(
-    #     np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
-    #     columns=["lat", "lon"],
+#     # chart_data = pd.DataFrame(
+#     #     np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
+#     #     columns=["lat", "lon"],
     # )
     
 def show_map():
