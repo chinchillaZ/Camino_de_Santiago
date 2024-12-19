@@ -28,6 +28,64 @@ with col2:
 
 with col1:
     st.header("intro")
+
+    m = leafmap.Map(center = [42.5, -4.0], zoom = 7 , minimap_control=True)
+    
+    country_url = "https://chinchillaz.github.io/streamlit-hw/S_P_F_country_clear.geojson"
+    style = {
+        "color": "grey",  # Outline color
+        "weight": 1.5,      # Line thickness
+        "opacity": 0.5,     # Line transparency
+        "fillColor": "none" # No fill color
+    }
+    m.add_geojson(country_url, layer_name="Country", style=style)
+    
+    def style_by_route(feature):
+        route = feature["properties"].get("route", "default")  # Get the "route" value
+        # Define a color map for different routes
+        color_map = {
+            "Camino_Frances": "red",          # Vibrant red
+            "Camino_Ingles": "blue",         # Strong blue
+            "Camino_Portugues_central": "orange",  # Bright orange
+            "Camino_Primitivo": "green",     # Fresh green
+            "Camino_del_Norte": "purple",    # Deep purple
+            "Portugues_Coastal": "yellow",   # Sunny yellow
+            "Via_de_la_Plata": "brown",      # Earthy brown
+            "default": "black",              # Default color if route not found
+        }
+    
+        return {
+            "color": color_map.get(route, "black"),  # Use the route value to get the color
+            "weight": 3,
+            "opacity": 0.8,
+        }
+    
+    # Add the GeoJSON with dynamic styling
+    geojson_url = "https://chinchillaz.github.io/streamlit-hw/all_Camino_route.geojson"
+    m.add_geojson(geojson_url, layer_name="Camino de Santiago Route", style_callback=style_by_route)
+    
+    # Define the legend details
+    # Define the legend dictionary
+    legend_dict = {
+        "法國之路 (Camino Francés)": "red",
+        "英國之路 (Camino Inglés)": "blue",
+        "葡萄牙之路 (Camino Portugués)": "orange",
+        "原始之路 (Camino Primitivo)": "green",
+        "北方之路 (Camino del Norte)": "purple",
+        "世界盡頭之路 (Camino Finisterre-Muxía)": "yellow",
+        "銀之路 (Via de la Plata)": "brown",
+        #"Default": "black",
+    }
+
+# Add the legend to the map
+m.add_legend(title="Camino de Santiago Routes", legend_dict=legend_dict)
+
+
+
+
+
+
+    
     
     markdown = """
     
