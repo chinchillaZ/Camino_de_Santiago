@@ -18,7 +18,7 @@ logo = "https://chinchillaz.github.io/streamlit-hw/logo_sun-removebg-preview.png
 st.sidebar.image(logo)
 
 
-st.title("路線介紹🎅")
+st.title("各路線介紹")
 
 col1, col2 = st.columns([4, 1])
 options = list(leafmap.basemaps.keys())
@@ -168,15 +168,15 @@ with col1:
         data_frame=df,
         x="Name",
         y=["Distance (km)", "Days"],
-        title="Distance and Days for Different Camino Routes",
+        title="天數、距離比一比🔍",
         opacity=0.9,
         orientation="v",  # Vertical bars
         barmode='group',  # Grouped bar mode
     )
     
     fig.update_layout(
-        xaxis_title="Camino Route",
-        yaxis_title="Value",
+        xaxis_title="路線",
+        yaxis_title="數值",
         xaxis_tickangle=-45,  # Rotate x-axis labels for better readability
     )
     
