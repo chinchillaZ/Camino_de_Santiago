@@ -40,7 +40,13 @@ m.add_geojson(country_url, layer_name="Country", style=style)
 geojson_url = "https://chinchillaz.github.io/streamlit-hw/all_Camino_route.geojson"
 style = {"color": "navy", "weight": 3, "opacity": 0.8}
 # m.add_geojson(geojson_url, layer_name="Camino de Santiago Route", style=style)
-m.add_geojson(geojson_url, layer_name="Camino de Santiago Route", fill_colors=["red", "yellow", "green", "orange"])
+def random_color(feature):
+    return {
+        "color": random.choice(["blue", "purple", "brown", "pink"]),
+         "weight": 2,
+    }
+
+m.add_geojson(geojson_url, layer_name="Camino de Santiago Route", style_callback=random_color)
 
 # Get the colors from the 'Paired' colormap
 # Get the colors from the 'Paired' colormap
