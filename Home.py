@@ -71,7 +71,36 @@ def style_by_route(feature):
 geojson_url = "https://chinchillaz.github.io/streamlit-hw/all_Camino_route.geojson"
 m.add_geojson(geojson_url, layer_name="Camino de Santiago Route", style_callback=style_by_route)
 
+legend_html = """
+<div style="
+    position: fixed;
+    bottom: 50px;
+    left: 50px;
+    width: 200px;
+    background-color: white;
+    border: 2px solid grey;
+    z-index:9999;
+    font-size:14px;
+    padding: 10px;">
+    <b>Legend</b><br>
+    <i style="background: red; width: 10px; height: 10px; display: inline-block;"></i> Camino Frances<br>
+    <i style="background: blue; width: 10px; height: 10px; display: inline-block;"></i> Camino Ingles<br>
+    <i style="background: orange; width: 10px; height: 10px; display: inline-block;"></i> Camino Portugues Central<br>
+    <i style="background: green; width: 10px; height: 10px; display: inline-block;"></i> Camino Primitivo<br>
+    <i style="background: purple; width: 10px; height: 10px; display: inline-block;"></i> Camino del Norte<br>
+    <i style="background: yellow; width: 10px; height: 10px; display: inline-block;"></i> Portugues Coastal<br>
+    <i style="background: brown; width: 10px; height: 10px; display: inline-block;"></i> Via de la Plata<br>
+    <i style="background: black; width: 10px; height: 10px; display: inline-block;"></i> Default<br>
+</div>
+"""
 
+# Add the legend as a macro element to the map
+legend = MacroElement()
+legend._template = Template(legend_html)
+m.get_root().add_child(legend)
+
+# Save the map to an HTML file or display it
+m.save("camino_map_with_legend.html")
 
 
 # def random_color(feature):
