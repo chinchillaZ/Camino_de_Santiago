@@ -27,10 +27,34 @@ with col2:
 
 
 with col1:
-    m = leafmap.Map(
-        locate_control=True, latlon_control=True, draw_export=True #, minimap_control=True
-    )
+    m = leafmap.Map(center = [42.5, -4.0], zoom = 7)
     m.add_basemap(basemap)
+
+    def style_by_route(feature):
+        route = feature["properties"].get("route", "default")  # Get the "route" value
+        # Define a color map for different routes
+        color_map = {
+            "Camino_Frances": "red",          # Vibrant red
+            "Camino_Ingles": "blue",         # Strong blue
+            "Camino_Portugues_central": "orange",  # Bright orange
+            "Camino_Primitivo": "green",     # Fresh green
+            "Camino_del_Norte": "purple",    # Deep purple
+            "Portugues_Coastal": "yellow",   # Sunny yellow
+            "Via_de_la_Plata": "brown",      # Earthy brown
+            "default": "black",              # Default color if route not found
+        }
+    
+        return {
+            "color": color_map.get(route, "black"),  # Use the route value to get the color
+            "weight": 3,
+            "opacity": 0.8,
+        }
+
+    # Add the GeoJSON with dynamic styling
+    geojson_url = "https://chinchillaz.github.io/streamlit-hw/all_Camino_route.geojson"
+    m.add_geojson(geojson_url, layer_name="Camino de Santiago Route", style_callback=style_by_rout
+
+    
     m.to_streamlit(height=500)  # Set height and width
 
 
