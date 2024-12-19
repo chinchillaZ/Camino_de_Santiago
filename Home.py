@@ -34,7 +34,7 @@ m = leafmap.Map(minimap_control=True)
 m = leafmap.Map(center = [42.5, -4.0], zoom = 7 , minimap_control=True)
 
 country_url = "https://chinchillaz.github.io/streamlit-hw/S_P_F_country_clear.geojson"
-style = {"color": "yellow", "weight": 1.5, "opacity": 0.9}
+style = {"color": "yellow", "weight": 1.5, "opacity": 0.5}
 m.add_geojson(country_url, layer_name="Country", style=style)
 
 # # Add GeoJSON line to the map
@@ -46,14 +46,17 @@ def style_by_route(feature):
     route = feature["properties"].get("route", "default")  # Get the "route" value
     # Define a color map for different routes
     color_map = {
-        "Camino_Frances": "red",
-        "Camino_Ingles": "blue",
-        "Camino_Portugues_central": "green",
-        # Add more routes and their corresponding colors here
-        "default": "gray",  # Default color if route not found
+        "Camino_Frances": "#a6cee3",  # Light blue
+        "Camino_Ingles": "#1f78b4",   # Dark blue
+        "Camino_Portugues_central": "purple",  # Light green
+        "Camino_Primitivo": "#33a02c",  # Dark green
+        "Camino_del_Norte": "#fb9a99",  # Light red
+        "Portugues_Coastal": "darkred",  # Dark red
+        "Via_de_la_Plata": "grey",  # Orange
+        "default": "black",  # Default color if route not found
     }
     return {
-        "color": color_map.get(route, "gray"),  # Use the route value to get the color
+        "color": color_map.get(route, "black"),  # Use the route value to get the color
         "weight": 3,
         "opacity": 0.8,
     }
