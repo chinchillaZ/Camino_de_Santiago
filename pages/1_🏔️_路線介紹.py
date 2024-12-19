@@ -94,7 +94,7 @@ with col1:
             <th>公里數</th>
             <th>天數</th>
             <th>挑戰難度</th>
-            <th>季節 (<span style="color:blue">適合月份</span> 、 <span style="color:green">熱門月份</span> 、<span style="color:orange"> 淡季</span>)</th>
+            <th>季節 (<span style="color:blue">適合月份</span> 、 <span style="color:green">熱門月份</span> 、<span style="color:orange"> 淡季</span>、<span style="color:grey">不推薦</span>)</th>
         </tr>
         <tr>
             <td>法國之路</td>
