@@ -3,7 +3,6 @@ import leafmap.foliumap as leafmap
 #import leafmap
 import matplotlib.pyplot as plt
 import folium
-import random
 
 st.set_page_config(layout="wide")
 
@@ -38,10 +37,33 @@ country_url = "https://chinchillaz.github.io/streamlit-hw/S_P_F_country_clear.ge
 style = {"color": "yellow", "weight": 1.5, "opacity": 0.9}
 m.add_geojson(country_url, layer_name="Country", style=style)
 
-# Add GeoJSON line to the map
-geojson_url = "https://chinchillaz.github.io/streamlit-hw/all_Camino_route.geojson"
-style = {"color": "navy", "weight": 3, "opacity": 0.8}
-m.add_geojson(geojson_url, layer_name="Camino de Santiago Route", style=style)
+# # Add GeoJSON line to the map
+# geojson_url = "https://chinchillaz.github.io/streamlit-hw/all_Camino_route.geojson"
+# style = {"color": "navy", "weight": 3, "opacity": 0.8}
+# m.add_geojson(geojson_url, layer_name="Camino de Santiago Route", style=style)
+
+def style_by_route(feature):
+    route = feature["properties"].get("route", "default")  # Get the "route" value
+    # Define a color map for different routes
+    color_map = {
+        "route1": "red",
+        "route2": "blue",
+        "route3": "green",
+        # Add more routes and their corresponding colors here
+        "default": "gray",  # Default color if route not found
+    }
+    return {
+        "color": color_map.get(route, "gray"),  # Use the route value to get the color
+        "weight": 3,
+        "opacity": 0.8,
+    }
+
+# Add the GeoJSON with dynamic styling
+m.add_geojson(geojson_url, layer_name="Camino de Santiago Route", style_callback=style_by_route)
+
+
+
+
 # def random_color(feature):
 #     return {
 #         "color": random.choice(["blue", "purple", "brown", "pink"]),
