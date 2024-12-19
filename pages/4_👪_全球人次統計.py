@@ -14,7 +14,7 @@ st.sidebar.info(markdown)
 logo = "https://chinchillaz.github.io/streamlit-hw/logo_sun-removebg-preview.png"
 st.sidebar.image(logo)
 
-st.title("🎒_全球人次統計")
+st.title("全球人次統計 👪")
 
 
 # Create two rows using columns
