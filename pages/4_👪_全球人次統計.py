@@ -43,6 +43,7 @@ def show_map():
                     radius=200,  # Size of the hexagons, adjust based on data density
                     elevation_scale=10000,
                     elevation_range=[0, 5000],
+                    get_elevation="Number",
                     pickable=True,
                     extruded=True,
                 ),
