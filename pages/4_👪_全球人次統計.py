@@ -32,36 +32,48 @@ def show_map():
     #     columns=["lat", "lon"],
     # )
     
+def show_map():
+    # Load the GeoJSON data
+    data = "https://chinchillaz.github.io/streamlit-hw/Camino/1_Frances_travelers.geojson"
+    chart_data = gpd.read_file(data)
+
+    # Filter data for the year 2024
+    chart_data = chart_data[chart_data["year"] == 2024]
+    
+    # Extract the X (longitude) and Y (latitude) coordinates
+    chart_data['X'] = chart_data['geometry'].apply(lambda x: x.coords[0][0])  # Longitude
+    chart_data['Y'] = chart_data['geometry'].apply(lambda x: x.coords[0][1])  # Latitude
+
+    # You can now use `chart_data` which is a GeoDataFrame
+
+    # Render the map using Pydeck
     st.pydeck_chart(
         pdk.Deck(
             map_style=None,
             initial_view_state=pdk.ViewState(
-                latitude=37.76,
-                longitude=-122.4,
-                zoom=11,
+                latitude=20,  # Centering the map on the general location
+                longitude=0,  # Adjust based on your map area
+                zoom=2,       # Adjust zoom to fit the global map
                 pitch=50,
             ),
             layers=[
                 pdk.Layer(
                     "HexagonLayer",
                     data=chart_data,
-                    get_position="[lon, lat]",
-                    radius=200,
-                    elevation_scale=4,
-                    elevation_range=[0, 1000],
+                    get_position="['X', 'Y']",  # Corrected syntax for accessing the columns
+                    radius=200,  # Size of the hexagons, adjust based on data density
+                    elevation_scale=10000,
+                    elevation_range=[0, 5000],
+                    get_elevation="Number",  # Use the 'Number' column for height
+                    get_fill_color="[0, 0, 255, 255]",  # Color for the hexagons (blue)
                     pickable=True,
                     extruded=True,
-                ),
-                pdk.Layer(
-                    "ScatterplotLayer",
-                    data=chart_data,
-                    get_position="[lon, lat]",
-                    get_color="[200, 30, 0, 160]",
-                    get_radius=200,
-                ),
+                ),            
             ],
         )
     )
+
+
 
 # Create two rows using columns
 upper_row = st.columns(3)  # Upper row with 3 buttons
