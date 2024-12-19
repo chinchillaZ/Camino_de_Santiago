@@ -27,7 +27,7 @@ style = {"color": "black", "weight": 3, "opacity": 0.8}
 m.add_geojson(geojson_url, layer_name="Camino de Santiago Route", style=style)
 
 data = "https://chinchillaz.github.io/streamlit-hw/Camino/Caminos_attraction.csv"
-m.add_points_from_xy(data, x="X", y="Y")
+m.add_points_from_xy(data, x="Y", y="X")
 
 # Display the map
 m.to_streamlit(height=700)
