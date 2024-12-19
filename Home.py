@@ -1,9 +1,10 @@
 import streamlit as st
 import leafmap.foliumap as leafmap
-#import leafmap
 import matplotlib.pyplot as plt
 import folium
-from branca.element import Template, MacroElement
+import pandas as pd
+import numpy as np
+import plotly.express as px
 
 st.set_page_config(layout="wide")
 
@@ -87,6 +88,36 @@ legend_dict = {
 
 # Add the legend to the map
 m.add_legend(title="Camino de Santiago Routes", legend_dict=legend_dict)
+
+# Create the DataFrame
+df = pd.DataFrame({
+    "Name": ["法國之路 (Camino Francés)", "葡萄牙之路 (Camino Portugués)", "北方之路 (Camino del Norte)", 
+             "原始之路 (Camino Primitivo)", "銀之路 (Via de la Plata)", "英國之路 (Camino Inglés)", 
+             "世界盡頭之路 (Camino Finisterre-Muxía)"],
+    "Distance (km)": [771, 620, 481, 16, 49, 114, 86],
+    "Days": [36, 29, 23, 16, 49, 7, 6],
+    "Challenge": ["Moderate", "Easy", "Easy", "Moderate Plus", "Moderate Plus", "Moderate", "Moderate"]
+})
+
+# Plot the bar chart
+fig = px.bar(
+    data_frame=df,
+    x="Name",
+    y=["Distance (km)", "Days"],
+    title="Distance and Days for Different Camino Routes",
+    opacity=0.9,
+    orientation="v",  # Vertical bars
+    barmode='group',  # Grouped bar mode
+)
+
+fig.update_layout(
+    xaxis_title="Camino Route",
+    yaxis_title="Value",
+    xaxis_tickangle=-45,  # Rotate x-axis labels for better readability
+)
+
+# Show the plot
+fig.show()
 
 
 
