@@ -203,7 +203,7 @@ with col1:
         ### 北方之路 (Camino del Norte)
         
         起點是位於西班牙北部的海濱城市聖塞巴斯蒂安（San Sebastien），沿途會穿越西班牙北部的海灘，再進入到寧靜的森林，於行走過程放鬆地享受大自然的魅力。  
-        ![Image Description](https://chinchillaz.github.io/streamlit-hw//Camino/photos/3_Norte.jpg)
+        <img src="https://chinchillaz.github.io/streamlit-hw//Camino/photos/3_Norte.jpg" width="1000"/>
         
         ---
         
