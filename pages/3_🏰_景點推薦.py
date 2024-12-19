@@ -55,6 +55,18 @@ st.data_editor(
     hide_index=True,  # Hide the index if you want
 )
 
+# Add custom HTML to change the checkbox color (if HTML support is allowed in this context)
+st.markdown(
+    """
+    <style>
+        .streamlit-checkbox input[type=checkbox]:checked {
+            background-color: red !important;
+        }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 
 
 
