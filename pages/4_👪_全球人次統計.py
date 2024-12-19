@@ -44,6 +44,7 @@ def show_map():
                     elevation_scale=10000,
                     elevation_range=[0, 5000],
                     get_elevation="Number",
+                    get_fill_color=[0, 0, 255, 255],
                     pickable=True,
                     extruded=True,
                 ),
