@@ -74,22 +74,82 @@ with col1:
     m.to_streamlit(height=500)  # Set height and width
 
     
+    # markdown = """
+    #     | 路線名稱            | 公里數  | 天數  | 挑戰難度  | 季節  (<span style="color:blue">適合月份</span> 、 <span style="color:green">熱門月份</span> 、<span style="color:orange"> 淡季</span>) |
+    #     |-------------------|---------|-------|-----------|-------------------------------------------------------------------------------------------------------------|
+    #     | 法國之路          | 771     | 36    | ⭐⭐        | &nbsp;<span style="color:orange">1月</span>&nbsp;&nbsp;&nbsp;<span style="color:orange">2月</span>&nbsp;&nbsp;&nbsp;<span style="color:orange">3月</span>&nbsp;&nbsp;&nbsp;<span style="color:blue">4月</span>&nbsp;&nbsp;&nbsp;<span style="color:green">5月</span>&nbsp;&nbsp;&nbsp;<span style="color:green">6月</span><br/> &nbsp;<span style="color:blue">7月</span>&nbsp;&nbsp;&nbsp;<span style="color:blue">8月</span>&nbsp;&nbsp;&nbsp;<span style="color:green">9月</span>&nbsp;&nbsp;<span style="color:orange">10月</span>&nbsp;&nbsp;<span style="color:blue">11月</span>&nbsp;&nbsp;<span style="color:orange">12月</span> |
+    #     | 葡萄牙之路        | 620     | 29    | ⭐         | <span style="color:orange">1月</span>&nbsp;&nbsp;<span style="color:orange">2月</span>&nbsp;&nbsp;<span style="color:orange">3月</span>&nbsp;&nbsp;<span style="color:blue">4月</span>&nbsp;&nbsp;<span style="color:green">5月</span>&nbsp;&nbsp;<span style="color:green">6月</span><br/> <span style="color:blue">7月</span>&nbsp;&nbsp;<span style="color:blue">8月</span>&nbsp;&nbsp;<span style="color:green">9月</span>&nbsp;&nbsp;<span style="color:orange">10月</span>&nbsp;&nbsp;<span style="color:orange">11月</span>&nbsp;&nbsp;<span style="color:orange">12月</span> |
+    #     | 北方之路          | 481     | 23    | ⭐         | <span style="color:orange">1月</span>&nbsp;&nbsp;<span style="color:orange">2月</span>&nbsp;&nbsp;<span style="color:orange">3月</span>&nbsp;&nbsp;<span style="color:blue">4月</span>&nbsp;&nbsp;<span style="color:blue">5月</span>&nbsp;&nbsp;<span style="color:green">6月</span><br/> <span style="color:green">7月</span>&nbsp;&nbsp;<span style="color:green">8月</span>&nbsp;&nbsp;<span style="color:blue">9月</span>&nbsp;&nbsp;<span style="color:orange">10月</span>&nbsp;&nbsp;<span style="color:orange">11月</span>&nbsp;&nbsp;<span style="color:orange">12月</span> |
+    #     | 原始之路          | 16      | 16    | ⭐⭐⭐⭐     | <span style="color:orange">1月</span>&nbsp;&nbsp;<span style="color:orange">2月</span>&nbsp;&nbsp;<span style="color:orange">3月</span>&nbsp;&nbsp;<span style="color:blue">4月</span>&nbsp;&nbsp;<span style="color:blue">5月</span>&nbsp;&nbsp;<span style="color:green">6月</span><br/> <span style="color:green">7月</span>&nbsp;&nbsp;<span style="color:green">8月</span>&nbsp;&nbsp;<span style="color:blue">9月</span>&nbsp;&nbsp;<span style="color:orange">10月</span>&nbsp;&nbsp;<span style="color:orange">11月</span>&nbsp;&nbsp;<span style="color:orange">12月</span> |
+    #     | 銀之路            | 49      | 49    | ⭐⭐⭐⭐     | <span style="color:orange">1月</span>&nbsp;&nbsp;<span style="color:orange">2月</span>&nbsp;&nbsp;<span style="color:orange">3月</span>&nbsp;&nbsp;<span style="color:orange">4月</span>&nbsp;&nbsp;<span style="color:orange">5月</span>&nbsp;&nbsp;<span style="color:green">6月</span><br/> <span style="color:blue">7月</span>&nbsp;&nbsp;<span style="color:blue">8月</span>&nbsp;&nbsp;<span style="color:green">9月</span>&nbsp;&nbsp;<span style="color:orange">10月</span>&nbsp;&nbsp;<span style="color:orange">11月</span>&nbsp;&nbsp;<span style="color:orange">12月</span> |
+    #     | 英國之路          | 114     | 7     | ⭐⭐        | <span style="color:grey">1月</span>&nbsp;&nbsp;<span style="color:grey">2月</span>&nbsp;&nbsp;<span style="color:orange">3月</span>&nbsp;&nbsp;<span style="color:blue">4月</span>&nbsp;&nbsp;<span style="color:green">5月</span>&nbsp;&nbsp;<span style="color:green">6月</span><br/> <span style="color:blue">7月</span>&nbsp;&nbsp;<span style="color:blue">8月</span>&nbsp;&nbsp;<span style="color:green">9月</span>&nbsp;&nbsp;<span style="color:blue">10月</span>&nbsp;&nbsp;<span style="color:orange">11月</span>&nbsp;&nbsp;<span style="color:grey">12月</span> |
+    #     | 世界盡頭之路      | 86      | 6     | ⭐⭐        | <span style="color:orange">1月</span>&nbsp;&nbsp;<span style="color:orange">2月</span>&nbsp;&nbsp;<span style="color:orange">3月</span>&nbsp;&nbsp;<span style="color:blue">4月</span>&nbsp;&nbsp;<span style="color:green">5月</span>&nbsp;&nbsp;<span style="color:blue">6月</span><br/> <span style="color:blue">7月</span>&nbsp;&nbsp;<span style="color:blue">8月</span>&nbsp;&nbsp;<span style="color:green">9月</span>&nbsp;&nbsp;<span style="color:blue">10月</span>&nbsp;&nbsp;<span style="color:orange">11月</span>&nbsp;&nbsp;<span style="color:orange">12月</span> |
+    # """  
+    # st.markdown(markdown, unsafe_allow_html=True)
+
     markdown = """
-        | 路線名稱&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;             | 公里數  | 天數  | 挑戰難度  | 季節  (<span style="color:blue">適合月份</span> 、 <span style="color:green">熱門月份</span> 、<span style="color:orange"> 淡季</span>) |
-        |-------------------|---------|-------|-----------|-------------------------------------------------------------------------------------------------------------|
-        | 法國之路          | 771     | 36    | ⭐⭐        | &nbsp;<span style="color:orange">1月</span>&nbsp;&nbsp;&nbsp;<span style="color:orange">2月</span>&nbsp;&nbsp;&nbsp;<span style="color:orange">3月</span>&nbsp;&nbsp;&nbsp;<span style="color:blue">4月</span>&nbsp;&nbsp;&nbsp;<span style="color:green">5月</span>&nbsp;&nbsp;&nbsp;<span style="color:green">6月</span><br/> &nbsp;<span style="color:blue">7月</span>&nbsp;&nbsp;&nbsp;<span style="color:blue">8月</span>&nbsp;&nbsp;&nbsp;<span style="color:green">9月</span>&nbsp;&nbsp;<span style="color:orange">10月</span>&nbsp;&nbsp;<span style="color:blue">11月</span>&nbsp;&nbsp;<span style="color:orange">12月</span> |
-        | 葡萄牙之路        | 620     | 29    | ⭐         | <span style="color:orange">1月</span>&nbsp;&nbsp;<span style="color:orange">2月</span>&nbsp;&nbsp;<span style="color:orange">3月</span>&nbsp;&nbsp;<span style="color:blue">4月</span>&nbsp;&nbsp;<span style="color:green">5月</span>&nbsp;&nbsp;<span style="color:green">6月</span><br/> <span style="color:blue">7月</span>&nbsp;&nbsp;<span style="color:blue">8月</span>&nbsp;&nbsp;<span style="color:green">9月</span>&nbsp;&nbsp;<span style="color:orange">10月</span>&nbsp;&nbsp;<span style="color:orange">11月</span>&nbsp;&nbsp;<span style="color:orange">12月</span> |
-        | 北方之路          | 481     | 23    | ⭐         | <span style="color:orange">1月</span>&nbsp;&nbsp;<span style="color:orange">2月</span>&nbsp;&nbsp;<span style="color:orange">3月</span>&nbsp;&nbsp;<span style="color:blue">4月</span>&nbsp;&nbsp;<span style="color:blue">5月</span>&nbsp;&nbsp;<span style="color:green">6月</span><br/> <span style="color:green">7月</span>&nbsp;&nbsp;<span style="color:green">8月</span>&nbsp;&nbsp;<span style="color:blue">9月</span>&nbsp;&nbsp;<span style="color:orange">10月</span>&nbsp;&nbsp;<span style="color:orange">11月</span>&nbsp;&nbsp;<span style="color:orange">12月</span> |
-        | 原始之路          | 16      | 16    | ⭐⭐⭐⭐     | <span style="color:orange">1月</span>&nbsp;&nbsp;<span style="color:orange">2月</span>&nbsp;&nbsp;<span style="color:orange">3月</span>&nbsp;&nbsp;<span style="color:blue">4月</span>&nbsp;&nbsp;<span style="color:blue">5月</span>&nbsp;&nbsp;<span style="color:green">6月</span><br/> <span style="color:green">7月</span>&nbsp;&nbsp;<span style="color:green">8月</span>&nbsp;&nbsp;<span style="color:blue">9月</span>&nbsp;&nbsp;<span style="color:orange">10月</span>&nbsp;&nbsp;<span style="color:orange">11月</span>&nbsp;&nbsp;<span style="color:orange">12月</span> |
-        | 銀之路            | 49      | 49    | ⭐⭐⭐⭐     | <span style="color:orange">1月</span>&nbsp;&nbsp;<span style="color:orange">2月</span>&nbsp;&nbsp;<span style="color:orange">3月</span>&nbsp;&nbsp;<span style="color:orange">4月</span>&nbsp;&nbsp;<span style="color:orange">5月</span>&nbsp;&nbsp;<span style="color:green">6月</span><br/> <span style="color:blue">7月</span>&nbsp;&nbsp;<span style="color:blue">8月</span>&nbsp;&nbsp;<span style="color:green">9月</span>&nbsp;&nbsp;<span style="color:orange">10月</span>&nbsp;&nbsp;<span style="color:orange">11月</span>&nbsp;&nbsp;<span style="color:orange">12月</span> |
-        | 英國之路          | 114     | 7     | ⭐⭐        | <span style="color:grey">1月</span>&nbsp;&nbsp;<span style="color:grey">2月</span>&nbsp;&nbsp;<span style="color:orange">3月</span>&nbsp;&nbsp;<span style="color:blue">4月</span>&nbsp;&nbsp;<span style="color:green">5月</span>&nbsp;&nbsp;<span style="color:green">6月</span><br/> <span style="color:blue">7月</span>&nbsp;&nbsp;<span style="color:blue">8月</span>&nbsp;&nbsp;<span style="color:green">9月</span>&nbsp;&nbsp;<span style="color:blue">10月</span>&nbsp;&nbsp;<span style="color:orange">11月</span>&nbsp;&nbsp;<span style="color:grey">12月</span> |
-        | 世界盡頭之路      | 86      | 6     | ⭐⭐        | <span style="color:orange">1月</span>&nbsp;&nbsp;<span style="color:orange">2月</span>&nbsp;&nbsp;<span style="color:orange">3月</span>&nbsp;&nbsp;<span style="color:blue">4月</span>&nbsp;&nbsp;<span style="color:green">5月</span>&nbsp;&nbsp;<span style="color:blue">6月</span><br/> <span style="color:blue">7月</span>&nbsp;&nbsp;<span style="color:blue">8月</span>&nbsp;&nbsp;<span style="color:green">9月</span>&nbsp;&nbsp;<span style="color:blue">10月</span>&nbsp;&nbsp;<span style="color:orange">11月</span>&nbsp;&nbsp;<span style="color:orange">12月</span> |
-    """
+    <table style="width: 100%; border-collapse: collapse;">
+        <tr>
+            <th>路線名稱</th>
+            <th>公里數</th>
+            <th>天數</th>
+            <th>挑戰難度</th>
+            <th>季節 (<span style="color:blue">適合月份</span> 、 <span style="color:green">熱門月份</span> 、<span style="color:orange"> 淡季</span>)</th>
+        </tr>
+        <tr>
+            <td>法國之路</td>
+            <td>771</td>
+            <td>36</td>
+            <td>⭐⭐</td>
+            <td>&nbsp;<span style="color:orange">1月</span>&nbsp;&nbsp;&nbsp;<span style="color:orange">2月</span>&nbsp;&nbsp;&nbsp;<span style="color:orange">3月</span>&nbsp;&nbsp;&nbsp;<span style="color:blue">4月</span>&nbsp;&nbsp;&nbsp;<span style="color:green">5月</span>&nbsp;&nbsp;&nbsp;<span style="color:green">6月</span><br/> &nbsp;<span style="color:blue">7月</span>&nbsp;&nbsp;&nbsp;<span style="color:blue">8月</span>&nbsp;&nbsp;&nbsp;<span style="color:green">9月</span>&nbsp;&nbsp;<span style="color:orange">10月</span>&nbsp;&nbsp;<span style="color:blue">11月</span>&nbsp;&nbsp;<span style="color:orange">12月</span></td>
+        </tr>
+        <tr>
+            <td>葡萄牙之路</td>
+            <td>620</td>
+            <td>29</td>
+            <td>⭐</td>
+            <td><span style="color:orange">1月</span>&nbsp;&nbsp;<span style="color:orange">2月</span>&nbsp;&nbsp;<span style="color:orange">3月</span>&nbsp;&nbsp;<span style="color:blue">4月</span>&nbsp;&nbsp;<span style="color:green">5月</span>&nbsp;&nbsp;<span style="color:green">6月</span><br/> <span style="color:blue">7月</span>&nbsp;&nbsp;<span style="color:blue">8月</span>&nbsp;&nbsp;<span style="color:green">9月</span>&nbsp;&nbsp;<span style="color:orange">10月</span>&nbsp;&nbsp;<span style="color:orange">11月</span>&nbsp;&nbsp;<span style="color:orange">12月</span></td>
+        </tr>
+        <tr>
+            <td>北方之路</td>
+            <td>481</td>
+            <td>23</td>
+            <td>⭐</td>
+            <td><span style="color:orange">1月</span>&nbsp;&nbsp;<span style="color:orange">2月</span>&nbsp;&nbsp;<span style="color:orange">3月</span>&nbsp;&nbsp;<span style="color:blue">4月</span>&nbsp;&nbsp;<span style="color:blue">5月</span>&nbsp;&nbsp;<span style="color:green">6月</span><br/> <span style="color:green">7月</span>&nbsp;&nbsp;<span style="color:green">8月</span>&nbsp;&nbsp;<span style="color:blue">9月</span>&nbsp;&nbsp;<span style="color:orange">10月</span>&nbsp;&nbsp;<span style="color:orange">11月</span>&nbsp;&nbsp;<span style="color:orange">12月</span></td>
+        </tr>
+        <tr>
+            <td>原始之路</td>
+            <td>16</td>
+            <td>16</td>
+            <td>⭐⭐⭐⭐</td>
+            <td><span style="color:orange">1月</span>&nbsp;&nbsp;<span style="color:orange">2月</span>&nbsp;&nbsp;<span style="color:orange">3月</span>&nbsp;&nbsp;<span style="color:blue">4月</span>&nbsp;&nbsp;<span style="color:blue">5月</span>&nbsp;&nbsp;<span style="color:green">6月</span><br/> <span style="color:green">7月</span>&nbsp;&nbsp;<span style="color:green">8月</span>&nbsp;&nbsp;<span style="color:blue">9月</span>&nbsp;&nbsp;<span style="color:orange">10月</span>&nbsp;&nbsp;<span style="color:orange">11月</span>&nbsp;&nbsp;<span style="color:orange">12月</span></td>
+        </tr>
+        <tr>
+            <td>銀之路</td>
+            <td>49</td>
+            <td>49</td>
+            <td>⭐⭐⭐⭐</td>
+            <td><span style="color:orange">1月</span>&nbsp;&nbsp;<span style="color:orange">2月</span>&nbsp;&nbsp;<span style="color:orange">3月</span>&nbsp;&nbsp;<span style="color:orange">4月</span>&nbsp;&nbsp;<span style="color:orange">5月</span>&nbsp;&nbsp;<span style="color:green">6月</span><br/> <span style="color:blue">7月</span>&nbsp;&nbsp;<span style="color:blue">8月</span>&nbsp;&nbsp;<span style="color:green">9月</span>&nbsp;&nbsp;<span style="color:orange">10月</span>&nbsp;&nbsp;<span style="color:orange">11月</span>&nbsp;&nbsp;<span style="color:orange">12月</span></td>
+        </tr>
+        <tr>
+            <td>英國之路</td>
+            <td>114</td>
+            <td>7</td>
+            <td>⭐⭐</td>
+            <td><span style="color:grey">1月</span>&nbsp;&nbsp;<span style="color:grey">2月</span>&nbsp;&nbsp;<span style="color:orange">3月</span>&nbsp;&nbsp;<span style="color:blue">4月</span>&nbsp;&nbsp;<span style="color:green">5月</span>&nbsp;&nbsp;<span style="color:green">6月</span><br/> <span style="color:blue">7月</span>&nbsp;&nbsp;<span style="color:blue">8月</span>&nbsp;&nbsp;<span style="color:green">9月</span>&nbsp;&nbsp;<span style="color:blue">10月</span>&nbsp;&nbsp;<span style="color:orange">11月</span>&nbsp;&nbsp;<span style="color:grey">12月</span></td>
+        </tr>
+        <tr>
+            <td>世界盡頭之路</td>
+            <td>86</td>
+            <td>6</td>
+            <td>⭐⭐</td>
+            <td><span style="color:orange">1月</span>&nbsp;&nbsp;<span style="color:orange">2月</span>&nbsp;&nbsp;<span style="color:orange">3月</span>&nbsp;&nbsp;<span style="color:blue">4月</span>&nbsp;&nbsp;<span style="color:green">5月</span>&nbsp;&nbsp;<span style="color:blue">6月</span><br/> <span style="color:blue">7月</span>&nbsp;&nbsp;<span style="color:blue">8月</span>&nbsp;&nbsp;<span style="color:green">9月</span>&nbsp;&nbsp;<span style="color:blue">10月</span>&nbsp;&nbsp;<span style="color:orange">11月</span>&nbsp;&nbsp;<span style="color:orange">12月</span></td>
+        </tr>
+    </table>
+   """
 
-
-
-    
     st.markdown(markdown, unsafe_allow_html=True)
+
 
 
         
