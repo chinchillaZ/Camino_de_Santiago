@@ -187,6 +187,8 @@ with col1:
         ### 法國之路 (Camino Francés)
         
         聖讓皮德波特（Saint-Jean-Pied-de-Port）位於法國，是這條路的起點，沿途經過的城市，如：潘普洛納（Pamplona）、布爾戈斯（Burgos）、萊昂（Leon）和龐費拉達（Ponferrada）等城鎮，不僅有豐富的歷史文化，這條路線的地形還很多變，從庇里牛斯山脈的高山到北部平原的平坦地帶，再到加利西亞的起伏丘陵，相當考驗朝聖者的體能。
+        ![Image Description](https://chinchillaz.github.io/streamlit-hw//Camino/photos/1_frances.png)
+
         
         ### 葡萄牙之路 (Camino Portugués)
         
