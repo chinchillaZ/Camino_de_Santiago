@@ -13,7 +13,7 @@ st.sidebar.info(markdown)
 logo = "https://chinchillaz.github.io/streamlit-hw/logo_sun-removebg-preview.png"
 st.sidebar.image(logo)
 
-st.title("路線重要點位地圖")
+st.title("景點推薦 🏰")
 
 # Initialize the map with center coordinates and zoom level
 m = leafmap.Map(center=[42.5, -4.0], zoom=7, minimap_control=True)
@@ -26,7 +26,7 @@ geojson_url = "https://chinchillaz.github.io/streamlit-hw/all_Camino_route.geojs
 style = {"color": "black", "weight": 3, "opacity": 0.8}
 m.add_geojson(geojson_url, layer_name="Camino de Santiago Route", style=style)
 
-data = "https://chinchillaz.github.io/streamlit-hw/Camino/Caminos_attraction.geojson"
+data = "https://chinchillaz.github.io/streamlit-hw/Camino/Caminos_attraction.csv"
 m.add_points_from_xy(data, x="X", y="Y")
 
 # Display the map
