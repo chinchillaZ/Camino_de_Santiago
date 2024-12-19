@@ -60,8 +60,8 @@ def show_map():
                 pdk.Layer(
                     "HexagonLayer",
                     data=chart_data,
-                    get_position="['X', 'Y']",  # Corrected syntax for accessing the columns
-                    radius=200,  # Size of the hexagons, adjust based on data density
+                    get_position=['X', 'Y'],  # Corrected syntax for accessing the columns
+                    radius=1000,  # Size of the hexagons, adjust based on data density
                     elevation_scale=10000,
                     elevation_range=[0, 5000],
                     get_elevation="Number",  # Use the 'Number' column for height
@@ -71,7 +71,7 @@ def show_map():
                 ),            
             ],
         )
-    )
+    
 
 
 
