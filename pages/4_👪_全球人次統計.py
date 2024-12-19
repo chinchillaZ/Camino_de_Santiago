@@ -47,13 +47,13 @@ def show_map():
                     pickable=True,
                     extruded=True,
                 ),
-                pdk.Layer(
-                    "ScatterplotLayer",
-                    data=chart_data,
-                    get_position="[Y, X]",  # Using Y (longitude) and X (latitude) for positions
-                    get_color="[200, 30, 0, 160]",  # Color for points
-                    get_radius=200000,  # Size of scatterplot points
-                ),
+                # pdk.Layer(
+                #     "ScatterplotLayer",
+                #     data=chart_data,
+                #     get_position="[Y, X]",  # Using Y (longitude) and X (latitude) for positions
+                #     get_color="[200, 30, 0, 160]",  # Color for points
+                #     get_radius=200000,  # Size of scatterplot points
+                # ),
             ],
         )
     )
