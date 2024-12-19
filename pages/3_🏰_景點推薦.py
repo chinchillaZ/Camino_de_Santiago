@@ -18,19 +18,16 @@ st.title("路線重要點位地圖")
 # Initialize the map with center coordinates and zoom level
 m = leafmap.Map(center=[42.5, -4.0], zoom=7, minimap_control=True)
 
-# URL for the cities GeoJSON
+
 cities_url = "https://chinchillaz.github.io/streamlit-hw/country_interest.geojson"
-# URL for the Camino de Santiago GeoJSON
-geojson_url = "https://chinchillaz.github.io/streamlit-hw/all_Camino_route.geojson"
-
-# Style for the Camino de Santiago routes
-style = {"color": "navy", "weight": 3, "opacity": 0.8}
-
-# Add the cities layer (Intersect towns)
 m.add_geojson(cities_url, layer_name="Intersect towns")
 
-# Add the Camino de Santiago routes layer with style
+geojson_url = "https://chinchillaz.github.io/streamlit-hw/all_Camino_route.geojson"
+style = {"color": "black", "weight": 3, "opacity": 0.8}
 m.add_geojson(geojson_url, layer_name="Camino de Santiago Route", style=style)
+
+data = "https://chinchillaz.github.io/streamlit-hw/Camino/Caminos_attraction.geojson"
+m.add_points_from_xy(data, x="X", y="Y")
 
 # Display the map
 m.to_streamlit(height=700)
