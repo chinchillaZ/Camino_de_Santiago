@@ -116,8 +116,9 @@ fig.update_layout(
     xaxis_tickangle=-45,  # Rotate x-axis labels for better readability
 )
 
-# Show the plot
-fig.show()
+# Show the plot in Streamlit
+st.plotly_chart(fig, use_container_width=True)
+
 
 
 
