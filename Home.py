@@ -3,6 +3,7 @@ import streamlit as st
 import leafmap
 import matplotlib.pyplot as plt
 import folium
+import random
 
 st.set_page_config(layout="wide")
 
