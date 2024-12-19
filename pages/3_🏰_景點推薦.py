@@ -1,5 +1,7 @@
 import streamlit as st
 import leafmap.foliumap as leafmap
+import pandas as pd
+import numpy as np
 
 st.set_page_config(layout="wide")
 
@@ -26,11 +28,14 @@ geojson_url = "https://chinchillaz.github.io/streamlit-hw/all_Camino_route.geojs
 style = {"color": "black", "weight": 3, "opacity": 0.8}
 m.add_geojson(geojson_url, layer_name="Camino de Santiago Route", style=style)
 
-data = "https://chinchillaz.github.io/streamlit-hw/Camino/Caminos_attraction.csv"
+data = "https://chinchillaz.github.io/streamlit-hw/Camino/Caminos_attraction3.csv"
 m.add_points_from_xy(data, x="Y", y="X")
 
 # Display the map
 m.to_streamlit(height=700)
+
+df = pd.read_csv(data)
+st.dataframe(df)
 
 
 
