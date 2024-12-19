@@ -30,7 +30,7 @@ st.markdown(
 
 # st.markdown(markdown)
 
-m = leafmap.Map(minimap_control=True)
+#m = leafmap.Map(minimap_control=True)
 #m.add_basemap("OpenTopoMap")
 m = leafmap.Map(center = [42.5, -4.0], zoom = 7 , minimap_control=True)
 
@@ -76,12 +76,12 @@ m.add_geojson(geojson_url, layer_name="Camino de Santiago Route", style_callback
 # Define the legend dictionary
 legend_dict = {
     "法國之路 (Camino Francés)": "red",
-    "Camino Ingles": "blue",
-    "Camino Portugues Central": "orange",
-    "Camino Primitivo": "green",
-    "Camino del Norte": "purple",
-    "Portugues Coastal": "yellow",
-    "Via de la Plata": "brown",
+    "英國之路 (Camino Inglés)": "blue",
+    "葡萄牙之路 (Camino Portugués)": "orange",
+    "原始之路 (Camino Primitivo)": "green",
+    "北方之路 (Camino del Norte)": "purple",
+    "世界盡頭之路 (Camino Finisterre-Muxía)": "yellow",
+    "銀之路 (Via de la Plata)": "brown",
     "Default": "black",
 }
 
