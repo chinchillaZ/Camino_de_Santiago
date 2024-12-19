@@ -195,7 +195,7 @@ with col1:
         ### 葡萄牙之路 (Camino Portugués)
         
         葡萄牙的首都里斯本（Lisbon）是這條路的主要出發點，沿途會經過「古老的道路」、「森林」、「農田」、「橄欖樹林」、「葡萄園」和「歷史城鎮」，這些自然景觀不僅提供了美麗的視覺享受，還能讓朝聖者與大自然親密接觸。  
-        <img src="https://chinchillaz.github.io/streamlit-hw//Camino/photos/2_portugal.jpg" width="1000"/>
+        ![Image Description](https://chinchillaz.github.io/streamlit-hw//Camino/photos/2_portugal.jpg)
 
         
         ---
@@ -203,7 +203,7 @@ with col1:
         ### 北方之路 (Camino del Norte)
         
         起點是位於西班牙北部的海濱城市聖塞巴斯蒂安（San Sebastien），沿途會穿越西班牙北部的海灘，再進入到寧靜的森林，於行走過程放鬆地享受大自然的魅力。  
-        <img src="https://chinchillaz.github.io/streamlit-hw//Camino/photos/3_Norte.jpg" width="1000"/>
+        ![Image Description](https://chinchillaz.github.io/streamlit-hw//Camino/photos/3_Norte.jpg)
         
         ---
         
