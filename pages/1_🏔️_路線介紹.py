@@ -129,7 +129,7 @@ with col1:
             <td>49</td>
             <td>49</td>
             <td>⭐⭐⭐⭐</td>
-            <td><span style="color:orange">1月</span>&nbsp;&nbsp;<span style="color:orange">2月</span>&nbsp;&nbsp;<span style="color:orange">3月</span>&nbsp;&nbsp;<span style="color:orange">4月</span>&nbsp;&nbsp;<span style="color:orange">5月</span>&nbsp;&nbsp;<span style="color:green">6月</span><br/> <span style="color:blue">7月</span>&nbsp;&nbsp;<span style="color:blue">8月</span>&nbsp;&nbsp;<span style="color:green">9月</span>&nbsp;&nbsp;<span style="color:orange">10月</span>&nbsp;&nbsp;<span style="color:orange">11月</span>&nbsp;&nbsp;<span style="color:orange">12月</span></td>
+            <td><span style="color:grey">1月</span>&nbsp;&nbsp;<span style="color:grey">2月</span>&nbsp;&nbsp;<span style="color:blue">3月</span>&nbsp;&nbsp;<span style="color:green">4月</span>&nbsp;&nbsp;<span style="color:green">5月</span>&nbsp;&nbsp;<span style="color:green">6月</span><br/> <span style="color:blue">7月</span>&nbsp;&nbsp;<span style="color:blue">8月</span>&nbsp;&nbsp;<span style="color:green">9月</span>&nbsp;&nbsp;<span style="color:orange">10月</span>&nbsp;&nbsp;<span style="color:grey">11月</span>&nbsp;&nbsp;<span style="color:grey">12月</span></td>
         </tr>
         <tr>
             <td>英國之路</td>
