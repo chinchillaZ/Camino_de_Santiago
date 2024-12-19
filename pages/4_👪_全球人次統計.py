@@ -44,35 +44,35 @@ def show_map():
     chart_data['X'] = chart_data['geometry'].apply(lambda x: x.coords[0][0])  # Longitude
     chart_data['Y'] = chart_data['geometry'].apply(lambda x: x.coords[0][1])  # Latitude
 
-    # You can now use `chart_data` which is a GeoDataFrame
+    # Check the first few rows of the chart_data to make sure everything is correct
+    print(chart_data[['X', 'Y', 'Number']].head())
 
     # Render the map using Pydeck
-    st.pydeck_chart(
-        pdk.Deck(
-            map_style=None,
-            initial_view_state=pdk.ViewState(
-                latitude=20,  # Centering the map on the general location
-                longitude=0,  # Adjust based on your map area
-                zoom=1,       # Adjust zoom to fit the global map
-                pitch=50,
+    deck = pdk.Deck(
+        map_style=None,
+        initial_view_state=pdk.ViewState(
+            latitude=20,  # Centering the map on the general location
+            longitude=0,  # Adjust based on your map area
+            zoom=1,       # Adjust zoom to fit the global map
+            pitch=50,     # Angle for 3D effect
+        ),
+        layers=[
+            pdk.Layer(
+                "HexagonLayer",
+                data=chart_data,
+                get_position=["X", "Y"],  # Corrected syntax for accessing the columns
+                radius=1000,  # Size of the hexagons, adjust based on data density
+                elevation_scale=4,
+                elevation_range=[0, 1000],
+                get_elevation="Number",  # Use the 'Number' column for height (this adds 3D bars)
+                get_fill_color="[0, 0, 255, 255]",  # Color for the hexagons (blue)
+                pickable=True,
+                extruded=True,  # This makes the bars 3D
             ),
-            layers=[
-                pdk.Layer(
-                    "HexagonLayer",
-                    data=chart_data,
-                    get_position="[X, Y]",  # Corrected syntax for accessing the columns
-                    radius=1000,  # Size of the hexagons, adjust based on data density
-                    elevation_scale=4,
-                    elevation_range=[0, 1000],
-                    #get_elevation="Number",  # Use the 'Number' column for height
-                    #get_fill_color="[0, 0, 255, 255]",  # Color for the hexagons (blue)
-                    get_color="[200, 30, 0, 160]",
-                    pickable=True,
-                    extruded=True,
-                ),            
-            ],
-        )
+        ],
     )
+    
+    deck.show()
 
 
 
