@@ -39,7 +39,7 @@ def show_map():
                 pdk.Layer(
                     "HexagonLayer",
                     data=chart_data,
-                    get_position="[Y, X]",  # Using Y (longitude) and X (latitude) for positions
+                    get_position= [Y, X],  # Using Y (longitude) and X (latitude) for positions
                     radius=200,  # Size of the hexagons, adjust based on data density
                     elevation_scale=10000,
                     elevation_range=[0, 5000],
@@ -47,14 +47,7 @@ def show_map():
                     get_fill_color=[0, 0, 255, 255],
                     pickable=True,
                     extruded=True,
-                ),
-                # pdk.Layer(
-                #     "ScatterplotLayer",
-                #     data=chart_data,
-                #     get_position="[Y, X]",  # Using Y (longitude) and X (latitude) for positions
-                #     get_color="[200, 30, 0, 160]",  # Color for points
-                #     get_radius=200000,  # Size of scatterplot points
-                # ),
+                ),            
             ],
         )
     )
