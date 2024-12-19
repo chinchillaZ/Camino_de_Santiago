@@ -236,8 +236,7 @@ with col1:
         ### 世界盡頭之路 (Camino Finisterre-Muxía)
         
         許多朝聖者在抵達終點後，會決定將他們的旅程延伸到死亡之海（Costa da Morte）– 菲尼斯特雷（Finisterre），並在西班牙最西端的陡峭懸崖為這趟旅程畫下句點。  
-        ![Image Description](https://chinchillaz.github.io/streamlit-hw//Camino/photos/6_muxia.jpg)
-
+        <img src="https://chinchillaz.github.io/streamlit-hw//Camino/photos/6_muxia.jpg" width="1200"/>
 
     """
     st.markdown(markdown, unsafe_allow_html=True)
