@@ -166,8 +166,8 @@ with col1:
     # Plot the bar chart
     fig = px.bar(
         data_frame=df,
-        x="Name",
-        y=["距離(km)", "天數"],
+        x="Name",        
+        y=["Distance (km)", "Days"],  # Update with correct column names
         title="天數、距離比一比🔍",
         opacity=0.9,
         orientation="v",  # Vertical bars
