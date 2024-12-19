@@ -46,9 +46,9 @@ def style_by_route(feature):
     route = feature["properties"].get("route", "default")  # Get the "route" value
     # Define a color map for different routes
     color_map = {
-        "route1": "red",
-        "route2": "blue",
-        "route3": "green",
+        "Camino_Frances": "red",
+        "Camino_Ingles": "blue",
+        "Camino_Portugues_central": "green",
         # Add more routes and their corresponding colors here
         "default": "gray",  # Default color if route not found
     }
