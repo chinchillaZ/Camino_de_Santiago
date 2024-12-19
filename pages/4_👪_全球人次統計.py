@@ -21,27 +21,26 @@ st.title("全球人次統計 👪")
 # Function to generate and display the map
 def show_map():
     # Prepare the chart data for the map
-    chart_data = pd.DataFrame(
-        np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],  # Latitude, Longitude
-        columns=["lat", "lon"],
-    )
+    data = "https://chinchillaz.github.io/streamlit-hw/Camino/1_Frances_travelers.csv"
+    chart_data = pd.read_csv(data)
+    chart_data = chart_data[chart_data["year"]==2024] # plot 2024 only
 
     # Render the map using Pydeck
     st.pydeck_chart(
         pdk.Deck(
             map_style=None,
             initial_view_state=pdk.ViewState(
-                latitude=37.76,
-                longitude=-122.4,
-                zoom=11,
+                latitude=20,  # Centering the map on the general location
+                longitude=0,  # Adjust based on your map area
+                zoom=2,       # Adjust zoom to fit the global map
                 pitch=50,
             ),
             layers=[
                 pdk.Layer(
                     "HexagonLayer",
                     data=chart_data,
-                    get_position="[lon, lat]",
-                    radius=200,
+                    get_position="[Y, X]",  # Using Y (longitude) and X (latitude) for positions
+                    radius=200000,  # Size of the hexagons, adjust based on data density
                     elevation_scale=4,
                     elevation_range=[0, 1000],
                     pickable=True,
@@ -50,9 +49,9 @@ def show_map():
                 pdk.Layer(
                     "ScatterplotLayer",
                     data=chart_data,
-                    get_position="[lon, lat]",
-                    get_color="[200, 30, 0, 160]",
-                    get_radius=200,
+                    get_position="[Y, X]",  # Using Y (longitude) and X (latitude) for positions
+                    get_color="[200, 30, 0, 160]",  # Color for points
+                    get_radius=200000,  # Size of scatterplot points
                 ),
             ],
         )
@@ -65,8 +64,6 @@ lower_row = st.columns(4)  # Lower row with 4 buttons
 
 # Upper row buttons
 if upper_row[0].button("法國之路", use_container_width=True):
-    #upper_row[0].markdown("You clicked 法國之路")
-    # Call the function to show the map
     show_map()
     
 if upper_row[1].button("葡萄牙之路", use_container_width=True):
