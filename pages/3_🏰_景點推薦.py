@@ -40,7 +40,7 @@ m.to_streamlit(height=700)
 st.markdown("#### 🎇推薦景點清點🎇")
 df = pd.read_csv(data)
 df['I wanna go!!!!!!!'] = False
-st.dataframe(df)
+# st.dataframe(df)
 
 st.data_editor(
     df,
