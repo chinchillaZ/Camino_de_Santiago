@@ -53,7 +53,7 @@ def show_map():
             initial_view_state=pdk.ViewState(
                 latitude=20,  # Centering the map on the general location
                 longitude=0,  # Adjust based on your map area
-                zoom=2,       # Adjust zoom to fit the global map
+                zoom=1,       # Adjust zoom to fit the global map
                 pitch=50,
             ),
             layers=[
@@ -62,8 +62,8 @@ def show_map():
                     data=chart_data,
                     get_position=['X', 'Y'],  # Corrected syntax for accessing the columns
                     radius=1000,  # Size of the hexagons, adjust based on data density
-                    elevation_scale=10000,
-                    elevation_range=[0, 5000],
+                    elevation_scale=4,
+                    elevation_range=[0, 1000],
                     get_elevation="Number",  # Use the 'Number' column for height
                     get_fill_color="[0, 0, 255, 255]",  # Color for the hexagons (blue)
                     pickable=True,
