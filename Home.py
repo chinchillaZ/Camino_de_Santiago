@@ -82,7 +82,7 @@ legend_dict = {
     "北方之路 (Camino del Norte)": "purple",
     "世界盡頭之路 (Camino Finisterre-Muxía)": "yellow",
     "銀之路 (Via de la Plata)": "brown",
-    "Default": "black",
+    #"Default": "black",
 }
 
 # Add the legend to the map
