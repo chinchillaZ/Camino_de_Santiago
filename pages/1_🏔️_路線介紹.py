@@ -79,13 +79,13 @@ with col1:
         
         | Name                          | Distance (km) | Days | Challenge      |
     |-------------------------------|---------------|------|----------------|
-    | 法國之路 (Camino Francés)       | 771           | 36   | Moderate       |
-    | 葡萄牙之路 (Camino Portugués)   | 620           | 29   | Easy           |
-    | 北方之路 (Camino del Norte)     | 481           | 23   | Easy           |
-    | 原始之路 (Camino Primitivo)     | 16            | 16   | Moderate Plus  |
-    | 銀之路 (Via de la Plata)        | 49            | 49   | Moderate Plus  |
-    | 英國之路 (Camino Inglés)        | 114           | 7    | Moderate       |
-    | 世界盡頭之路 (Camino Finisterre-Muxía) | 86            | 6    | Moderate       |
+    | 法國之路       | 771           | 36   | Moderate       |
+    | 葡萄牙之路   | 620           | 29   | Easy           |
+    | 北方之路    | 481           | 23   | Easy           |
+    | 原始之路    | 16            | 16   | Moderate Plus  |
+    | 銀之路       | 49            | 49   | Moderate Plus  |
+    | 英國之路        | 114           | 7    | Moderate       |
+    | 世界盡頭之路  | 86            | 6    | Moderate       |
     
         """
         
@@ -93,9 +93,9 @@ with col1:
 
     # Create the DataFrame
     df = pd.DataFrame({
-        "Name": ["法國之路 (Camino Francés)", "葡萄牙之路 (Camino Portugués)", "北方之路 (Camino del Norte)", 
-                 "原始之路 (Camino Primitivo)", "銀之路 (Via de la Plata)", "英國之路 (Camino Inglés)", 
-                 "世界盡頭之路 (Camino Finisterre-Muxía)"],
+        "Name": ["法國之路", "葡萄牙之路", "北方之路", 
+                 "原始之路", "銀之路", "英國之路", 
+                 "世界盡頭之路"],
         "Distance (km)": [771, 620, 481, 16, 49, 114, 86],
         "Days": [36, 29, 23, 16, 49, 7, 6],
         "Challenge": ["Moderate", "Easy", "Easy", "Moderate Plus", "Moderate Plus", "Moderate", "Moderate"]
