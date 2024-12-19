@@ -48,7 +48,7 @@ def show_map():
                     get_elevation="Number",  # Use the 'Number' column for height
                     get_fill_color="[0, 0, 255, 255]",  # Color for the hexagons (blue)
                     pickable=True,  # Make the hexagons interactive
-                    extruded=True,  # Enable extrusion for 3D effect
+                    #extruded=True,  # Enable extrusion for 3D effect
                 ),            
             ],
         )
