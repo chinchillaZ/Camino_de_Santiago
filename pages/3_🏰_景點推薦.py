@@ -39,7 +39,21 @@ m.to_streamlit(height=700)
 
 st.markdown("#### 🎇推薦景點清點🎇")
 df = pd.read_csv(data)
+df['I wanna go!!!!!!!'] = False
 st.dataframe(df)
+
+st.data_editor(
+    df,
+    column_config={
+        "I wanna go!!!!!!!": st.column_config.CheckboxColumn(
+            "I wanna go!!!!!!!",
+            help="Select if you want to visit this place",
+            default=False,
+        )
+    },
+    disabled=[],  # You can disable other columns if needed
+    hide_index=True,  # Hide the index if you want
+)
 
 
 
