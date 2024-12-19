@@ -3,6 +3,7 @@ import leafmap.foliumap as leafmap
 import pydeck as pdk
 import pandas as pd
 import numpy as np
+import geopandas as gpd
 
 st.set_page_config(layout="wide")
 
@@ -20,9 +21,9 @@ st.title("全球人次統計 👪")
 
 def show_map():
     # Prepare the chart data for the map
-    data = "https://chinchillaz.github.io/streamlit-hw/Camino/1_Frances_travelers.csv"
-    chart_data = pd.read_csv(data)
-    
+    data = "https://chinchillaz.github.io/streamlit-hw/Camino/1_Frances_travelers.geojson"
+    chart_data = gpd.read_file(data)
+
     # Filter data for the year 2024
     chart_data = chart_data[chart_data["year"] == 2024]
 
