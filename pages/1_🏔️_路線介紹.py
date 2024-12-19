@@ -42,7 +42,6 @@ with col1:
     
     def style_by_route(feature):
         route = feature["properties"].get("route", "default")  # Get the "route" value
-        # Define a color map for different routes
         color_map = {
             "Camino_Frances": "red",          # Vibrant red
             "Camino_Ingles": "blue",         # Strong blue
@@ -77,17 +76,11 @@ with col1:
         #"Default": "black",
     }
 
-# Add the legend to the map
+    # Add the legend to the map
 m.add_legend(title="Camino de Santiago Routes", legend_dict=legend_dict)
 
-
-
-
-
-
     
-    
-    markdown = """
+markdown = """
     
     | Name                          | Distance (km) | Days | Challenge      |
 |-------------------------------|---------------|------|----------------|
@@ -101,9 +94,4 @@ m.add_legend(title="Camino de Santiago Routes", legend_dict=legend_dict)
 
     """
     
-    st.markdown(markdown)
-        
-    # # Display the interactive plot in Streamlit
-    # st.plotly_chart(fig)
-
-
+st.markdown(markdown)
