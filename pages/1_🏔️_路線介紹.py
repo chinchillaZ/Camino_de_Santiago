@@ -75,7 +75,7 @@ with col1:
 
 
     markdown = """
-        | 路線名稱             | 公里數  | 天數  | 挑戰難度  | 季節  (<span style="color:orangered">適合月份</span> 、 <span style="color:green">熱門月份</span> 、<span style="color:darkblue"> 淡季</span>)                                |
+        | 路線名稱             | 公里數  | 天數  | 挑戰難度  | 季節  (<span style="color:orangered">適合月份</span> 、 <span style="color:springgreen">熱門月份</span> 、<span style="color:darkblue"> 淡季</span>)                                |
         |-------------------|------------|------|-----------|---------------------------------------|
         | 法國之路          | 771        | 36   | ⭐⭐        |<span style="color:orangered">1月</span> &nbsp;&nbsp; <span style="color:orangered">2月</span> &nbsp;&nbsp; <span style="color:orangered">3月</span> 4月  5月  6月<br/>7月  8月  9月  10月  11月  12月 |
         | 葡萄牙之路        | 620        | 29   | ⭐         | <span style="background-color:yellow">1月</span>  2月  3月  4月  5月  6月<br/>7月  8月  9月  10月  11月  12月 |
