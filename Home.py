@@ -34,7 +34,12 @@ m = leafmap.Map(minimap_control=True)
 m = leafmap.Map(center = [42.5, -4.0], zoom = 7 , minimap_control=True)
 
 country_url = "https://chinchillaz.github.io/streamlit-hw/S_P_F_country_clear.geojson"
-style = {"color": "yellow", "weight": 1.5, "opacity": 0.5}
+style = {
+    "color": "grey",  # Outline color
+    "weight": 1.5,      # Line thickness
+    "opacity": 0.5,     # Line transparency
+    "fillColor": "none" # No fill color
+}
 m.add_geojson(country_url, layer_name="Country", style=style)
 
 # # Add GeoJSON line to the map
