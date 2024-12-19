@@ -75,7 +75,7 @@ m.add_geojson(geojson_url, layer_name="Camino de Santiago Route", style_callback
 # Define the legend details
 # Define the legend dictionary
 legend_dict = {
-    "Camino Frances": "red",
+    "法國之路 (Camino Francés)": "red",
     "Camino Ingles": "blue",
     "Camino Portugues Central": "orange",
     "Camino Primitivo": "green",
