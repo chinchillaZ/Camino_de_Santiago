@@ -18,12 +18,13 @@ st.sidebar.image(logo)
 
 st.title("全球人次統計 👪")
 
-# Function to generate and display the map
 def show_map():
     # Prepare the chart data for the map
     data = "https://chinchillaz.github.io/streamlit-hw/Camino/1_Frances_travelers.csv"
     chart_data = pd.read_csv(data)
-    chart_data = chart_data[chart_data["year"]==2024] # plot 2024 only
+    
+    # Filter data for the year 2024
+    chart_data = chart_data[chart_data["year"] == 2024]
 
     # Render the map using Pydeck
     st.pydeck_chart(
@@ -32,26 +33,25 @@ def show_map():
             initial_view_state=pdk.ViewState(
                 latitude=20,  # Centering the map on the general location
                 longitude=0,  # Adjust based on your map area
-                zoom=2,       # Adjust zoom to fit the global map
+                zoom=1,       # Adjust zoom to fit the global map
                 pitch=50,
             ),
             layers=[
                 pdk.Layer(
                     "HexagonLayer",
                     data=chart_data,
-                    get_position= [Y, X],  # Using Y (longitude) and X (latitude) for positions
+                    get_position="['Y', 'X']",  # Correct way to extract longitude (Y) and latitude (X)
                     radius=200,  # Size of the hexagons, adjust based on data density
-                    elevation_scale=10000,
-                    elevation_range=[0, 5000],
-                    get_elevation="Number",
-                    get_fill_color=[0, 0, 255, 255],
-                    pickable=True,
-                    extruded=True,
+                    elevation_scale=10000,  # Controls the height of the hexagons
+                    elevation_range=[0, 5000],  # Range for hexagon heights
+                    get_elevation="Number",  # Use the 'Number' column for height
+                    get_fill_color="[0, 0, 255, 255]",  # Color for the hexagons (blue)
+                    pickable=True,  # Make the hexagons interactive
+                    extruded=True,  # Enable extrusion for 3D effect
                 ),            
             ],
         )
     )
-
 
 # Create two rows using columns
 upper_row = st.columns(3)  # Upper row with 3 buttons
