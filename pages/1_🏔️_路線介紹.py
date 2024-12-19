@@ -15,7 +15,7 @@ logo = "https://chinchillaz.github.io/streamlit-hw/logo_sun-removebg-preview.png
 st.sidebar.image(logo)
 
 
-st.title("路線介紹")
+st.title("路線介紹🎅")
 
 col1, col2 = st.columns([4, 1])
 options = list(leafmap.basemaps.keys())
