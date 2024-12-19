@@ -78,4 +78,4 @@ st.pydeck_chart(
     )
 )
 
-m.to_streamlit(height=700)
+
