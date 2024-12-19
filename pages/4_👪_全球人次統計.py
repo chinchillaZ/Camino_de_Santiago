@@ -64,7 +64,7 @@ def show_map():
                     radius=1000,  # Size of the hexagons, adjust based on data density
                     elevation_scale=4,
                     elevation_range=[0, 1000],
-                    get_elevation="Number",  # Use the 'Number' column for height
+                    #get_elevation="Number",  # Use the 'Number' column for height
                     #get_fill_color="[0, 0, 255, 255]",  # Color for the hexagons (blue)
                     get_color="[200, 30, 0, 160]",
                     pickable=True,
