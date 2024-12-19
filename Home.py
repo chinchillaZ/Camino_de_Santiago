@@ -1,6 +1,6 @@
 import streamlit as st
-#import leafmap.foliumap as leafmap
-import leafmap
+import leafmap.foliumap as leafmap
+#import leafmap
 import matplotlib.pyplot as plt
 import folium
 import random
@@ -41,14 +41,14 @@ m.add_geojson(country_url, layer_name="Country", style=style)
 # Add GeoJSON line to the map
 geojson_url = "https://chinchillaz.github.io/streamlit-hw/all_Camino_route.geojson"
 style = {"color": "navy", "weight": 3, "opacity": 0.8}
-# m.add_geojson(geojson_url, layer_name="Camino de Santiago Route", style=style)
-def random_color(feature):
-    return {
-        "color": random.choice(["blue", "purple", "brown", "pink"]),
-         "weight": 2,
-    }
+m.add_geojson(geojson_url, layer_name="Camino de Santiago Route", style=style)
+# def random_color(feature):
+#     return {
+#         "color": random.choice(["blue", "purple", "brown", "pink"]),
+#          "weight": 2,
+#     }
 
-m.add_geojson(geojson_url, layer_name="Camino de Santiago Route", style_callback=random_color)
+# m.add_geojson(geojson_url, layer_name="Camino de Santiago Route", style_callback=random_color)
 
 # Get the colors from the 'Paired' colormap
 # Get the colors from the 'Paired' colormap
