@@ -20,7 +20,6 @@ st.sidebar.image(logo)
 st.title("全球人次統計 👪")
 
 
-    
 def show_map():
     # Load the GeoJSON data
     data = "https://chinchillaz.github.io/streamlit-hw/Camino/1_Frances_travelers.geojson"
@@ -32,9 +31,6 @@ def show_map():
     # Extract the X (longitude) and Y (latitude) coordinates
     chart_data['X'] = chart_data['geometry'].apply(lambda x: x.coords[0][0])  # Longitude
     chart_data['Y'] = chart_data['geometry'].apply(lambda x: x.coords[0][1])  # Latitude
-
-    # Check the first few rows of the chart_data to make sure everything is correct
-    print(chart_data[['X', 'Y', 'Number']].head())
 
     # Render the map using Pydeck
     deck = pdk.Deck(
@@ -60,10 +56,9 @@ def show_map():
             ),
         ],
     )
-    
-    deck.show()
 
-
+    # Display the map in Streamlit using `st.pydeck_chart`
+    st.pydeck_chart(deck)
 
 # Create two rows using columns
 upper_row = st.columns(3)  # Upper row with 3 buttons
