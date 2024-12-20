@@ -22,7 +22,7 @@ markdown = """
 源自西班牙西北部的加利西亞（Galicia）地區，加利西亞有著悠久的海鮮捕撈歷史，尤其是章魚，這使得章魚成為當地餐桌上的重要食材之一。這道菜的主要特色是將章魚腳和馬鈴薯結合，經過燒烤和香料調味，口感鮮嫩且極具層次感，通常作為前菜或共享菜品來享用，搭配著一杯清爽的白葡萄酒。
 """
 st.markdown(markdown)
-image_url = "https://github.com/liqi6/caminotest/blob/main/%E7%BE%8E%E9%A3%9F%E7%85%A7%E7%89%87/%E7%82%AD%E7%83%A4%E9%A6%99%E6%96%99%E9%A6%AC%E9%88%B4%E8%96%AF%E7%AB%A0%E9%AD%9A%E8%85%B3.jpeg?raw=true"
+image_url = "https://chinchillaz.github.io/streamlit-hw/Camino/food/1_F.jpeg"
 st.image(image_url, caption="Pulpo a la Gallega", use_container_width=True)
 
 # Second Dish: Paella de Marisco
@@ -118,7 +118,7 @@ markdown = """
 Pastéis de nata 起源於葡萄牙的貝倫（Belém），這裡有著著名的貝倫蛋塔（Pastéis de Belém），被認為是葡萄牙最經典的版本。據說，這道甜點的起源可以追溯到18世紀的修道院，當時修道士使用剩餘的蛋黃和糖漿來製作這道甜點。隨著時間的推移，這款甜點逐漸流行開來，並在葡萄牙各地及全世界廣泛傳播。
 """
 st.markdown(markdown)
-image_url = "https://github.com/liqi6/caminotest/blob/main/%E7%BE%8E%E9%A3%9F%E7%85%A7%E7%89%87/%E8%91%A1%E5%BC%8F%E8%9B%8B%E6%92%BB.jpg?raw=true"
+image_url = "https://chinchillaz.github.io/streamlit-hw/Camino/food/12_F.jpg"
 st.image(image_url, caption="Pastéis de nata", use_container_width=True)
 
 
