@@ -33,6 +33,9 @@ markdown = """
 
 ---
 
+<span style="color: grey;">最近更新日期: 2024/12/30 晚上10:00</span>
+
+---
 
 """
 
