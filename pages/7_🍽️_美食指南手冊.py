@@ -14,6 +14,43 @@ st.markdown(
 你，準備好踏上這段飽含美食與文化的朝聖之路了嗎？
     """
 )
+
+# List of image URLs
+image_urls = [
+    "https://chinchillaz.github.io/streamlit-hw/Camino/food/1_F.jpeg",
+    "https://chinchillaz.github.io/streamlit-hw/Camino/food/2_Paella.png",
+    "https://chinchillaz.github.io/streamlit-hw/Camino/food/3_.jpg",
+    "https://chinchillaz.github.io/streamlit-hw/Camino/food/4_.png",
+    "https://chinchillaz.github.io/streamlit-hw/Camino/food/5_F.jpg",
+    "https://chinchillaz.github.io/streamlit-hw/Camino/food/6_.jpg",
+    "https://chinchillaz.github.io/streamlit-hw/Camino/food/7_F.png",
+    "https://chinchillaz.github.io/streamlit-hw/Camino/food/8_F.jpg",
+    "https://chinchillaz.github.io/streamlit-hw/Camino/food/9_.png",
+    "https://chinchillaz.github.io/streamlit-hw/Camino/food/12_F.jpg",
+    "https://chinchillaz.github.io/streamlit-hw/Camino/food/22_F.jpg",
+    "https://chinchillaz.github.io/streamlit-hw/Camino/food/3_F.jpg",
+    "https://chinchillaz.github.io/streamlit-hw/Camino/food/4_F.png",
+    "https://chinchillaz.github.io/streamlit-hw/Camino/food/52_F.jpeg",
+]
+
+# Generate rows of images
+cols = 3  # Number of columns
+rows = (len(image_urls) + cols - 1) // cols  # Calculate number of rows
+
+for i in range(rows):
+    # Create a row of columns
+    columns = st.columns(cols)
+    for j in range(cols):
+        index = i * cols + j
+        if index < len(image_urls):
+            # Display the image in the respective column
+            with columns[j]:
+                st.image(image_urls[index], use_container_width=True)
+
+
+
+
+
 st.title("西班牙")
 
 # First Dish: Pulpo a la Gallega
