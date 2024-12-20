@@ -56,7 +56,7 @@ edited_df = st.data_editor(
     hide_index=True,  # Hide the index if you want
 )
 
-st.markdown("#### 🎇我有興趣的景點🎇")
+
 
 # Add a "確認" button that will display the selected attractions when clicked
 if st.button('確認'):
@@ -67,7 +67,8 @@ if st.button('確認'):
     # Display the selected attractions in orange, each on a new line
     if selected_attractions:
         attractions_text = "<br>".join([f'<span style="color:orange;">{attraction}</span>' for attraction in selected_attractions])
-        st.markdown(f'我想要去的景點有:<br>{attractions_text}', unsafe_allow_html=True)
+        st.markdown("#### 🎇我有興趣的景點🎇")
+        st.markdown(f'<br>{attractions_text}', unsafe_allow_html=True)
     else:
         st.markdown('<span style="color:orange;">還沒有選擇任何景點</span>', unsafe_allow_html=True)
 
