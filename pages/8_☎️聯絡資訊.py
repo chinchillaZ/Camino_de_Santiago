@@ -26,7 +26,6 @@ markdown = """
 - Rich: [s1143012@gm.ncue.edu.tw](mailto:s1143012@gm.ncue.edu.tw)  
 
 
----
 🌍 **Resources**  
 - Streamlit Map Template: [GitHub Repository](https://github.com/opengeos/streamlit-map-template)
 - Camino Official Website: [website](https://www.caminodesantiago.gal/en/inicio)
@@ -35,7 +34,7 @@ markdown = """
 
 <span style="color: grey;">最近更新日期: 2024/12/30 晚上10:00</span>
 
----
+
 
 """
 
