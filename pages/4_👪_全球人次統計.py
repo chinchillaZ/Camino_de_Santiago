@@ -57,7 +57,7 @@ def show_map(csv_url, color):
     chart_data = pd.read_csv(csv_url)
     chart_data = chart_data[chart_data["year"] == 2024]
 
-     # Load the GeoJSON data from the URL
+   # Load the GeoJSON data from the URL
     geojson_url = "https://chinchillaz.github.io/streamlit-hw/all_Camino_route.geojson"
     geojson_data = requests.get(geojson_url).json()
 
@@ -69,6 +69,7 @@ def show_map(csv_url, color):
             if feature["properties"].get("route") == route_name
         ]
     }
+
 
 
     st.pydeck_chart(
