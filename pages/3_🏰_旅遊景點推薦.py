@@ -16,7 +16,7 @@ logo = "https://chinchillaz.github.io/streamlit-hw/logo_sun-removebg-preview.png
 st.sidebar.image(logo)
 
 
-st.title("景點推薦 🏰")
+st.title("旅遊景點推薦 🏰")
 
 # Initialize the map with center coordinates and zoom level
 m = leafmap.Map(center=[42.5, -4.0], zoom=7, minimap_control=True)
@@ -67,7 +67,7 @@ selected_attractions = edited_df[edited_df['I wanna go!!!!!!!'] == True]['Attrac
 
 # Display the text below the table with orange color
 if selected_attractions:
-    st.markdown(f'<span style="color:orange;">我想要去的景點有: {", ".join(selected_attractions)}</span>', unsafe_allow_html=True)
+    st.markdown(f'我想要去的景點有: <span style="color:orange;"> {", ".join(selected_attractions)}</span><br>', unsafe_allow_html=True)
 else:
     st.markdown('<span style="color:orange;">還沒有選擇任何景點</span>', unsafe_allow_html=True)
 
