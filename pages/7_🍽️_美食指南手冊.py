@@ -53,13 +53,47 @@ names = [
     "炸鱈魚球",
 ]
 
+
 cols = 5  # 5 columns
 rows = 3  # 3 rows
 max_images = cols * rows  # Display up to 15 images
 
-# Truncate the lists to fit the table
+# # Truncate the lists to fit the table
+# image_urls = image_urls[:max_images]
+# names = names[:max_images]
+
+# for i in range(rows):
+#     # Create a row of 5 columns
+#     columns = st.columns(cols)
+#     for j in range(cols):
+#         index = i * cols + j
+#         if index < len(image_urls):
+#             with columns[j]:
+#                 # Display the image
+#                 st.image(image_urls[index], use_container_width=True)
+#                 # Add the name below the image
+#                 st.caption(names[index])
+#         else:
+#             # If no image for the column, add the "吃吃吃" text
+#             with columns[j]:
+#                 st.markdown("<h2 style='text-align: center;'>Yummy~~<br>🧑‍🍳🥘✨</h2>", unsafe_allow_html=True)
+
+
 image_urls = image_urls[:max_images]
 names = names[:max_images]
+
+# Function to get the size of the second image
+def get_image_size(url):
+    response = requests.get(url)
+    img = Image.open(BytesIO(response.content))
+    return img.size  # Returns a tuple (width, height)
+
+# Get the dimensions of image 2 (if available)
+if len(image_urls) > 1:
+    image_2_size = get_image_size(image_urls[1])  # Get the size of the second image
+    image_width, image_height = image_2_size  # Unpack the width and height
+else:
+    image_width, image_height = 300, 300  # Default size if image 2 is not available
 
 for i in range(rows):
     # Create a row of 5 columns
@@ -68,16 +102,14 @@ for i in range(rows):
         index = i * cols + j
         if index < len(image_urls):
             with columns[j]:
-                # Display the image
-                st.image(image_urls[index], use_container_width=True)
+                # Display the image with the same width and height as image 2
+                st.image(image_urls[index], use_container_width=True, width=image_width, height=image_height)
                 # Add the name below the image
                 st.caption(names[index])
         else:
             # If no image for the column, add the "吃吃吃" text
             with columns[j]:
                 st.markdown("<h2 style='text-align: center;'>Yummy~~<br>🧑‍🍳🥘✨</h2>", unsafe_allow_html=True)
-
-
 
 
 
