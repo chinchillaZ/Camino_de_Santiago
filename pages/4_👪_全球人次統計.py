@@ -27,45 +27,7 @@ markdown = """
 """
 
 st.markdown(markdown, unsafe_allow_html=True)
-# def show_map():
-#     # Load the GeoJSON data
-#     data = "https://chinchillaz.github.io/streamlit-hw/Camino/1_Frances_travelers.geojson"
-#     chart_data = gpd.read_file(data)
 
-#     # Filter data for the year 2024
-#     chart_data = chart_data[chart_data["year"] == 2024]
-    
-#     # Extract the X (longitude) and Y (latitude) coordinates
-#     chart_data['X'] = chart_data['geometry'].apply(lambda x: x.coords[0][0])  # Longitude
-#     chart_data['Y'] = chart_data['geometry'].apply(lambda x: x.coords[0][1])  # Latitude
-
-#     # Render the map using Pydeck
-#     deck = pdk.Deck(
-#         map_style=None,
-#         initial_view_state=pdk.ViewState(
-#             latitude=20,  # Centering the map on the general location
-#             longitude=0,  # Adjust based on your map area
-#             zoom=1,       # Adjust zoom to fit the global map
-#             pitch=50,     # Angle for 3D effect
-#         ),
-#         layers=[
-#             pdk.Layer(
-#                 "HexagonLayer",
-#                 data=chart_data,
-#                 get_position=["X", "Y"],  # Corrected syntax for accessing the columns
-#                 radius=1000,  # Size of the hexagons, adjust based on data density
-#                 elevation_scale=4,
-#                 elevation_range=[0, 1000],
-#                 get_elevation="Number",  # Use the 'Number' column for height (this adds 3D bars)
-#                 get_fill_color="[0, 0, 255, 255]",  # Color for the hexagons (blue)
-#                 pickable=True,
-#                 extruded=True,  # This makes the bars 3D
-#             ),
-#         ],
-#     )
-
-#     # Display the map in Streamlit using `st.pydeck_chart`
-#     st.pydeck_chart(deck)
 def show_map():
     # Generate some random chart data (latitude and longitude)
     chart_data = pd.DataFrame(
@@ -123,9 +85,9 @@ def show_map2():
                     "ColumnLayer",
                     data=chart_data,
                     get_position="[Y, X]",  # Note: Longitude is X, Latitude is Y
-                    get_elevation="Number / 100",  # Set the elevation (height of the column) proportional to 'Number'
+                    get_elevation="Number / 10",  # Set the elevation (height of the column) proportional to 'Number'
                     elevation_scale=1000,  # Scale factor for elevation
-                    get_fill_color="[200, 30, 0, 160]",  # Color of the columns
+                    get_fill_color="[200, 30, 0, 200]",  # Color of the columns
                     radius=50000,  # Radius of the columns
                     pickable=True,
                 )
