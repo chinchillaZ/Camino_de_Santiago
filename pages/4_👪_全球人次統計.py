@@ -90,16 +90,47 @@ if lower_row[3].button("世界盡頭之路", use_container_width=True):
 
 st.markdown("#### 全部路線 遊客遊客數量統計 🔍")
 # URL for JSON data
+# json_url = "https://chinchillaz.github.io/streamlit-hw/Camino/all_travelers.json"
+# response = requests.get(json_url)
+# json_data = response.json()
+
+# labels = json_data["pie_chart"]["labels"]
+# sizes = json_data["pie_chart"]["sizes"]
+# # Pie chart using Plotly
+# fig = px.pie(values=sizes, names=labels, title="Pie Chart from JSON Data")
+# st.plotly_chart(fig)
+
+# URL for JSON data
 json_url = "https://chinchillaz.github.io/streamlit-hw/Camino/all_travelers.json"
+
+# Load JSON data from URL
 response = requests.get(json_url)
-json_data = response.json()
+if response.status_code == 200:
+    try:
+        json_data = response.json()
+    except ValueError as e:
+        st.error(f"Failed to parse JSON data: {e}")
+        st.stop()
+else:
+    st.error(f"Failed to load JSON data. Status code: {response.status_code}")
+    st.stop()
 
-labels = json_data["pie_chart"]["labels"]
-sizes = json_data["pie_chart"]["sizes"]
+# Convert JSON data to a pandas DataFrame
+try:
+    df = pd.DataFrame({
+        "labels": json_data["pie_chart"]["labels"],
+        "sizes": json_data["pie_chart"]["sizes"]
+    })
+except KeyError as e:
+    st.error(f"Key error while processing JSON: {e}")
+    st.stop()
+
+# Streamlit app
+st.title("Pie Chart from JSON Data")
+
 # Pie chart using Plotly
-fig = px.pie(values=sizes, names=labels, title="Pie Chart from JSON Data")
+fig = px.pie(df, values="sizes", names="labels", title="Pie Chart from JSON Data")
 st.plotly_chart(fig)
-
 
 
 
