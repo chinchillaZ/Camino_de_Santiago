@@ -51,13 +51,73 @@ data_urls_dict = {
 }
 
 
-def show_map(csv_url, color):
+# def show_map(csv_url, color):
 
+#     # Read the CSV file
+#     chart_data = pd.read_csv(csv_url)
+#     chart_data = chart_data[chart_data["year"] == 2024]
+
+#    # Load the GeoJSON data from the URL
+#     geojson_url = "https://chinchillaz.github.io/streamlit-hw/all_Camino_route.geojson"
+#     geojson_data = requests.get(geojson_url).json()
+
+#     # Filter the GeoJSON features based on the route_name
+#     filtered_geojson = {
+#         "type": "FeatureCollection",
+#         "features": [
+#             feature for feature in geojson_data["features"]
+#             if feature["properties"].get("route") == route_name
+#         ]
+#     }
+
+
+
+#     st.pydeck_chart(
+#         pdk.Deck(
+#             map_style="mapbox://styles/mapbox/light-v10",
+#             initial_view_state=pdk.ViewState(
+#                 latitude=40.0,  # Center near Spain for better view
+#                 longitude=0.0,
+#                 zoom=1,
+#                 pitch=45,
+#             ),
+#             layers=[
+#                 pdk.Layer(
+#                     "ColumnLayer",
+#                     data=chart_data,
+#                     get_position="[Y, X]",  # Note: Longitude is X, Latitude is Y
+#                     get_elevation="Number / 10",  # Set the elevation (height of the column) proportional to 'Number'
+#                     elevation_scale=800,  # Scale factor for elevation 誇張程度
+#                     get_fill_color=f"[{color[0]}, {color[1]}, {color[2]}, 210]",  # Color of the columns RGBA
+#                     radius=80000,  # Radius of the columns
+#                     pickable=True,
+#                 ),
+#                 pdk.Layer(
+#                     "GeoJsonLayer",  # Add GeoJSON layer
+#                     filtered_geojson,  # Use the filtered GeoJSON
+#                     get_fill_color=[255, 0, 0, 255],  # Color for the route line (red)
+#                     get_line_color=[255, 0, 0],  # Line color for the route (red)
+#                     line_width=4,  # Line width for the route
+#                     pickable=True,
+#                 )
+#             ],
+#         )
+#     )
+#     # Show the table of chart_data
+#     st.table(chart_data)  # Display the chart data as a table
+
+import pandas as pd
+import pydeck as pdk
+import streamlit as st
+import requests
+
+# Function to show the map
+def show_map(csv_url, color, route_name):
     # Read the CSV file
     chart_data = pd.read_csv(csv_url)
     chart_data = chart_data[chart_data["year"] == 2024]
-
-   # Load the GeoJSON data from the URL
+    
+    # Load the GeoJSON data from the URL
     geojson_url = "https://chinchillaz.github.io/streamlit-hw/all_Camino_route.geojson"
     geojson_data = requests.get(geojson_url).json()
 
@@ -70,11 +130,10 @@ def show_map(csv_url, color):
         ]
     }
 
-
-
+    # Create the map using pydeck
     st.pydeck_chart(
         pdk.Deck(
-            map_style="mapbox://styles/mapbox/light-v10",
+            map_style="mapbox://styles/mapbox/light-v10",  # Map style
             initial_view_state=pdk.ViewState(
                 latitude=40.0,  # Center near Spain for better view
                 longitude=0.0,
@@ -85,12 +144,12 @@ def show_map(csv_url, color):
                 pdk.Layer(
                     "ColumnLayer",
                     data=chart_data,
-                    get_position="[Y, X]",  # Note: Longitude is X, Latitude is Y
-                    get_elevation="Number / 10",  # Set the elevation (height of the column) proportional to 'Number'
-                    elevation_scale=800,  # Scale factor for elevation 誇張程度
+                    get_position="[Y, X]",  # Longitude is X, Latitude is Y
+                    get_elevation="Number / 10",  # Set the elevation proportional to 'Number'
+                    elevation_scale=800,  # Scale factor for elevation
                     get_fill_color=f"[{color[0]}, {color[1]}, {color[2]}, 210]",  # Color of the columns RGBA
                     radius=80000,  # Radius of the columns
-                    pickable=True,
+                    pickable=True,  # Allow clicking on columns
                 ),
                 pdk.Layer(
                     "GeoJsonLayer",  # Add GeoJSON layer
@@ -103,8 +162,9 @@ def show_map(csv_url, color):
             ],
         )
     )
-    # Show the table of chart_data
     st.table(chart_data)  # Display the chart data as a table
+
+
 
 
 # Create two rows using columns
