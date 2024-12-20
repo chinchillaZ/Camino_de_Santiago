@@ -124,7 +124,7 @@ def show_map2():
                     data=chart_data,
                     get_position="[Y, X]",  # Note: Longitude is X, Latitude is Y
                     get_elevation="Number / 100",  # Set the elevation (height of the column) proportional to 'Number'
-                    elevation_scale=100,  # Scale factor for elevation
+                    elevation_scale=1000,  # Scale factor for elevation
                     get_fill_color="[200, 30, 0, 160]",  # Color of the columns
                     radius=50000,  # Radius of the columns
                     pickable=True,
