@@ -20,7 +20,7 @@ markdown = """
 
 ---
 
-📧 **聯絡我們：**  
+📧 **Email：**  
 - Chinchilla: [zhongchinchilla0529@gmail.com](mailto:zhongchinchilla0529@gmail.com)  
 - Magi: [magi23570902@gmail.com](mailto:magi23570902@gmail.com)  
 - Rich: [s1143012@gm.ncue.edu.tw](mailto:s1143012@gm.ncue.edu.tw)  
