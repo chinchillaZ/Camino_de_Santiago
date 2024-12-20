@@ -5,6 +5,7 @@ import pandas as pd
 import numpy as np
 import geopandas as gpd
 import plotly.express as px
+import requests
 
 st.set_page_config(layout="wide")
 
@@ -90,6 +91,7 @@ if lower_row[3].button("世界盡頭之路", use_container_width=True):
 st.markdown("#### 全部路線 遊客遊客數量統計 🔍")
 # URL for JSON data
 json_url = "https://chinchillaz.github.io/streamlit-hw/Camino/all_travelers.json"
+json_data = response.json()
 labels = json_data["pie_chart"]["labels"]
 sizes = json_data["pie_chart"]["sizes"]
 # Pie chart using Plotly
