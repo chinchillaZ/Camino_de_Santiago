@@ -125,7 +125,7 @@ def show_map(csv_url, color, route_name):
         ]
     }
     
-    m.add_geojson(geojson_url
+    m.add_geojson(geojson_url)
     # Create the map using pydeck
     st.pydeck_chart(
         pdk.Deck(
