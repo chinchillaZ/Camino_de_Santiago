@@ -29,8 +29,6 @@ markdown = """
 st.markdown(markdown, unsafe_allow_html=True)
 
 def show_map():
-    # Generate some random chart data (latitude and longitude)
-    csv_url = "https://raw.githubusercontent.com/chinchillaZ/streamlit-hw/main/Camino/1_Frances_travelers.csv"
 
     # Read the CSV file
     chart_data = pd.read_csv(csv_url)
@@ -54,8 +52,8 @@ def show_map():
                     data=chart_data,
                     get_position="[Y, X]",  # Note: Longitude is X, Latitude is Y
                     get_elevation="Number / 10",  # Set the elevation (height of the column) proportional to 'Number'
-                    elevation_scale=500,  # Scale factor for elevation
-                    get_fill_color="[200, 30, 0, 200]",  # Color of the columns
+                    elevation_scale=500,  # Scale factor for elevation 誇張程度
+                    get_fill_color="[200, 30, 0, 200]",  # Color of the columns RGBA
                     radius=80000,  # Radius of the columns
                     pickable=True,
                 )
@@ -74,10 +72,11 @@ lower_row = st.columns(4)  # Lower row with 4 buttons
 
 # Upper row buttons
 if upper_row[0].button("法國之路", use_container_width=True):
-    show_map()
+    data_url = "https://raw.githubusercontent.com/chinchillaZ/streamlit-hw/main/Camino/1_Frances_travelers.csv"
+    show_map(data_url)
     
 if upper_row[1].button("葡萄牙之路", use_container_width=True):
-    show_map()
+    show_map(data_url)
 if upper_row[2].button("北方之路", use_container_width=True):
     upper_row[2].markdown("You clicked 北方之路")
 
