@@ -139,8 +139,13 @@ sizes = json_data["pie_chart"]["sizes"]
 
 # Streamlit app
 
-# Pie chart using Plotly
-fig = px.pie(values=sizes, names=labels, color_discrete_sequence=px.colors.sequential.Prism)
+fig = px.pie(
+    values=sizes,
+    names=labels,
+    color_discrete_sequence=px.colors.sequential.Prism,
+    title="Traveler Distribution by Country",
+)
+
 st.plotly_chart(fig)
 
 
