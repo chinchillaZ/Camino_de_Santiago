@@ -143,7 +143,7 @@ sizes = json_data["pie_chart"]["sizes"]
 fig = px.pie(
     values=sizes,
     names=labels,
-    color_discrete_sequence=px.colors.qualitative.Paired,  # Use the 'Paired' color sequence
+    #color_discrete_sequence=px.colors.qualitative.Paired,  # Use the 'Paired' color sequence
     title="Traveler Distribution by Country",
 )
 
