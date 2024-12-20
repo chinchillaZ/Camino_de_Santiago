@@ -27,6 +27,7 @@ markdown = """
     以下統理2024年各國人數數據，繪製成3D柱狀圖:
 """
 
+st.markdown(markdown, unsafe_allow_html=True)
 # def show_map():
 #     # Load the GeoJSON data
 #     data = "https://chinchillaz.github.io/streamlit-hw/Camino/1_Frances_travelers.geojson"
