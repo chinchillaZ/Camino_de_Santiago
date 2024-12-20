@@ -61,7 +61,7 @@ st.markdown(markdown)
 
 # Second Dish: Paella de Marisco
 st.subheader("2. 西班牙海鮮大鍋飯 Paella de Marisco")
-image_url = "https://github.com/liqi6/caminotest/blob/main/%E7%BE%8E%E9%A3%9F%E7%85%A7%E7%89%87/%E8%A5%BF%E7%8F%AD%E7%89%99%E6%B5%B7%E9%AE%AE%E5%A4%A7%E9%8D%8B%E9%A3%AF.jpeg?raw=true"
+image_url = "https://chinchillaz.github.io/streamlit-hw/Camino/food/2_Paella.png"
 st.image(image_url, caption="Paella de Marisco", use_container_width=True)
 
 markdown = """
@@ -71,7 +71,7 @@ st.markdown(markdown)
 
 # Third Dish: Secreto de Cerdo a la Plancha
 st.subheader("3. 秘密西班牙松阪豬 Secreto de Cerdo a la Plancha")
-image_url = "https://github.com/liqi6/caminotest/blob/main/%E7%BE%8E%E9%A3%9F%E7%85%A7%E7%89%87/%E7%A7%98%E5%AF%86%E8%A5%BF%E7%8F%AD%E7%89%99%E6%9D%BE%E9%98%AA%E8%B1%AC.jpeg?raw=true"
+image_url = "https://chinchillaz.github.io/streamlit-hw/Camino/food/3_.jpg"
 st.image(image_url, caption="Secreto de Cerdo a la Plancha", use_container_width=True)
 
 markdown = """
@@ -81,7 +81,7 @@ st.markdown(markdown)
 
 
 st.header("4.西班牙馬鈴薯烘蛋 Tortilla Espanola")
-image_url = "https://github.com/liqi6/caminotest/blob/main/%E7%BE%8E%E9%A3%9F%E7%85%A7%E7%89%87/%E8%A5%BF%E7%8F%AD%E7%89%99%E9%A6%AC%E9%88%B4%E8%96%AF%E7%83%98%E8%9B%8B.jpeg?raw=true"
+image_url = "https://chinchillaz.github.io/streamlit-hw/Camino/food/4_.png"
 st.image(image_url, caption="Tortilla Espanola", use_container_width=True)
 
 markdown = """
@@ -102,7 +102,7 @@ markdown = """
 st.markdown(markdown)
 
 st.header("6.伊比利火腿 Jamon Iberico")
-image_url = "https://github.com/liqi6/caminotest/blob/main/%E7%BE%8E%E9%A3%9F%E7%85%A7%E7%89%87/%E4%BC%8A%E6%AF%94%E5%88%A9%E7%81%AB%E8%85%BF.jpg?raw=true"
+image_url = "https://chinchillaz.github.io/streamlit-hw/Camino/food/6_.jpg"
 st.image(image_url, caption="Jamon Iberico", use_container_width=True)
 
 markdown = """
@@ -133,7 +133,7 @@ Gazpacho 是安達盧西亞的經典料理，起源於西班牙南部的安達�
 st.markdown(markdown)
 
 st.header("9.巧克力吉拿棒 Churros con Chocolate")
-image_url = "https://github.com/liqi6/caminotest/blob/main/%E7%BE%8E%E9%A3%9F%E7%85%A7%E7%89%87/%E5%B7%A7%E5%85%8B%E5%8A%9B%E5%90%89%E6%8B%BF%E6%A3%92.jpeg?raw=true"
+image_url = "https://chinchillaz.github.io/streamlit-hw/Camino/food/9_.png"
 st.image(image_url, caption="Churros con Chocolate", use_container_width=True)
 
 markdown = """
