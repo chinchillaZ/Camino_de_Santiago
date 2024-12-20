@@ -108,6 +108,7 @@ def show_map2():
 
     # Create a pydeck map with two layers: HexagonLayer and ScatterplotLayer
       # Create a pydeck map with ScatterplotLayer
+  # Create a pydeck map with a ColumnLayer for 3D bars
     st.pydeck_chart(
         pdk.Deck(
             map_style="mapbox://styles/mapbox/light-v10",
@@ -119,11 +120,13 @@ def show_map2():
             ),
             layers=[
                 pdk.Layer(
-                    "ScatterplotLayer",
+                    "ColumnLayer",
                     data=chart_data,
                     get_position="[Y, X]",  # Note: Longitude is X, Latitude is Y
-                    get_radius="Number / 200",  # Radius proportional to Number
-                    get_fill_color="[200, 30, 0, 160]",  # Red color with transparency
+                    get_elevation="Number / 100",  # Set the elevation (height of the column) proportional to 'Number'
+                    elevation_scale=100,  # Scale factor for elevation
+                    get_fill_color="[200, 30, 0, 160]",  # Color of the columns
+                    radius=50000,  # Radius of the columns
                     pickable=True,
                 )
             ],
