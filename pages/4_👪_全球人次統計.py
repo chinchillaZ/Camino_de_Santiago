@@ -138,10 +138,9 @@ labels = json_data["pie_chart"]["labels"]
 sizes = json_data["pie_chart"]["sizes"]
 
 # Streamlit app
-st.title("Pie Chart from JSON Data")
 
 # Pie chart using Plotly
-fig = px.pie(values=sizes, names=labels, title="Pie Chart from JSON Data")
+fig = px.pie(values=sizes, names=labels, color_discrete_sequence=px.colors.sequential.Prism)
 st.plotly_chart(fig)
 
 
