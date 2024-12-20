@@ -39,6 +39,17 @@ color_map = {
         "default": [0, 0, 0],                   # Default color if route not found
     }
 
+data_urls_dict = {
+    "Camino_Frances": "https://raw.githubusercontent.com/chinchillaZ/streamlit-hw/main/Camino/1_Frances_travelers.csv",
+    "Camino_Ingles": "https://raw.githubusercontent.com/chinchillaZ/streamlit-hw/main/Camino/6_Ingles_travelers.csv",
+    "Camino_Portugues_central": "https://raw.githubusercontent.com/chinchillaZ/streamlit-hw/main/Camino/2_Portugues_travelers.csv",
+    "Camino_Primitivo": "https://raw.githubusercontent.com/chinchillaZ/streamlit-hw/main/Camino/4_Primitivo_travelers.csv",
+    "Camino_del_Norte": "https://raw.githubusercontent.com/chinchillaZ/streamlit-hw/main/Camino/3_Norte_travelers.csv",
+    "Portugues_Coastal": "https://raw.githubusercontent.com/chinchillaZ/streamlit-hw/main/Camino/7_Muxia_travelers.csv",
+    "Via_de_la_Plata": "https://raw.githubusercontent.com/chinchillaZ/streamlit-hw/main/Camino/5_Plata_travelers.csv",
+    "default": ""  # Default key if route is not found
+}
+
 
 def show_map(csv_url, color):
 
@@ -79,39 +90,49 @@ upper_row = st.columns(3)  # Upper row with 3 buttons
 lower_row = st.columns(4)  # Lower row with 4 buttons
 
 # Upper row buttons
+# Upper row buttons
 if upper_row[0].button("法國之路", use_container_width=True):
-    data_url = "https://raw.githubusercontent.com/chinchillaZ/streamlit-hw/main/Camino/1_Frances_travelers.csv"
     route_name = "Camino_Frances"
+    data_url = data_urls_dict.get(route_name, data_urls_dict["default"])
     color = color_map.get(route_name, color_map["default"])
     show_map(data_url, color)
     
 if upper_row[1].button("葡萄牙之路", use_container_width=True):
-    data_url = "https://raw.githubusercontent.com/chinchillaZ/streamlit-hw/main/Camino/2_Portugues_travelers.csv"
     route_name = "Camino_Portugues_central"
+    data_url = data_urls_dict.get(route_name, data_urls_dict["default"])
     color = color_map.get(route_name, color_map["default"])
     show_map(data_url, color)
 
-
 if upper_row[2].button("北方之路", use_container_width=True):
-    upper_row[2].markdown("You clicked 北方之路")
+    route_name = "Camino_del_Norte"
+    data_url = data_urls_dict.get(route_name, data_urls_dict["default"])
+    color = color_map.get(route_name, color_map["default"])
+    show_map(data_url, color)
 
 # Lower row buttons
 if lower_row[0].button("原始之路", use_container_width=True):
-    lower_row[0].markdown("You clicked 原始之路")
+    route_name = "Camino_Primitivo"
+    data_url = data_urls_dict.get(route_name, data_urls_dict["default"])
+    color = color_map.get(route_name, color_map["default"])
+    show_map(data_url, color)
+    
 if lower_row[1].button("銀之路", use_container_width=True):
-    lower_row[1].markdown("You clicked 銀之路")
+    route_name = "Via_de_la_Plata"
+    data_url = data_urls_dict.get(route_name, data_urls_dict["default"])
+    color = color_map.get(route_name, color_map["default"])
+    show_map(data_url, color)
+    
 if lower_row[2].button("英國之路", use_container_width=True):
-    lower_row[2].markdown("You clicked 英國之路")
+    route_name = "Camino_Ingles"
+    data_url = data_urls_dict.get(route_name, data_urls_dict["default"])
+    color = color_map.get(route_name, color_map["default"])
+    show_map(data_url, color)
+    
 if lower_row[3].button("世界盡頭之路", use_container_width=True):
-    lower_row[3].markdown("You clicked 世界盡頭之路")
-
-
-
-
-
-
-
-
+    route_name = "Portugues_Coastal"
+    data_url = data_urls_dict.get(route_name, data_urls_dict["default"])
+    color = color_map.get(route_name, color_map["default"])
+    show_map(data_url, color)
 
 
 
