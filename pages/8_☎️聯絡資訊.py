@@ -28,8 +28,7 @@ markdown = """
 
 ---
 🌍 **Streamlit Map Template**  
-Access resources at the following link:  
-[GitHub Repository](https://github.com/opengeos/streamlit-map-template)
+- Access resources at the following link: [GitHub Repository](https://github.com/opengeos/streamlit-map-template)
 
 ---
 
