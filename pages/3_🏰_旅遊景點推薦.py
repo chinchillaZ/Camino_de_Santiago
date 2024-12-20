@@ -15,6 +15,7 @@ st.sidebar.info(markdown)
 logo = "https://chinchillaz.github.io/streamlit-hw/logo_sun-removebg-preview.png"
 st.sidebar.image(logo)
 
+
 st.title("景點推薦 🏰")
 
 # Initialize the map with center coordinates and zoom level
@@ -36,7 +37,7 @@ m.to_streamlit(height=700)
 
 
 
-
+st.markdown("<br><br><br>", unsafe_allow_html=True)  # Adds three line breaks
 st.markdown("#### 🎇推薦景點清點🎇")
 df = pd.read_csv(data)
 df['I wanna go!!!!!!!'] = False
