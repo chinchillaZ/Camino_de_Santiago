@@ -130,7 +130,7 @@ Frango Assado 是葡萄牙的一道經典家庭料理，幾乎每個家庭都有
 很多餐廳會提供搭配傳統葡萄牙飲品，如葡萄酒或啤酒。葡萄牙烤雞也在一些殖民地，如安哥拉和莫桑比克，甚至是巴西等地有著深遠的影響，當地的居民也深受其啟發，並發展出各自不同的烤雞風味。
 """
 st.markdown(markdown)
-image_url = "https://github.com/liqi6/caminotest/blob/main/%E7%BE%8E%E9%A3%9F%E7%85%A7%E7%89%87/%E8%91%A1%E5%BC%8F%E7%83%A4%E9%9B%9E.jpg?raw=true"
+image_url = "https://chinchillaz.github.io/streamlit-hw/Camino/food/22_F.jpg"
 st.image(image_url, caption="Frango assado", use_container_width=True)
 
 
@@ -163,7 +163,7 @@ markdown = """
 這道小吃由鹹鱈魚（Bacalhau）為主要食材，搭配土豆、洋蔥、香菜等調味料，製成小圓球狀後進行油炸。炸至金黃酥脆的鱈魚球，外脆內嫩，鮮美可口，特別適合作為開胃小吃。
 """
 st.markdown(markdown)
-image_url = "https://chinchillaz.github.io/streamlit-hw/Camino/food/52_F.jpg"
+image_url = "https://chinchillaz.github.io/streamlit-hw/Camino/food/52_F.jpeg"
 st.image(image_url, caption="Bolinhos de Bacalhau", use_container_width=True)
 
 
