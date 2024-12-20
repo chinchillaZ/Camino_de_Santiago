@@ -107,26 +107,25 @@ def show_map2():
     chart_data = chart_data[chart_data["year"] == 2024]
 
     # Create a pydeck map with two layers: HexagonLayer and ScatterplotLayer
+      # Create a pydeck map with ScatterplotLayer
     st.pydeck_chart(
         pdk.Deck(
-            map_style=None,
+            map_style="mapbox://styles/mapbox/light-v10",
             initial_view_state=pdk.ViewState(
-                latitude=37.76,
-                longitude=-122.4,
-                zoom=11,
-                pitch=70,
+                latitude=40.0,  # Center near Spain for better view
+                longitude=0.0,
+                zoom=1.5,
+                pitch=45,
             ),
             layers=[
                 pdk.Layer(
-                    "HexagonLayer",
+                    "ScatterplotLayer",
                     data=chart_data,
-                    get_position="[X, Y]",
-                    radius=200,
-                    elevation_scale=4,
-                    elevation_range=[0, 1000],
+                    get_position="[Y, X]",  # Note: Longitude is X, Latitude is Y
+                    get_radius="Number / 200",  # Radius proportional to Number
+                    get_fill_color="[200, 30, 0, 160]",  # Red color with transparency
                     pickable=True,
-                    extruded=True,
-                ),          
+                )
             ],
         )
     )
