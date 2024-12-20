@@ -70,6 +70,10 @@ for i in range(rows):
                 st.image(image_urls[index], use_container_width=True)
                 # Add the name below the image
                 st.caption(names[index])
+        else:
+            # If no image for the column, add the "吃吃吃" text
+            with columns[j]:
+                st.markdown("<h2 style='text-align: center;'>吃吃吃<br>🧑‍🍳🥘✨</h2>", unsafe_allow_html=True)
 
 
 
