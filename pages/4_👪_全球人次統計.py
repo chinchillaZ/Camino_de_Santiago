@@ -53,7 +53,7 @@ def show_map(csv_url, color):
             initial_view_state=pdk.ViewState(
                 latitude=40.0,  # Center near Spain for better view
                 longitude=0.0,
-                zoom=1.5,
+                zoom=1,
                 pitch=45,
             ),
             layers=[
