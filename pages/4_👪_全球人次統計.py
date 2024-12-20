@@ -56,7 +56,7 @@ def show_map():
                     get_elevation="Number / 10",  # Set the elevation (height of the column) proportional to 'Number'
                     elevation_scale=500,  # Scale factor for elevation
                     get_fill_color="[200, 30, 0, 200]",  # Color of the columns
-                    radius=50000,  # Radius of the columns
+                    radius=80000,  # Radius of the columns
                     pickable=True,
                 )
             ],
