@@ -33,12 +33,15 @@ image_urls = [
     "https://chinchillaz.github.io/streamlit-hw/Camino/food/52_F.jpeg",
 ]
 
-# Generate rows of images
-cols = 3  # Number of columns
-rows = (len(image_urls) + cols - 1) // cols  # Calculate number of rows
+cols = 5  # 5 columns
+rows = 3  # 3 rows
+max_images = cols * rows  # Display up to 15 images
+
+# Truncate the list to fit the table
+image_urls = image_urls[:max_images]
 
 for i in range(rows):
-    # Create a row of columns
+    # Create a row of 5 columns
     columns = st.columns(cols)
     for j in range(cols):
         index = i * cols + j
