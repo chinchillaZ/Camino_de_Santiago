@@ -56,17 +56,29 @@ st.data_editor(
     hide_index=True,  # Hide the index if you want
 )
 
+st.markdown("<br><br>", unsafe_allow_html=True)  # Adds three line breaks
+st.markdown("#### 🎇我有興趣的景點🎇")
+# Extract the names of selected attractions from the 'Attractions' column
+selected_attractions = edited_df[edited_df['I wanna go!!!!!!!'] == True]['Attractions'].tolist()
+
+# Display the text below the table with orange color
+if selected_attractions:
+    st.markdown(f'<span style="color:orange;">我想要去的景點有: {", ".join(selected_attractions)}</span>', unsafe_allow_html=True)
+else:
+    st.markdown('<span style="color:orange;">還沒有選擇任何景點</span>', unsafe_allow_html=True)
+
+
 # Add custom HTML to change the checkbox color (if HTML support is allowed in this context)
-st.markdown(
-    """
-    <style>
-        .streamlit-checkbox input[type=checkbox]:checked {
-            background-color: red !important;
-        }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
+# st.markdown(
+#     """
+#     <style>
+#         .streamlit-checkbox input[type=checkbox]:checked {
+#             background-color: red !important;
+#         }
+#     </style>
+#     """,
+#     unsafe_allow_html=True
+# )
 
 
 
