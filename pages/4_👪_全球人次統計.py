@@ -30,38 +30,6 @@ st.markdown(markdown, unsafe_allow_html=True)
 
 def show_map():
     # Generate some random chart data (latitude and longitude)
-    chart_data = pd.DataFrame(
-        np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
-        columns=["lat", "lon"],
-    )
-
-    # Create a pydeck map with two layers: HexagonLayer and ScatterplotLayer
-    st.pydeck_chart(
-        pdk.Deck(
-            map_style=None,
-            initial_view_state=pdk.ViewState(
-                latitude=37.76,
-                longitude=-122.4,
-                zoom=11,
-                pitch=70,
-            ),
-            layers=[
-                pdk.Layer(
-                    "HexagonLayer",
-                    data=chart_data,
-                    get_position="[lon, lat]",
-                    radius=200,
-                    elevation_scale=4,
-                    elevation_range=[0, 1000],
-                    pickable=True,
-                    extruded=True,
-                ),          
-            ],
-        )
-    )
-
-def show_map2():
-    # Generate some random chart data (latitude and longitude)
     csv_url = "https://raw.githubusercontent.com/chinchillaZ/streamlit-hw/main/Camino/1_Frances_travelers.csv"
 
     # Read the CSV file
@@ -86,7 +54,7 @@ def show_map2():
                     data=chart_data,
                     get_position="[Y, X]",  # Note: Longitude is X, Latitude is Y
                     get_elevation="Number / 10",  # Set the elevation (height of the column) proportional to 'Number'
-                    elevation_scale=1000,  # Scale factor for elevation
+                    elevation_scale=500,  # Scale factor for elevation
                     get_fill_color="[200, 30, 0, 200]",  # Color of the columns
                     radius=50000,  # Radius of the columns
                     pickable=True,
@@ -109,7 +77,7 @@ if upper_row[0].button("法國之路", use_container_width=True):
     show_map()
     
 if upper_row[1].button("葡萄牙之路", use_container_width=True):
-    show_map2()
+    show_map()
 if upper_row[2].button("北方之路", use_container_width=True):
     upper_row[2].markdown("You clicked 北方之路")
 
