@@ -54,6 +54,7 @@ for i in range(rows):
 
 
 
+st.markdown("<br><br>", unsafe_allow_html=True)  # Adds three line breaks
 st.title("西班牙")
 
 # First Dish: Pulpo a la Gallega
