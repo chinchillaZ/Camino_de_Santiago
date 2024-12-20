@@ -88,6 +88,8 @@ legend_dict = {
 # Add the legend to the map
 m.add_legend(title="Camino de Santiago Routes", legend_dict=legend_dict)
 
+m.to_streamlit(height=300)
+
 st.markdown(
     """
     [► Camino七大路線介紹⛰️: 這些路線充滿歷史與挑戰，帶你走過美麗的景點與文化的精髓](https://camino.streamlit.app/%E8%B7%AF%E7%B7%9A%E4%BB%8B%E7%B4%B9)  
@@ -96,6 +98,8 @@ st.markdown(
     [► Camino美食指南手冊🍽️: 品味Camino沿途的美味，從地道的小吃到高端餐廳一網打盡！](https://camino.streamlit.app/%E7%BE%8E%E9%A3%9F%E6%8C%87%E5%8D%97%E6%89%8B%E5%86%8A)  
     """
 )
+
+
 
 
 # Title for the page
@@ -145,4 +149,4 @@ st.markdown(
 #     style = {"color": route_colors[i], "weight": 3, "opacity": 0.8}
 #     m.add_geojson(geojson_urls[i], layer_name=f"Camino de Santiago Route {i+1}", style=style)
 
-m.to_streamlit(height=500)
+
