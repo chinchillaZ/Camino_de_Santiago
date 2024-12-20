@@ -88,7 +88,7 @@ legend_dict = {
 # Add the legend to the map
 m.add_legend(title="Camino de Santiago Routes", legend_dict=legend_dict)
 
-m.to_streamlit(height=300)
+m.to_streamlit(height=400)
 
 st.markdown(
     """
