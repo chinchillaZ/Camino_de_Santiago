@@ -63,11 +63,7 @@ edited_df = st.data_editor(
     hide_index=True,  # Hide the index if you want
 )
 
-
-
-st.markdown("#### 🎇我有興趣的景點🎇")
-
-# Add a "確認" button that will display the selected attractions when clicked
+# Add a "確認" button just below the table
 if st.button('確認'):
     # Extract the selected rows where 'I wanna go!!!!!!!' is True
     selected_attractions = edited_df[edited_df['I wanna go!!!!!!!'] == True]
@@ -75,12 +71,15 @@ if st.button('確認'):
     # Check if there are any selected attractions
     if not selected_attractions.empty:
         # Create a formatted list with both the 'id' and 'Attractions' columns
-        attractions_text = "<br>".join([f'<span style="color:orange;">ID: {row["id"]} - {row["Attractions"]}</span>' 
+        attractions_text = "<br>".join([f'<span style="color:orange;"> {row["id"]} - {row["Attractions"]}</span>' 
                                        for index, row in selected_attractions.iterrows()])
         # Display the selected attractions in orange, each on a new line
         st.markdown(f'我想要去的景點有:<br>{attractions_text}', unsafe_allow_html=True)
     else:
         st.markdown('<span style="color:orange;">還沒有選擇任何景點</span>', unsafe_allow_html=True)
+
+# Display the "我有興趣的景點" section title below the table
+st.markdown("#### 🎇我有興趣的景點🎇")
 
 
 # st.markdown("<br><br>", unsafe_allow_html=True)  # Adds three line breaks
