@@ -43,26 +43,6 @@ df = pd.read_csv(data)
 df['I wanna go!!!!!!!'] = False
 # st.dataframe(df)
 
-st.data_editor(
-    df,
-    column_config={
-        "I wanna go!!!!!!!": st.column_config.CheckboxColumn(
-            "I wanna go!!!!!!!",
-            help="Select if you want to visit this place",
-            default=False,
-        )
-    },
-    disabled=[],  # You can disable other columns if needed
-    hide_index=True,  # Hide the index if you want
-)
-
-
-
-
-st.markdown("<br><br>", unsafe_allow_html=True)  # Adds three line breaks
-st.markdown("#### 🎇我有興趣的景點🎇")
-
-# Create a data editor with a checkbox for selection
 edited_df = st.data_editor(
     df,
     column_config={
@@ -75,6 +55,13 @@ edited_df = st.data_editor(
     disabled=[],  # You can disable other columns if needed
     hide_index=True,  # Hide the index if you want
 )
+
+
+st.markdown("<br><br>", unsafe_allow_html=True)  # Adds three line breaks
+st.markdown("#### 🎇我有興趣的景點🎇")
+
+# Create a data editor with a checkbox for selection
+
 # Extract the names of selected attractions from the 'Attractions' column
 selected_attractions = edited_df[edited_df['I wanna go!!!!!!!'] == True]['Attractions'].tolist()
 
