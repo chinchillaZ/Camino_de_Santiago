@@ -86,8 +86,8 @@ if lower_row[3].button("世界盡頭之路", use_container_width=True):
     lower_row[3].markdown("You clicked 世界盡頭之路")
 
 
-st.empty()  # Creates a space between components
-st.empty()  # Creates a space between components
+st.markdown("<br><br><br>", unsafe_allow_html=True)  # Adds three line breaks
+
 
 
 st.markdown("#### 全部路線 遊客遊客數量統計 🔍")
@@ -133,7 +133,7 @@ fig = px.pie(
     values=sizes,
     names=labels,
     #color_discrete_sequence=px.colors.qualitative.Paired,  # Use the 'Paired' color sequence
-    title="Traveler Distribution by Country",
+    #title="Traveler Distribution by Country",
 )
 
 
