@@ -73,7 +73,7 @@ for i in range(rows):
         else:
             # If no image for the column, add the "吃吃吃" text
             with columns[j]:
-                st.markdown("<h2 style='text-align: center;'>吃吃吃<br>🧑‍🍳🥘✨</h2>", unsafe_allow_html=True)
+                st.markdown("<h2 style='text-align: center;'>Yummy~~<br>🧑‍🍳🥘✨</h2>", unsafe_allow_html=True)
 
 
 
