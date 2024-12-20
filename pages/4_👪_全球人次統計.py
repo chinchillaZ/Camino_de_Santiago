@@ -50,10 +50,22 @@ data_urls_dict = {
     "default": ""  # Default key if route is not found
 }
 
+# Function to handle clicks and display the relevant information
+def on_click(info, chart_data):
+    # Extract the clicked feature's position (latitude and longitude)
+    clicked_data = info['object']
+    clicked_index = clicked_data.get('index', None)
+    
+    # Get the related information from chart_data
+    if clicked_index is not None and clicked_index < len(chart_data):
+        data_point = chart_data.iloc[clicked_index]
+        st.write(f"Clicked Data: {data_point}")  # Display clicked data as a table
+        # You can customize this part to display specific fields from chart_data
+
+
+
 
 def show_map(csv_url, color):
-
-    # Read the CSV file
     chart_data = pd.read_csv(csv_url)
     chart_data = chart_data[chart_data["year"] == 2024]
 
@@ -101,6 +113,8 @@ def show_map(csv_url, color):
                     pickable=True,
                 )
             ],
+             # Set the on_click event to capture clicks and show relevant data
+            on_click=lambda info: on_click(info, chart_data)
         )
     )
     # Show the table of chart_data
