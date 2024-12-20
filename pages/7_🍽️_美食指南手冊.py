@@ -33,12 +33,31 @@ image_urls = [
     "https://chinchillaz.github.io/streamlit-hw/Camino/food/52_F.jpeg",
 ]
 
+
+names = [
+    "炭烤香料馬鈴薯章魚腳",
+    "西班牙海鮮大鍋飯",
+    "秘密西班牙松阪豬",
+    "西班牙馬鈴薯烘蛋",
+    "塔帕斯",
+    "伊比利火腿",
+    "燉牛肚",
+    "安達盧西亞冷湯",
+    "巧克力吉拿棒",
+    "葡式蛋塔",
+    "葡式烤雞",
+    "豬扒包",
+    "胖三明治",
+    "炸鱈魚球",
+]
+
 cols = 5  # 5 columns
 rows = 3  # 3 rows
 max_images = cols * rows  # Display up to 15 images
 
-# Truncate the list to fit the table
+# Truncate the lists to fit the table
 image_urls = image_urls[:max_images]
+names = names[:max_images]
 
 for i in range(rows):
     # Create a row of 5 columns
@@ -46,9 +65,11 @@ for i in range(rows):
     for j in range(cols):
         index = i * cols + j
         if index < len(image_urls):
-            # Display the image in the respective column
             with columns[j]:
+                # Display the image
                 st.image(image_urls[index], use_container_width=True)
+                # Add the name below the image
+                st.caption(names[index])
 
 
 
