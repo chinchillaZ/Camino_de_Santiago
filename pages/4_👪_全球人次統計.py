@@ -84,7 +84,12 @@ if upper_row[0].button("法國之路", use_container_width=True):
     show_map(data_url, color)
     
 if upper_row[1].button("葡萄牙之路", use_container_width=True):
-    show_map(data_url)
+    data_url = "https://raw.githubusercontent.com/chinchillaZ/streamlit-hw/main/Camino/1_Frances_travelers.csv"
+    route_name = "Camino_Ingles"
+    color = color_map.get(route_name, color_map["default"])
+    show_map(data_url, color)
+
+
 if upper_row[2].button("北方之路", use_container_width=True):
     upper_row[2].markdown("You clicked 北方之路")
 
