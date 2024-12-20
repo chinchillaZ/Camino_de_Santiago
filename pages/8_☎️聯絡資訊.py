@@ -17,9 +17,9 @@ markdown = """
 期待在朝聖者之路與您相遇！
 
 <br>  
-📧 **Email**: Chinchilla - zhongchinchilla0529@gmail.com
-📧 **Email**: Magi - magi23570902@gmail.com
-📧 **Email**: Rich - s1143012@gm.ncue.edu.tw
+📧 **Email**: Chinchilla - zhongchinchilla0529@gmail.com<br>  
+📧 **Email**: Magi - magi23570902@gmail.com<br>  
+📧 **Email**: Rich - s1143012@gm.ncue.edu.tw<br>  
 <br>  
 """
 
