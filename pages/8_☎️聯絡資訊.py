@@ -29,6 +29,7 @@ markdown = """
 🌍 **Resources**  
 - Streamlit Map Template: [GitHub Repository](https://github.com/opengeos/streamlit-map-template)
 - Camino Official Website: [website](https://www.caminodesantiago.gal/en/inicio)
+- Food Recommendation: [Spain](https://www.marieclaire.com.tw/lifestyle/taste/72322)、[Portugal](https://hsuanslife.com/portugal-food/)
 
 ---
 
