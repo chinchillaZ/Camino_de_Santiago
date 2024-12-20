@@ -20,7 +20,8 @@ logo = "https://chinchillaz.github.io/streamlit-hw/logo_sun-removebg-preview.png
 st.sidebar.image(logo)
 
 # Customize page title
-st.title("Camino de Santiago")
+st.title("Welcome to Camino de Santiago App")
+# Display clickable links
 
 st.markdown(
     """
@@ -28,11 +29,20 @@ st.markdown(
     """
 )
 
+st.markdown(
+    """
+    [► Camino七大路線介紹⛰️](https://camino.streamlit.app/%E8%B7%AF%E7%B7%9A%E4%BB%8B%E7%B4%B9)  
+    **探索西班牙七大經典路線！** 這些路線充滿歷史與挑戰，帶你走過美麗的景點與文化的精髓。  
+    [► Camino沿路旅遊景點推薦🏰](https://camino.streamlit.app/%E6%97%85%E9%81%8A%E6%99%AF%E9%BB%9E%E6%8E%A8%E8%96%A6)  
+    **從壯麗的古堡到浪漫的海岸線，發現不容錯過的必遊景點！**  
+    [► Camino全球人次統計👪](https://camino.streamlit.app/%E5%85%A8%E7%90%83%E4%BA%BA%E6%AC%A1%E7%B5%B1%E8%A8%88)  
+    **全球朝聖者的足跡！快來看看哪個國家的旅客最多。**  
+    [► Camino美食指南手冊🍽️](https://camino.streamlit.app/%E7%BE%8E%E9%A3%9F%E6%8C%87%E5%8D%97%E6%89%8B%E5%86%8A)  
+    **品味Camino沿途的美味，從地道的小吃到高端餐廳一網打盡！**  
+    """
+)
 
-# st.markdown(markdown)
 
-#m = leafmap.Map(minimap_control=True)
-#m.add_basemap("OpenTopoMap")
 m = leafmap.Map(center = [42.5, -4.0], zoom = 7 , minimap_control=True)
 
 country_url = "https://chinchillaz.github.io/streamlit-hw/S_P_F_country_clear.geojson"
@@ -91,17 +101,9 @@ m.add_legend(title="Camino de Santiago Routes", legend_dict=legend_dict)
 
 
 # Title for the page
-st.title("Welcome to Camino de Santiago App")
 
-# Display clickable links
-st.markdown(
-    """
-    [► Camino七大路線介紹⛰️](https://camino.streamlit.app/%E8%B7%AF%E7%B7%9A%E4%BB%8B%E7%B4%B9)  
-    [► Camino沿路旅遊景點推薦🏰](https://camino.streamlit.app/%E6%97%85%E9%81%8A%E6%99%AF%E9%BB%9E%E6%8E%A8%E8%96%A6)  
-    [► Camino全球人次統計👪](https://camino.streamlit.app/%E5%85%A8%E7%90%83%E4%BA%BA%E6%AC%A1%E7%B5%B1%E8%A8%88)  
-    [► Camino美食指南手冊🍽️](https://camino.streamlit.app/%E7%BE%8E%E9%A3%9F%E6%8C%87%E5%8D%97%E6%89%8B%E5%86%8A)
-    """
-)
+
+
 
 
 
