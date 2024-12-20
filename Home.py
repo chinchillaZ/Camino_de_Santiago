@@ -90,6 +90,19 @@ legend_dict = {
 m.add_legend(title="Camino de Santiago Routes", legend_dict=legend_dict)
 
 
+# Title for the page
+st.title("Welcome to Camino de Santiago App")
+
+# Display clickable links
+st.markdown(
+    """
+    [Camino七大路線介紹⛰️](https://camino.streamlit.app/%E8%B7%AF%E7%B7%9A%E4%BB%8B%E7%B4%B9)  
+    [Camino沿路旅遊景點推薦🏰](https://camino.streamlit.app/%E6%97%85%E9%81%8A%E6%99%AF%E9%BB%9E%E6%8E%A8%E8%96%A6)  
+    [Camino全球人次統計👪](https://camino.streamlit.app/%E5%85%A8%E7%90%83%E4%BA%BA%E6%AC%A1%E7%B5%B1%E8%A8%88)  
+    [美食指南手冊🍽️](https://camino.streamlit.app/%E7%BE%8E%E9%A3%9F%E6%8C%87%E5%8D%97%E6%89%8B%E5%86%8A)
+    """
+)
+
 
 
 
