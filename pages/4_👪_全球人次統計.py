@@ -167,7 +167,7 @@ if lower_row[3].button("世界盡頭之路", use_container_width=True):
 st.markdown("<br><br><br>", unsafe_allow_html=True)  # Adds three line breaks
 
 
-st.markdown("#### 全部路線 遊客遊客數量統計 🔍")
+st.markdown("#### 七大路線 遊客人數總計 🔍")
 json_data = {
     "pie_chart": {
         "labels": [
