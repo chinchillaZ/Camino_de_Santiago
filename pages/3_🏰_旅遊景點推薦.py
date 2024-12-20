@@ -39,6 +39,13 @@ m.to_streamlit(height=700)
 
 st.markdown("<br><br>", unsafe_allow_html=True)  # Adds three line breaks
 st.markdown("#### 🎇推薦景點清點🎇")
+markdown = """
+    精心蒐集各大平台上的熱門景點，讓您不再為選擇目的地煩惱。從歷史名勝到自然奇觀，為您推薦最值得一遊的地方。<br>
+    歡迎勾選有興趣的目的地，按「確認」按鈕後，會在下方顯示清單~
+"""
+st.markdown(markdown, unsafe_allow_html=True)
+
+
 df = pd.read_csv(data)
 df['I wanna go!!!!!!!'] = False
 # st.dataframe(df)
