@@ -56,7 +56,7 @@ edited_df = st.data_editor(
     hide_index=True,  # Hide the index if you want
 )
 
- st.markdown("#### 🎇我有興趣的景點🎇")
+st.markdown("#### 🎇我有興趣的景點🎇")
 
 # Add a "確認" button that will display the selected attractions when clicked
 if st.button('確認'):
