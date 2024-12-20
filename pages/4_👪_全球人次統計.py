@@ -106,11 +106,6 @@ data_urls_dict = {
 #     # Show the table of chart_data
 #     st.table(chart_data)  # Display the chart data as a table
 
-import pandas as pd
-import pydeck as pdk
-import streamlit as st
-import requests
-
 # Function to show the map
 def show_map(csv_url, color, route_name):
     # Read the CSV file
