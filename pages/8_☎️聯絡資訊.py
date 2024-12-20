@@ -27,8 +27,9 @@ markdown = """
 
 
 ---
-🌍 **Streamlit Map Template**  
-- Access resources at the following link: [GitHub Repository](https://github.com/opengeos/streamlit-map-template)
+🌍 **Resources**  
+- Streamlit Map Template: [GitHub Repository](https://github.com/opengeos/streamlit-map-template)
+- Camino Official Website: [website](https://www.caminodesantiago.gal/en/inicio)
 
 ---
 
