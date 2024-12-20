@@ -5,13 +5,9 @@ import numpy as np
 
 st.set_page_config(layout="wide")
 
-markdown = """
-A Streamlit map template
-<https://github.com/opengeos/streamlit-map-template>
-"""
 
 st.sidebar.title("About")
-st.sidebar.info(markdown)
+
 logo = "https://chinchillaz.github.io/streamlit-hw/logo_sun-removebg-preview.png"
 st.sidebar.image(logo)
 
