@@ -57,8 +57,6 @@ st.image(image_url, caption="Tortilla Espanola", use_container_width=True)
 
 
 
-
-
 st.subheader("5.塔帕斯 Tapas")
 image_url = "https://chinchillaz.github.io/streamlit-hw/Camino/food/5_F.jpg"
 st.image(image_url, caption="Tapas", use_container_width=True)
@@ -79,7 +77,7 @@ markdown = """
 st.markdown(markdown)
 
 st.subheader("7.燉牛肚 Callos a la Madrileña")
-image_url = "https://chinchillaz.github.io/streamlit-hw/Camino/food7_F.png"
+image_url = "https://chinchillaz.github.io/streamlit-hw/Camino/food/7_F.png"
 st.image(image_url, caption="Callos a la Madrileña", use_container_width=True)
 
 markdown = """
@@ -90,7 +88,7 @@ markdown = """
 st.markdown(markdown)
 
 st.subheader("8.安達盧西亞冷湯 Gazpacho")
-image_url = ""https://chinchillaz.github.io/streamlit-hw/Camino/food/8_F.jpg""
+image_url = "https://chinchillaz.github.io/streamlit-hw/Camino/food/8_F.jpg"
 st.image(image_url, caption="Gazpacho", use_container_width=True)
 
 markdown = """
@@ -131,7 +129,7 @@ Frango Assado 是葡萄牙的一道經典家庭料理，幾乎每個家庭都有
 st.markdown(markdown)
 
 st.subheader("3.豬扒包 Bifanas")
-image_url = "https://github.com/liqi6/caminotest/blob/main/%E7%BE%8E%E9%A3%9F%E7%85%A7%E7%89%87/%E8%B1%AC%E6%89%92%E5%8C%85.jpg?raw=true"
+image_url = "https://chinchillaz.github.io/streamlit-hw/Camino/food/3_F.jpg"
 st.image(image_url, caption="Bifanas", use_container_width=True)
 
 markdown = """
@@ -151,7 +149,7 @@ markdown = """
 st.markdown(markdown)
 
 st.subheader("5.炸鱈魚球 Bolinhos de Bacalhau")
-image_url = "https://github.com/liqi6/caminotest/blob/main/%E7%BE%8E%E9%A3%9F%E7%85%A7%E7%89%87/%E7%82%B8%E9%B1%88%E9%AD%9A%E7%90%83.jpg?raw=true"
+image_url = "https://chinchillaz.github.io/streamlit-hw/Camino/food/52_F.jpg"
 st.image(image_url, caption="Bolinhos de Bacalhau", use_container_width=True)
 
 markdown = """
