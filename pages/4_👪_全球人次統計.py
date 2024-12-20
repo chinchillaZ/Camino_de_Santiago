@@ -73,8 +73,8 @@ def show_map(csv_url, color):
                     data=chart_data,
                     get_position="[Y, X]",  # Note: Longitude is X, Latitude is Y
                     get_elevation="Number / 10",  # Set the elevation (height of the column) proportional to 'Number'
-                    elevation_scale=500,  # Scale factor for elevation 誇張程度
-                    get_fill_color=f"[{color[0]}, {color[1]}, {color[2]}, 200]",  # Color of the columns RGBA
+                    elevation_scale=800,  # Scale factor for elevation 誇張程度
+                    get_fill_color=f"[{color[0]}, {color[1]}, {color[2]}, 210]",  # Color of the columns RGBA
                     radius=80000,  # Radius of the columns
                     pickable=True,
                 )
