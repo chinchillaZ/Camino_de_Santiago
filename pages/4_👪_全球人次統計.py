@@ -28,15 +28,25 @@ markdown = """
 
 st.markdown(markdown, unsafe_allow_html=True)
 
-def show_map(csv_url):
+color_map = {
+        "Camino_Frances": [255, 0, 0],           # Vibrant red
+        "Camino_Ingles": [0, 0, 255],           # Strong blue
+        "Camino_Portugues_central": [255, 165, 0],  # Bright orange
+        "Camino_Primitivo": [0, 255, 0],        # Fresh green
+        "Camino_del_Norte": [128, 0, 128],      # Deep purple
+        "Portugues_Coastal": [255, 255, 0],     # Sunny yellow
+        "Via_de_la_Plata": [139, 69, 19],       # Earthy brown
+        "default": [0, 0, 0],                   # Default color if route not found
+    }
+
+
+def show_map(csv_url, color):
 
     # Read the CSV file
     chart_data = pd.read_csv(csv_url)
     chart_data = chart_data[chart_data["year"] == 2024]
 
-    # Create a pydeck map with two layers: HexagonLayer and ScatterplotLayer
-      # Create a pydeck map with ScatterplotLayer
-  # Create a pydeck map with a ColumnLayer for 3D bars
+
     st.pydeck_chart(
         pdk.Deck(
             map_style="mapbox://styles/mapbox/light-v10",
@@ -53,17 +63,13 @@ def show_map(csv_url):
                     get_position="[Y, X]",  # Note: Longitude is X, Latitude is Y
                     get_elevation="Number / 10",  # Set the elevation (height of the column) proportional to 'Number'
                     elevation_scale=500,  # Scale factor for elevation 誇張程度
-                    get_fill_color="[200, 30, 0, 200]",  # Color of the columns RGBA
+                    get_fill_color=f"[{color[0]}, {color[1]}, {color[2]}, 200]",  # Color of the columns RGBA
                     radius=80000,  # Radius of the columns
                     pickable=True,
                 )
             ],
         )
     )
-
-
-
-
 
 
 # Create two rows using columns
@@ -73,6 +79,8 @@ lower_row = st.columns(4)  # Lower row with 4 buttons
 # Upper row buttons
 if upper_row[0].button("法國之路", use_container_width=True):
     data_url = "https://raw.githubusercontent.com/chinchillaZ/streamlit-hw/main/Camino/1_Frances_travelers.csv"
+    route_name = "Camino_Frances"
+    color = color_map.get(route_name, color_map["default"])
     show_map(data_url)
     
 if upper_row[1].button("葡萄牙之路", use_container_width=True):
