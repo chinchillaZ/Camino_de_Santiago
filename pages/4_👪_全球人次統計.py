@@ -86,22 +86,11 @@ if lower_row[3].button("世界盡頭之路", use_container_width=True):
     lower_row[3].markdown("You clicked 世界盡頭之路")
 
 
+st.empty()  # Creates a space between components
+st.empty()  # Creates a space between components
 
 
 st.markdown("#### 全部路線 遊客遊客數量統計 🔍")
-# URL for JSON data
-# json_url = "https://chinchillaz.github.io/streamlit-hw/Camino/all_travelers.json"
-# response = requests.get(json_url)
-# json_data = response.json()
-
-# labels = json_data["pie_chart"]["labels"]
-# sizes = json_data["pie_chart"]["sizes"]
-# # Pie chart using Plotly
-# fig = px.pie(values=sizes, names=labels, title="Pie Chart from JSON Data")
-# st.plotly_chart(fig)
-
-# URL for JSON data
-# JSON data
 json_data = {
     "pie_chart": {
         "labels": [
