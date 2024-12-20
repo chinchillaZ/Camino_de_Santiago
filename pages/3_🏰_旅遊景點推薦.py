@@ -37,7 +37,7 @@ m.to_streamlit(height=700)
 
 
 
-st.markdown("<br><br><br>", unsafe_allow_html=True)  # Adds three line breaks
+st.markdown("<br><br>", unsafe_allow_html=True)  # Adds three line breaks
 st.markdown("#### 🎇推薦景點清點🎇")
 df = pd.read_csv(data)
 df['I wanna go!!!!!!!'] = False
