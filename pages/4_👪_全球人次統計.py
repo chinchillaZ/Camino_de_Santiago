@@ -101,36 +101,47 @@ st.markdown("#### 全部路線 遊客遊客數量統計 🔍")
 # st.plotly_chart(fig)
 
 # URL for JSON data
-json_url = "https://chinchillaz.github.io/streamlit-hw/Camino/all_travelers.json"
+# JSON data
+json_data = {
+    "pie_chart": {
+        "labels": [
+            "Spain", "USA", "Italy", "Germany", "Portugal", "United Kingdom",
+            "France", "Ireland", "Mexico", "Korea", "Canada", "Australia", "Poland",
+            "Brazil", "Holland", "Republic Czech", "Argentina", "Colombia", "Denmark", "Taiwan",
+            "Belgium", "China", "Austria", "Swiss", "Hungary", "South Africa", "Slovakia",
+            "Romania", "Nea Zeeland", "Japan", "Ukraine", "Venezuela", "Sweden", "Russia",
+            "Philippines", "Bulgaria", "Puerto Rico", "Chili", "Uruguay", "Norway", "Slovenia",
+            "Singapore", "Ecuador", "Lithuania", "Finland", "Costa Rica", "Peru", "Latvia",
+            "Hong Kong", "Malaysia", "Iran", "Indonesia", "Malta", "Estonia", "Guatemala",
+            "Greece", "Israel", "Rep.Dominican", "Andorra", "El Salvador", "Belarus", "India",
+            "Paraguay", "Luxembourg", "Bolivia", "Cuba", "Serbia", "Iceland", "Turkey",
+            "Panama", "Iraq", "Nicaragua"
+        ],
+        "sizes": [
+            43.71, 7.99, 6, 4.93, 4.59, 2.75,
+            2.15, 2.15, 1.99, 1.65, 1.63, 1.61, 1.57,
+            1.49, 1.33, 1.67, 1.01, 0.95, 0.8, 0.78,
+            0.73, 0.53, 0.52, 0.4, 0.38, 0.35, 0.34,
+            0.33, 0.31, 0.31, 0.3, 0.3, 0.29, 0.29,
+            0.27, 0.23, 0.23, 0.21, 0.2, 0.18, 0.17,
+            0.17, 0.17, 0.17, 0.16, 0.15, 0.14, 0.12,
+            0.12, 0.11, 0.09, 0.09, 0.08, 0.07, 0.07,
+            0.06, 0.06, 0.05, 0.05, 0.05, 0.05, 0.05,
+            0.04, 0.04, 0.03, 0.03, 0.03, 0.03, 0.03,
+            0.03, 0.02, 0.02
+        ]
+    }
+}
 
-# Load JSON data from URL
-response = requests.get(json_url)
-if response.status_code == 200:
-    try:
-        json_data = response.json()
-    except ValueError as e:
-        st.error(f"Failed to parse JSON data: {e}")
-        st.stop()
-else:
-    st.error(f"Failed to load JSON data. Status code: {response.status_code}")
-    st.stop()
-
-# Convert JSON data to a pandas DataFrame
-try:
-    df = pd.DataFrame({
-        "labels": json_data["pie_chart"]["labels"],
-        "sizes": json_data["pie_chart"]["sizes"]
-    })
-except KeyError as e:
-    st.error(f"Key error while processing JSON: {e}")
-    st.stop()
+# Extract data for the pie chart
+labels = json_data["pie_chart"]["labels"]
+sizes = json_data["pie_chart"]["sizes"]
 
 # Streamlit app
 st.title("Pie Chart from JSON Data")
 
 # Pie chart using Plotly
-fig = px.pie(df, values="sizes", names="labels", title="Pie Chart from JSON Data")
+fig = px.pie(values=sizes, names=labels, title="Pie Chart from JSON Data")
 st.plotly_chart(fig)
-
 
 
