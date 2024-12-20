@@ -22,45 +22,88 @@ st.sidebar.image(logo)
 st.title("全球人次統計 👪")
 
 
-def show_map():
-    # Load the GeoJSON data
-    data = "https://chinchillaz.github.io/streamlit-hw/Camino/1_Frances_travelers.geojson"
-    chart_data = gpd.read_file(data)
+# def show_map():
+#     # Load the GeoJSON data
+#     data = "https://chinchillaz.github.io/streamlit-hw/Camino/1_Frances_travelers.geojson"
+#     chart_data = gpd.read_file(data)
 
-    # Filter data for the year 2024
-    chart_data = chart_data[chart_data["year"] == 2024]
+#     # Filter data for the year 2024
+#     chart_data = chart_data[chart_data["year"] == 2024]
     
-    # Extract the X (longitude) and Y (latitude) coordinates
-    chart_data['X'] = chart_data['geometry'].apply(lambda x: x.coords[0][0])  # Longitude
-    chart_data['Y'] = chart_data['geometry'].apply(lambda x: x.coords[0][1])  # Latitude
+#     # Extract the X (longitude) and Y (latitude) coordinates
+#     chart_data['X'] = chart_data['geometry'].apply(lambda x: x.coords[0][0])  # Longitude
+#     chart_data['Y'] = chart_data['geometry'].apply(lambda x: x.coords[0][1])  # Latitude
 
-    # Render the map using Pydeck
-    deck = pdk.Deck(
-        map_style=None,
-        initial_view_state=pdk.ViewState(
-            latitude=20,  # Centering the map on the general location
-            longitude=0,  # Adjust based on your map area
-            zoom=1,       # Adjust zoom to fit the global map
-            pitch=50,     # Angle for 3D effect
-        ),
-        layers=[
-            pdk.Layer(
-                "HexagonLayer",
-                data=chart_data,
-                get_position=["X", "Y"],  # Corrected syntax for accessing the columns
-                radius=1000,  # Size of the hexagons, adjust based on data density
-                elevation_scale=4,
-                elevation_range=[0, 1000],
-                get_elevation="Number",  # Use the 'Number' column for height (this adds 3D bars)
-                get_fill_color="[0, 0, 255, 255]",  # Color for the hexagons (blue)
-                pickable=True,
-                extruded=True,  # This makes the bars 3D
+#     # Render the map using Pydeck
+#     deck = pdk.Deck(
+#         map_style=None,
+#         initial_view_state=pdk.ViewState(
+#             latitude=20,  # Centering the map on the general location
+#             longitude=0,  # Adjust based on your map area
+#             zoom=1,       # Adjust zoom to fit the global map
+#             pitch=50,     # Angle for 3D effect
+#         ),
+#         layers=[
+#             pdk.Layer(
+#                 "HexagonLayer",
+#                 data=chart_data,
+#                 get_position=["X", "Y"],  # Corrected syntax for accessing the columns
+#                 radius=1000,  # Size of the hexagons, adjust based on data density
+#                 elevation_scale=4,
+#                 elevation_range=[0, 1000],
+#                 get_elevation="Number",  # Use the 'Number' column for height (this adds 3D bars)
+#                 get_fill_color="[0, 0, 255, 255]",  # Color for the hexagons (blue)
+#                 pickable=True,
+#                 extruded=True,  # This makes the bars 3D
+#             ),
+#         ],
+#     )
+
+#     # Display the map in Streamlit using `st.pydeck_chart`
+#     st.pydeck_chart(deck)
+def show_map():
+        chart_data = pd.DataFrame(
+        np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
+        columns=["lat", "lon"],
+    )
+    
+    st.pydeck_chart(
+        pdk.Deck(
+            map_style=None,
+            initial_view_state=pdk.ViewState(
+                latitude=37.76,
+                longitude=-122.4,
+                zoom=11,
+                pitch=50,
             ),
-        ],
+            layers=[
+                pdk.Layer(
+                    "HexagonLayer",
+                    data=chart_data,
+                    get_position="[lon, lat]",
+                    radius=200,
+                    elevation_scale=4,
+                    elevation_range=[0, 1000],
+                    pickable=True,
+                    extruded=True,
+                ),
+                pdk.Layer(
+                    "ScatterplotLayer",
+                    data=chart_data,
+                    get_position="[lon, lat]",
+                    get_color="[200, 30, 0, 160]",
+                    get_radius=200,
+                ),
+            ],
+        )
     )
 
-    # Display the map in Streamlit using `st.pydeck_chart`
-    st.pydeck_chart(deck)
+
+
+
+
+
+
 
 # Create two rows using columns
 upper_row = st.columns(3)  # Upper row with 3 buttons
@@ -86,8 +129,17 @@ if lower_row[3].button("世界盡頭之路", use_container_width=True):
     lower_row[3].markdown("You clicked 世界盡頭之路")
 
 
-st.markdown("<br><br><br>", unsafe_allow_html=True)  # Adds three line breaks
 
+
+
+
+
+
+
+
+
+
+st.markdown("<br><br><br>", unsafe_allow_html=True)  # Adds three line breaks
 
 
 st.markdown("#### 全部路線 遊客遊客數量統計 🔍")
