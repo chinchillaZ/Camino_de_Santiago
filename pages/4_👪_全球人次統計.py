@@ -62,11 +62,13 @@ st.title("全球人次統計 👪")
 #     # Display the map in Streamlit using `st.pydeck_chart`
 #     st.pydeck_chart(deck)
 def show_map():
-        chart_data = pd.DataFrame(
+    # Generate some random chart data (latitude and longitude)
+    chart_data = pd.DataFrame(
         np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
         columns=["lat", "lon"],
     )
-    
+
+    # Create a pydeck map with two layers: HexagonLayer and ScatterplotLayer
     st.pydeck_chart(
         pdk.Deck(
             map_style=None,
@@ -97,7 +99,6 @@ def show_map():
             ],
         )
     )
-
 
 
 
