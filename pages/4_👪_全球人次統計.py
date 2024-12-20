@@ -75,7 +75,7 @@ def show_map():
             initial_view_state=pdk.ViewState(
                 latitude=37.76,
                 longitude=-122.4,
-                zoom=11,
+                zoom=1,
                 pitch=50,
             ),
             layers=[
