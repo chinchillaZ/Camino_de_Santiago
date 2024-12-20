@@ -28,7 +28,7 @@ markdown = """
 
 st.markdown(markdown, unsafe_allow_html=True)
 
-def show_map():
+def show_map(csv_url):
 
     # Read the CSV file
     chart_data = pd.read_csv(csv_url)
