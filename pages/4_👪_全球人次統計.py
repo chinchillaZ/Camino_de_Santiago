@@ -98,6 +98,38 @@ def show_map():
         )
     )
 
+def show_map2():
+    # Generate some random chart data (latitude and longitude)
+    csv_url = "https://raw.githubusercontent.com/chinchillaZ/streamlit-hw/main/Camino/1_Frances_travelers.csv"
+
+    # Read the CSV file
+    chart_data = pd.read_csv(csv_url)
+    chart_data = chart_data[chart_data["year"] == 2024]
+
+    # Create a pydeck map with two layers: HexagonLayer and ScatterplotLayer
+    st.pydeck_chart(
+        pdk.Deck(
+            map_style=None,
+            initial_view_state=pdk.ViewState(
+                latitude=37.76,
+                longitude=-122.4,
+                zoom=11,
+                pitch=70,
+            ),
+            layers=[
+                pdk.Layer(
+                    "HexagonLayer",
+                    data=chart_data,
+                    get_position="[X, Y]",
+                    radius=200,
+                    elevation_scale=4,
+                    elevation_range=[0, 1000],
+                    pickable=True,
+                    extruded=True,
+                ),          
+            ],
+        )
+    )
 
 
 
@@ -113,7 +145,7 @@ if upper_row[0].button("法國之路", use_container_width=True):
     show_map()
     
 if upper_row[1].button("葡萄牙之路", use_container_width=True):
-    upper_row[1].markdown("You clicked 葡萄牙之路")
+    show_map2()
 if upper_row[2].button("北方之路", use_container_width=True):
     upper_row[2].markdown("You clicked 北方之路")
 
