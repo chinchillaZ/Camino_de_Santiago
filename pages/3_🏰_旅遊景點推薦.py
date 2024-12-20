@@ -72,7 +72,7 @@ if selected_attractions:
     st.markdown(f'我想要去的景點有:<br>{attractions_text}', unsafe_allow_html=True)
 else:
     st.markdown('<span style="color:orange;">還沒有選擇任何景點</span>', unsafe_allow_html=True)
-)
+
 
 
 # Add custom HTML to change the checkbox color (if HTML support is allowed in this context)
