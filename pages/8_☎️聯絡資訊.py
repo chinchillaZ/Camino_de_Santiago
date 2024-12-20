@@ -25,6 +25,15 @@ markdown = """
 - Magi: [magi23570902@gmail.com](mailto:magi23570902@gmail.com)  
 - Rich: [s1143012@gm.ncue.edu.tw](mailto:s1143012@gm.ncue.edu.tw)  
 
+
+---
+🌍 **Streamlit Map Template**  
+Explore the Streamlit map template and access resources at the following link:  
+[GitHub Repository](https://github.com/opengeos/streamlit-map-template)
+
+---
+
+
 """
 
 st.markdown(markdown, unsafe_allow_html=True)
