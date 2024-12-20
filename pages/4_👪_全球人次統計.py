@@ -124,7 +124,7 @@ if upper_row[0].button("法國之路", use_container_width=True):
     route_name = "Camino_Frances"
     data_url = data_urls_dict.get(route_name, data_urls_dict["default"])
     color = color_map.get(route_name, color_map["default"])
-    show_map(data_url, color,route_name)
+    show_map(data_url, color)
     
 if upper_row[1].button("葡萄牙之路", use_container_width=True):
     route_name = "Camino_Portugues_central"
