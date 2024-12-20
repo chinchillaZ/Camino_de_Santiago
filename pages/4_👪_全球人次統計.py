@@ -91,6 +91,14 @@ def show_map(csv_url, color):
                     get_fill_color=f"[{color[0]}, {color[1]}, {color[2]}, 210]",  # Color of the columns RGBA
                     radius=80000,  # Radius of the columns
                     pickable=True,
+                ),
+                pdk.Layer(
+                    "GeoJsonLayer",  # Add GeoJSON layer
+                    filtered_geojson,  # Use the filtered GeoJSON
+                    get_fill_color=[255, 0, 0, 255],  # Color for the route line (red)
+                    get_line_color=[255, 0, 0],  # Line color for the route (red)
+                    line_width=4,  # Line width for the route
+                    pickable=True,
                 )
             ],
         )
