@@ -56,22 +56,37 @@ edited_df = st.data_editor(
     hide_index=True,  # Hide the index if you want
 )
 
+ st.markdown("#### 🎇我有興趣的景點🎇")
 
-st.markdown("<br><br>", unsafe_allow_html=True)  # Adds three line breaks
-st.markdown("#### 🎇我有興趣的景點🎇")
+# Add a "確認" button that will display the selected attractions when clicked
+if st.button('確認'):
+    # Extract the names of selected attractions from the 'Attractions' column
+    selected_attractions = edited_df[edited_df['I wanna go!!!!!!!'] == True]['Attractions'].tolist()
+    
+    # Display the text below the table with orange color
+    # Display the selected attractions in orange, each on a new line
+    if selected_attractions:
+        attractions_text = "<br>".join([f'<span style="color:orange;">{attraction}</span>' for attraction in selected_attractions])
+        st.markdown(f'我想要去的景點有:<br>{attractions_text}', unsafe_allow_html=True)
+    else:
+        st.markdown('<span style="color:orange;">還沒有選擇任何景點</span>', unsafe_allow_html=True)
 
-# Create a data editor with a checkbox for selection
 
-# Extract the names of selected attractions from the 'Attractions' column
-selected_attractions = edited_df[edited_df['I wanna go!!!!!!!'] == True]['Attractions'].tolist()
+# st.markdown("<br><br>", unsafe_allow_html=True)  # Adds three line breaks
+# st.markdown("#### 🎇我有興趣的景點🎇")
 
-# Display the text below the table with orange color
-# Display the selected attractions in orange, each on a new line
-if selected_attractions:
-    attractions_text = "<br>".join([f'<span style="color:orange;">{attraction}</span>' for attraction in selected_attractions])
-    st.markdown(f'我想要去的景點有:<br>{attractions_text}', unsafe_allow_html=True)
-else:
-    st.markdown('<span style="color:orange;">還沒有選擇任何景點</span>', unsafe_allow_html=True)
+# # Create a data editor with a checkbox for selection
+
+# # Extract the names of selected attractions from the 'Attractions' column
+# selected_attractions = edited_df[edited_df['I wanna go!!!!!!!'] == True]['Attractions'].tolist()
+
+# # Display the text below the table with orange color
+# # Display the selected attractions in orange, each on a new line
+# if selected_attractions:
+#     attractions_text = "<br>".join([f'<span style="color:orange;">{attraction}</span>' for attraction in selected_attractions])
+#     st.markdown(f'我想要去的景點有:<br>{attractions_text}', unsafe_allow_html=True)
+# else:
+#     st.markdown('<span style="color:orange;">還沒有選擇任何景點</span>', unsafe_allow_html=True)
 
 
 
